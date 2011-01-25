@@ -1,0 +1,45 @@
+\opt{text}{\skbheading{Creating a Directory Structure}}
+
+The real power (and possibly madness) of the \skbacft{A3DS:SKB} comes with the separation of
+different parts of a document into different directory structures. For the user guide,
+we assume the \opt{text}{following} general directory structure%
+\opt{note}{shown in this slide}%
+.
+
+\opt{text}{
+  \begin{longtable}{|>{}p{0.945\textwidth} >{}p{1pt}|}
+    \hline
+    \rowcolor[gray]{.9}
+      \skbinput[from=fig]{dirtree/complete}
+    & \\
+    \hline
+  \end{longtable}
+}
+
+To create this structure, go to the directory were you want to put all your 
+documents, say \skbem[code]{/doc}. Now create the folders \skbem[code]{database},
+\skbem[code]{figures}, \skbem[code]{publish} and \skbem[code]{repository} and the 
+respective sub-folders as shown \opt{text}{above.}\opt{note}{in this slide.} Finally, configure the 
+\skbacft{A3DS:SKB} by either editing one of the configuration files or adding the following line
+to all of your published documents (and of course change the text \skbem[code]{myfile.tex}
+to something that tells you about the location of the configuration change):
+
+\begin{lstlisting}[style=generic,language=TeX]
+\skbconfig[root=/doc,
+           acr=database/latex,acrfile=acronym,
+           bib=database/bibtex,bibfile=bibliograhpy,
+           rep=repository,pub=publish,
+           fig=figures,sli=slides
+          ]{myfile.tex}
+\end{lstlisting}
+
+The directory structures for the publish folder and the repository folder reflect different
+views to your document base. The publish folder contains documents that are published for a
+reason (i.e. articles, books, presentations, white papers, work in progress) while the 
+repository folder contains content, most likely structured following a content-specific 
+categorisation. The choice of how the directory structure looks like is yours, and of course 
+you could also have multiple document directories with completely different structures, for instance
+one for computer science publications and one for a gardening book. The \skbacft{A3DS:SKB} does not set any 
+limit, since it can be configured very flexibly to your needs
+\opt{text}{(please see \autoref{macro:skbconfig} for more details)}%
+.

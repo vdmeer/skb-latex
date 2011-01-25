@@ -1,0 +1,26 @@
+\opt{text}{\skbheading{Path and File Names}}
+
+\DescribeMacro{\skbfileroot}
+\DescribeMacro{\skbpathroot}
+\DescribeMacro{\skbfileacr}
+\DescribeMacro{\skbfilebib}
+\DescribeMacro{\skbpathbib}
+\DescribeMacro{\skbfilerep}
+\DescribeMacro{\skbfilepub}
+\DescribeMacro{\skbfilefig}
+\DescribeMacro{\skbfilesli}
+The \skbacft{A3DS:SKB} provides a number of macros to directly create path and file names. Most of 
+these macros are actually used within the \skbacft{A3DS:SKB}, but they might also be useful for 
+users to access files without using the provided specialised macros (such as \cmd{\skbinput}.
+The following macros are provided:
+\begin{skbnotelist}
+  \item \cmd{\skbpathroot} -- returns the set root path of the \skbacft{A3DS:SKB}.
+  \item \cmd{\skbfileroot} -- returns the set root path and adds \skbem[code]{/#1}, i.e. the directory separator and the argument provided.
+  \item \cmd{\skbfileacr} -- returns the path (including root) and file name for the acronym database.
+  \item \cmd{\skbfilebib} -- returns the path (including root) and file name for the file that loads the reference database (\BibTeX).
+  \item \cmd{\skbpathbib} -- returns the path (including root) to the reference database.
+  \item \cmd{\skbfilerep} -- returns the path to the repository and adds \skbem[code]{/#1}, i.e. the directory separator and the argument provided.
+  \item \cmd{\skbfilepub} -- returns the path to the folder with the published documents and adds \skbem[code]{/#1}, i.e. the directory separator and the argument provided.
+  \item \cmd{\skbfilefig} -- returns the path to the figure folder and adds \skbem[code]{/#1}, i.e. the directory separator and the argument provided.
+  \item \cmd{\skbfilesli} -- returns the path to the slide folder and adds \skbem[code]{/#1}, i.e. the directory separator and the argument provided.
+\end{skbnotelist}

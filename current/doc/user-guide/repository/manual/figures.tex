@@ -1,0 +1,56 @@
+\opt{text}{\skbheading{Figures}}
+
+\DescribeMacro{\skbfigure}
+The classic way to add figures to your document is to have a \skbacft{ISO:PDF} or \skbacft{ISO:PNG} or \skbacft{ISO:JPG} 
+file ready, include it using \cmd{\includegraphics} while putting it into a box
+to resize it (i.e. to the width of the text in your document), putting this
+very box into a figure environment so that \LaTeX~can process list of figures etc.
+and of course adding lable and caption to it.%
+\opt{text}{%
+  Here is some \LaTeX~example, which also uses the center environment:
+  \lstinputlisting[style=generic,language=TeX]{\skbfileroot{examples/figure-classic}}
+}%
+\opt{note}{The first block of this slide show a \LaTeX~example, which also uses the
+center environment.}%
+
+With the \skbacft{A3DS:SKB} macro \cmd{\skbfigure} things become a little bit simplier.
+takes a number of options and one argument.%
+\opt{text}{The following code}\opt{note}{The second block on this slide}
+shows a number of examples for using this macro.
+
+\lstinputlisting[style=genericLN,language=TeX]{\skbfileroot{examples/skbfigure}}
+
+Let's start with the easy usage, simply using the one argument to load a figure,
+as shown in line 1.
+This call will simply use \cmd{\includegraphics} and \cmd{\resizebox} to load the figure
+\skbem[code]{myfig} from the figure directory, so we do not need to say
+\skbem[code]{../figures} anymore. To use the figure and the center environment, we simply
+add two options requesting exactly that, as shown in line 2.
+In other words, using the option \skbem[code]{figure} will put the \skbem[code]{myfig} in
+a figure environment and using the option \skbem[code]{center} will center the figure.
+
+Similar for width and height information. Say the figure should be rescaled to the width 
+of the text in your document you simply add width to the options, as shown in line 3
+Use \skbem[code]{height} for height or both options if required. Note that the width and 
+the hight are automatically applied to the \cmd{\resizebox} and \cmd{\includegraphics}.
+You can also add caption and label information using the respective options (lines 4 and 5).
+Now we will have the same result as the classi \LaTeX~example. You can also add the 
+required position for your figure, if using the figure environment applying the option
+\skbem[code]{position} with the usual paramters, including \skbem[code]{H} from the float
+environment.
+
+\opt{text}{
+  \begin{table}[ht!]
+    \caption{Options for skbfigure}
+    \label{tab:skbfigure:options}
+    \begin{tabular*}{\textwidth}{ >{\small}p{.2\textwidth} >{\small}p{.75\textwidth}}
+      \toprule
+      \textbf{Option} & \textbf{Description} \\
+      \midrule
+      \skbinput[from=rep]{manual/skbfigure-opt-table}
+      \bottomrule
+    \end{tabular*}
+  \end{table}
+}
+
+\opt{text}{\skbinput[from=rep]{manual/figures2}}

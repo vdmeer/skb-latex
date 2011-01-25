@@ -1,0 +1,32 @@
+\mode
+<presentation>
+
+\begin{frame}{Macros for PDF Info}
+  \label{manual:pdfinfo}
+
+  Macros to set information, call them anywere in your document:
+  \begin{itemize}
+    \item \cmd{\skbtitle} -- the title
+    \item \cmd{\skbauthor} -- the author
+    \item \cmd{\skbsubject} -- the subject
+    \item \cmd{\skbkeywords} -- the keywords
+    \item date -- will be set automatically to today
+  \end{itemize}
+
+  SKB automatically calls the \cmd{\skbpdfinfo} macro at the end of the main document
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{manual:pdfinfo}}
+\bigskip
+
+\skbinput[from=rep]{manual/pdfinfo}
+
+\clearpage
+
+\mode
+<all>

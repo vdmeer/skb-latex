@@ -1,0 +1,34 @@
+\opt{text}{\skbheading{Slides}}
+
+\DescribeMacro{\skbslide}
+This macro helps to create lecture notes (handouts) using \skbacft{ISO:PDF} slides and \LaTeX~notes
+without using the beamer package. The reason for adding this to the \skbacft{A3DS:SKB} was to integrate
+slides from sources outside the \LaTeX~universe (i.e. Microsoft Powerpoint). Some of my 
+presentations are done using Powerpoint, but for handouts I do prefer using \LaTeX~thus
+benefiting from many of the automated features it provides (references, acronyms). As a nice
+side effect, the output generated is scalable (assuming that the \skbacft{ISO:PDF} sources of the slides
+contain scalable images rather than bitmaps, which can be easily realised using for instance
+Inkscape's EMF export within Microsoft Powerpoint slides).
+
+The macro \cmd{\skbslide}
+provides all means to include \skbacft{ISO:PDF} slides with or without annotations, annotations only and
+it can load the annotations using different mechanisms.
+The macro offers two options to set the input
+path for the slides and the annotations: \skbem[code]{slidefrom} and \skbem[code]{notefrom}. 
+If \skbem[code]{slidefrom} is used, then the slide (\skbacft{ISO:PDF}) file will be loaded from the requested path (\skbem[code]{sli}, \skbem[code]{rep} or \skbem[code]{pub}).
+If \skbem[code]{notefrom} is used, then the annotation (\TeX~) file will be loaded from the requested path (\skbem[code]{sli}, \skbem[code]{rep} or \skbem[code]{pub}).
+The default path for slides and annotations is the path for slides.
+
+The third option \skbem[code]{annotate} requests to load annotations. If not used, no annotations will be loaded. It can be used in 
+combination with the two arguments to automated loading annotations.
+
+The two arguments of this macro define the files for the slide and the annotation. They can be used as followes:
+\begin{skbnotelist}
+  \item Argument 1 is the slide to be loaded. If a name if given, we load the \skbacft{ISO:PDF} using \cmd{\inputgraphics} with width being \cmd{\textwidth}. If no 
+        name is given, no slide will be loaded.
+  \item Argument 2 is the file with the annotations in combination with the option \skbem[code]{annotate}. If this option is not used then
+        no annotations will be loaded. If the option is used and no name is given, then the annotation is loaded from a file with the 
+        same name as the slide plus the extension \skbem[code]{.tex}. If this option is used and a name is given then this file will be loaded.
+\end{skbnotelist}
+
+\opt{text}{\skbinput[from=rep]{manual/slides2}}

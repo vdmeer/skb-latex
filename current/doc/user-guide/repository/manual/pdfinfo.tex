@@ -1,0 +1,19 @@
+\opt{text}{\skbheading{Macros for PDF Info}}
+
+\DescribeMacro{\skbtitle}
+The macro \cmd{\skbtitle} will set the title to be used for \skbacft{ISO:PDF} info. The default for the title is an empty string.
+
+\DescribeMacro{\skbauthor}
+The macro \cmd{\skbauthor} will set the author information to be used for \skbacft{ISO:PDF} info. The default for the author is an empty string.
+
+\DescribeMacro{\skbsubject}
+The macro \cmd{\skbsubject} will set the subject information to be used for \skbacft{ISO:PDF} info. The default for the subject is an empty string.
+
+\DescribeMacro{\skbkeywords}
+The macro \cmd{\skbkeywords} will set the keywords to be used for \skbacft{ISO:PDF} info. The default for the keywords is an empty string.
+
+\DescribeMacro{\skbpdfinfo}
+The macro \cmd{skbpdfinfo} will call the macro \cmd{\pdfinfo} to set the meta information
+in the created \skbacft{ISO:PDF} output file. The \skbacft{A3DS:SKB} automatically calls this macro just before finishing
+the process of the main document, using the information provided by the above described macros.
+Furthermore, the date of the \skbacft{ISO:PDF} file will be set.

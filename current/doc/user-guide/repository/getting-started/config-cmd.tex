@@ -1,0 +1,19 @@
+The macro \cmd{\skbconfig} requires one argument, which describes where the configuration has
+been changed. This is helpful in combination with the macro \cmd{\skboptionsused} to trace configuration 
+settings. For instance, in the files \skbem[code]{skb.cfg} and \skbem[code]{skblocal.cfg} we 
+should use the respective filename. When changing configuration settings elsewhere, some other descriptive
+text should be useful.
+
+\opt{text}{
+  The following code shows the example for \cmd{skbconfig}. The first one is the defailt content
+  of the file \skbem[code]{skb.cfg}. It basically sets all possible configuration options to their default value.
+  \lstinputlisting[style=generic,language=TeX]{\skbfileroot{examples/skbconfig}}
+}
+
+If you want to change the configuration settings for a single document without any directory structure,
+overwriting all default settings (from \skbem[code]{skb.sty}, \skbem[code]{skb.cfg} and \skbem[code]{skblocal.cfg}
+and using the current relative path, you can use the second examle
+\opt{text}{shown above}\opt{note}{shown in this slide}.
+
+To trace the configuration settings, you can use \cmd{\skboptionsused}.
+\opt{text}{Please see \#\#\# for details on this macro.}

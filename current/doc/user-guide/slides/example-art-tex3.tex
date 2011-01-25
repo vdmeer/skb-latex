@@ -1,0 +1,25 @@
+\mode
+<presentation>
+
+\begin{frame}{An Example Article -- \TeX~code}
+  \label{example:art:tex3}
+
+  \begin{example}[more sections]
+    \lstinputlisting[style=beamer-example,language=TeX,firstline=22,lastline=25]{\skbfileroot{examples/example}}
+  \end{example}
+
+  \begin{example}[finishing the tex file]
+    \lstinputlisting[style=beamer-example,language=TeX,firstline=27]{\skbfileroot{examples/example}}
+  \end{example}
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{example:art:tex3}}
+\bigskip
+
+\mode
+<all>

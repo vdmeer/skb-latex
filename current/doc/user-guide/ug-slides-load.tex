@@ -1,0 +1,85 @@
+\skbconfig[sli=slides]{ug-slides-load}
+
+\opt{anim}{\def\tmpHighlight<#1>{\temporal<#1>{\color{gray}}{\color{blue}}{\color{black}}}}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\title[User Guide]{The SKB User Guide}
+\subtitle{Version 0.5, 04-Aug-2010}
+\author[Sven van der Meer]{Sven van der Meer}
+
+\date{Create and maintain a repository for long-living documents}
+
+\skbtitle{The SKB User Guide}
+\skbauthor{Sven van der Meer}
+\skbsubject{User Guide for the LaTeX package SKB}
+\skbkeywords{LaTeX, SKB}
+
+\begin{frame}
+  \label{title}
+  \mode<presentation>{\titlepage}
+\end{frame}
+
+\mode<presentation>{
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+}
+
+\section{The \LaTeX~ SKB Package}
+  \subsection{The Idea}
+    \skbinput[from=sli]{about}
+    \skbinput[from=sli]{intent}
+    \skbinput[from=sli]{applicability}
+  \subsection{The Story}
+    \skbinput[from=sli]{story-short}
+    \skbinput[from=sli]{story-long1}
+    \skbinput[from=sli]{story-long2}
+  \subsection{The underlying Concept}
+    \skbinput[from=sli]{separate}
+    \skbinput[from=sli]{separate-cs}
+    \skbinput[from=sli]{separate-parts-baf}
+    \skbinput[from=sli]{separate-parts-pc1}
+    \skbinput[from=sli]{separate-parts-pc2}
+
+\mode<presentation>{\section{User Manual}}
+\only<article>{\skbinput[from=rep,level=section]{manual/manual}\clearpage}
+  \subsection{Getting Started}
+    \skbinput[from=sli]{start-distribution}
+    \skbinput[from=sli]{start-installation}
+    \skbinput[from=sli]{start-rebuild1}
+    \only<presentation>{\skbinput[from=sli]{start-rebuild2}}
+    \skbinput[from=sli]{start-config-opt}
+    \skbinput[from=sli]{start-config-cmd}
+    \skbinput[from=sli]{start-used-options}
+    \skbinput[from=sli]{start-folders}
+
+  \subsection{Headings, Files, Figures, Slides, Paths, Acronyms and References}
+    \skbinput[from=sli]{manual-haf}
+    \skbinput[from=sli]{manual-figures}
+    \skbinput[from=sli]{manual-figures-opt}
+    \skbinput[from=sli]{manual-figures-exna}
+    \skbinput[from=sli]{manual-figures-exa} \only<article>{\clearpage}
+    \skbinput[from=sli]{manual-slides1}
+    \skbinput[from=sli]{manual-slides2}
+    \skbinput[from=sli]{manual-paths}
+    \skbinput[from=sli]{manual-acrbib}
+
+  \subsection{Other usefull Macros}
+    \skbinput[from=sli]{manual-skbem}
+    \skbinput[from=sli]{manual-lists}
+    \skbinput[from=sli]{manual-listings}
+    \skbinput[from=sli]{manual-pdfinfo}
+    \skbinput[from=sli]{manual-optional-text}
+
+\section{Examples}
+  \subsection{A simple Article}
+    \skbinput[from=sli]{example-art-tex1}
+    \skbinput[from=sli]{example-art-tex2}
+    \skbinput[from=sli]{example-art-tex3} \only<article>{\clearpage}
+    \only<presentation>{\skbinput[from=sli]{example-art-toc}}

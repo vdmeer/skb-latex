@@ -1,0 +1,25 @@
+\mode
+<presentation>
+
+\begin{frame}{An Example Article -- \TeX~code}
+  \label{example:art:tex2}
+
+  \begin{example}[loading inital text]
+    \lstinputlisting[style=beamer-example,language=TeX,firstline=10,lastline=10]{\skbfileroot{examples/example}}
+  \end{example}
+
+  \begin{example}[a section called Introduction]
+    \lstinputlisting[style=beamer-example,language=TeX,firstline=12,lastline=20]{\skbfileroot{examples/example}}
+  \end{example}
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{example:art:tex2}}
+\bigskip
+
+\mode
+<all>

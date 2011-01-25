@@ -1,0 +1,33 @@
+\mode
+<presentation>
+
+\begin{frame}{Confguration: View Options Used}
+  \label{start:used:options}
+
+  \begin{itemize}
+    \item Macro that can be used to show configuration options
+    \item Shows the Change Log and actually used options
+    \item Uses package warning to printout information
+    \item Automatically called at the end of processing main document
+  \end{itemize}
+
+  \begin{example}[Root path Change Log and Option]
+    \lstinputlisting[style=beamer-example,firstline=2,lastline=3]{\skbfileroot{examples/used-options}}
+    \lstinputlisting[style=beamer-example,firstline=12,lastline=13]{\skbfileroot{examples/used-options}}
+  \end{example}
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{start:used:options}}
+\bigskip
+
+\skbinput[from=rep]{getting-started/used-options}
+
+\clearpage
+
+\mode
+<all>

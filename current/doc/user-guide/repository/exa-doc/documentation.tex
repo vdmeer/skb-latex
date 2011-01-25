@@ -1,0 +1,88 @@
+\skbheading{The SKB Documentation}
+
+The documentation of this package is using most macros the \skbacft{A3DS:SKB} defines, thus 
+realising two things in one go: it provides the documentation for the package showing
+its features and it is used to test the the packge while generating the documentation
+(I might say that we do other tests as well). With all that, it can now be also used
+as one example on how to maintain a document repository, and that's exactly what the 
+following statements trying to achieve.
+
+As we have seen earlier, the \skbacft{A3DS:SKB} documentation comes in several parts. First, there 
+is the documentation on the documented \LaTeX~source code (skb.dtx). Next, there is 
+the user guide, which can be compiled along with the documented source (see skb.pdf)
+or as a stand-alone article document (see user-guide.pdf). Since we use our \skbacft{A3DS:SKB} for
+presentations, we provide an animated and a non-animated presentation about the \skbacft{A3DS:SKB}
+(ug-slides-anim.pdf and ug-slides-noanim.pdf) along with annotated slides as a handout
+(ug-slides-notes.pdf). All of these documents use the same source, which includes
+some conditional text. All of these documents `assemble' their content in their specific way
+which quits their purpose best. For instance, the document level are different for the
+headings, the text blocks and tables and figures and examples are ordered in different
+way and some text is incuded in one \skbacft{ISO:PDF} document and not in others.
+
+
+
+
+The documentation has three main parts. The first tells some stories and 
+explains the general concepts of the \skbacft{A3DS:SKB}. This part is generated using
+many \skbacft{A3DS:SKB} macros including \cmd{\skbinput} and \cmd{\skbheading}.
+The second part documents the implementation of the \skbacft{A3DS:SKB} package. This part
+uses only some macros for the layout. The last part provides information
+about the history of the package and a change log. This part again uses 
+\cmd{\skbinput} and \cmd{\skbheading} and many other \skbacft{A3DS:SKB} macros.
+
+Let's start with the first part, of which this example is again a part of.
+The \skbacft{A3DS:SKB} documentation is split over two main directories: \skbem[code]{publish}
+for the actual article and \skbem[code]{repository}. The folder \skbem[code]{publish/article/tex}
+contains two files, the fiel with the title page of the aticle \skbem[code]{skb.tex} and one for loading the
+repository files \skbem[code]{contents.tex} and creating the intended document structure (levels).
+The file \skbem[code]{user-guide.tex} looks like as follows:
+
+\lstinputlisting[style=genericLN,language=TeX]{\skbfilepub{article/tex/skb-titlepage}}
+
+Line by line the macros calls here have the following effect:
+\begin{skbnotelist}
+  \item Line 1\&2 set the title for the document.
+  \item Line 4 sets the author of the document.
+  \item Line 6 sets the date and version information for the document.
+  \item Line 8\&9 use the \skbacft{A3DS:SKB} macros \cmd{\skbsubject} and \cmd{\skbkeywords} to set the subject
+        and keywords for \skbacft{ISO:PDF} info.
+  \item Line 11 calls \cmd{\maketitle} to create the title minipage (we are in an article class).
+  \item Line 13\&15 start and finish the abstract.
+  \item Line 21 finished the \TeX processing of the file by calling \cmd{\endinput}.
+\end{skbnotelist}
+
+The interesting lines here are number 14 and 19. They use the \skbacft{A3DS:SKB} macro \cmd{\skbinput} to load 
+further content. In line 14 it is a file called \skbem[code]{abstract.tex} from the repsitory.
+Note: \cmd{\skbinput} automatically adds the file extension \skbem[code]{.tex} when loading from the repository or publish folders.
+Now the file \skbem[code]{abstract.tex} contains the one paragraph abstract of this document. Nothing else
+special in there.
+
+The other file in  the folder \skbem[code]{publish/article/tex} -- \skbem[code]{skb-contents.tex} -- will actually load
+all other files required to build the first part of this document and create the intended document structure
+(i.e. sections and subsections). This file looks like this:
+
+\lstinputlisting[style=genericLN,language=TeX]{\skbfilepub{article/tex/skb-contents}}
+
+The first line uses the classic \LaTeX macro \cmd{\section} to start the section \skbem[italic]{Introduction}.
+All other lines use the \skbacft{A3DS:SKB} macro \cmd{\skbinput} to load files from the repository and associate a \LaTeX document
+level to them. In the case of this document we use sections, subsections and subsubsections. Each of the files loaded here
+with \cmd{\skbinput} will start by calling the \skbacft{A3DS:SKB} macro \cmd{\skbheading} to declare the heading text. For instance, the
+first few lines of the file \skbem[code]{separate-parts.tex} in the repository (loaded in line 7) look like this
+(we show the first 4 lines):
+
+\lstinputlisting[style=genericLN,language=TeX,lastline=4]{\skbfilerep{separate-parts}}
+
+In other words: line 7 of \skbem[code]{contents.tex} calls \cmd{\skbinput} with the option \skbem[code]{from} set 
+ro \skbem[code]{rep} and the option \skbem[code]{level} set to \skbem[code]{subsection} and requests to load a file 
+called \skbem[code]{separate-parts.tex}. This loaded file then first calls \cmd{\skbheading} to declare a heading text.
+The \skbacft{A3DS:SKB} now will translate use heading tex calling the classic \LaTeX macro \cmd{\subsection}. The rest is done by
+\LaTeX as usual.
+
+If you have a look into the directory \skbem[code]{source/repository} of this distribution, you will see all tex files 
+that form part one of this document. You will also see that parts of the documentation, namely code and dirtree figures,
+have been separated out in sub-directories.
+
+Finally, the file \skbem[code]{skb.dtx} uses the \skbacft{A3DS:SKB} macro \cmd{\skbinput} to load the files \skbem[code]{skb-titlepage.tex}
+and \skbem[code]{skb-contents.tex} from the publish folder. You can find that macro call just above \cmd{\StopEventually}
+in \skbem[code]{skb.dtx}. Furthermore, if you look at the very end of \skbem[code]{skb.dtx}, just above \cmd{\Final}, you
+will find the call to \cmd{\skbinput} that loads the file \skbem[code]{history.tex} from the repository.

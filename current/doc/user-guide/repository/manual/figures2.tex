@@ -1,0 +1,14 @@
+The last option for the macro \cmd{\skbfigure} is called \skbem[code]{multiinclude}.
+It can be used with the beamer package to realise animations by loading a series of
+images and showing them in sequence with or without overlaying. If used, this
+option will overwrite all other options resulting in a simple call to
+\cmd{multiinclude} within a resised box. One can use all standard multiinclude
+paramters with \cmd{\skbfigure}, just omit the enclosing brackets. For instance, if you
+want to use multiinclude on the \skbem[code]{myfig} with the options \skbem[code]{<+->} call
+\begin{lstlisting}
+  \skbfigure[multiinclude=+-]{myfig}
+\end{lstlisting}
+
+The figure size will be automatically set to \cmd{\textwidth} and the height to \skbem[code]{!}.
+The start of the multiinclude is fixed to be 0, the format is PDF. For more informatio on how to
+use multiinclude please refer to mpmulti and beamer packages.

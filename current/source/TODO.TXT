@@ -1,0 +1,20 @@
+Before v0.4
+done - add error/warning/help message to macros
+done - add local configuration as in the lstlisting package
+done - make \skbinput failsafe, is \IfExist and warnings
+done - add options for PDF documents (cf. hyperref)
+done - add postion to \skbfigure with test if figurer option is active
+
+Before v0.5
+done - finish documentation
+done - rewrite the \Slide commands
+done - publish at CTAN
+
+Before v0.6
+- improve documentation, especially complete examples
+
+Before v0.7
+
+Before v0.8
+
+Before v0.9

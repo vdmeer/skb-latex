@@ -1,0 +1,40 @@
+\documentclass{skbarticle}
+
+\IfFileExists{user-guide}
+  {\skbconfig[root=./]{user-guide.tex}}{}
+\IfFileExists{user-guide/user-guide}
+  {\skbconfig[root=user-guide]{user-guide.tex}}{}
+\skbconfig[pub=,acr=database,bib=database]{user-guide.tex}
+\skbbibtex
+
+\begin{document}
+  \title{The SKB User Guide}
+  \author{Sven van der Meer}
+  \date{Version 0.5, 04-Aug-2010}
+  \maketitle
+
+  \begin{abstract}
+   \skbinput[from=rep]{abstract}
+  \end{abstract}
+  \footnote{
+      Note: This article is part of the \skbacft{A3DS:SKB} package. It is typeset separated from 
+      the original documentation to show the usage of the \cmd{\skbarticle} class
+      and to provide an example for the usage of the \skbacft{A3DS:SKB}.
+  }
+
+  \tableofcontents*
+
+  \skbtitle{The SKB User Guide}
+  \skbauthor{Sven van der Meer, sven@vandermeer.de}
+  \skbsubject{LaTeX SKB}
+  \skbkeywords{SKB;LaTeX;Package}
+
+  \skbinput[from=pub]{user-guide-load}
+
+  \section*{Acronyms}
+    \skbacronyms
+
+  \printbibliography
+
+\end{document}
+\endinput

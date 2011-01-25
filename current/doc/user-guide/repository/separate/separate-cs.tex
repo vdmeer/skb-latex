@@ -1,0 +1,41 @@
+\opt{text}{\skbheading{Separate Content from Structure: the Repository Folder}}
+
+Now, separating the structure from the content first. The structure of a 
+document (we stay with classic text documents like articles, books, etc. 
+for a while) is words in sentences in paragraphs in (sub-) sections in 
+chapters (if its a book, of not only sections)\footnote{One very 
+meticulous person might add 'characters' and mention that there are more 
+ways to think about a document's structure. But that person is not me. The 
+structure I used fits the purpose (as of now), if it doesn't anymore I 
+will look further.}. We collect sentences and paragraphs but separate them 
+from headings. \LaTeX~is doing that already with the macros for chapters and 
+sections. We go one step further and provide a generic way to identify a 
+heading with the \skbacft{A3DS:SKB} macro \cmd{\setheading}. This allows to select the appropriate
+\LaTeX~heading level at a later stage having the context of that later stage in mind
+(i.e. it might be a section in an article but a chapter in a book). Now we create 
+a structure for the resulting files in our repository, adding meaningful names to 
+the directories and files. Obviously the names of these folders should provide some
+idea about the general characterisation of the files they contain. Example? Well, if you collect 
+information from \acs{SDO} the top folder 
+could be named \skbem[code]{sdo} and the sub-folders using the 
+respective \ac{SDO} acronyms, such as \skbem[code]{omg} for the \skbacft{organisation:OMG} and 
+\skbem[code]{ieee} for the \skbacft{organisation:IEEE} and \skbem[code]{ietf} for the
+\skbacft{organisation:IETF}. We put all this in a folder named repository, making it explicit
+that here is were we find all our normative content.
+\opt{text}{The following example}\opt{note}{This slide} shows how that looks like.
+
+\opt{text}{
+  \begin{longtable}{|>{}p{0.945\textwidth} >{}p{1pt}|}
+    \hline
+    \rowcolor[gray]{.9}
+      \skbinput[from=fig]{dirtree/repository}
+    & \\
+    \hline
+  \end{longtable}
+  \addtocounter{table}{-1}
+}
+
+The result: we have a structure of files, containing our 'stuff', 
+integrated in a structure of folders that allows us to find it (the better 
+this structure the more helpful it is, and remember this is a 'personal' 
+repository, so your personal flavour is king).

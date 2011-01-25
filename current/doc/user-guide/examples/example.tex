@@ -1,0 +1,28 @@
+\documentclass{skbarticle}
+
+\begin{document}
+  \author{Sven van der Meer}
+  \title{Protocols, Formats and Communication Services}
+  \maketitle
+  \tableofcontents*
+  \bigskip
+
+  \skbinput[from=rep]{sota/protocols}
+
+  \section{Introduction}
+    \skbinput[from=rep,level=subsection]
+        {sota/protocols/data_encoding}
+    \skbinput[from=rep,level=subsection]
+        {sota/protocols/message-formates}
+    \skbinput[from=rep,level=subsection]
+        {sota/protocols/protocols}
+    \skbinput[from=rep,level=subsection]
+        {sota/protocols/protocol-services}
+
+  \skbinput[from=rep,level=section]{sdo/omg/corba-giop}
+  \skbinput[from=rep,level=section]{sdo/ietf/snmp-protocol}
+  \skbinput[from=rep,level=section]{sdo/itu/x700-cmip}
+  \skbinput[from=rep,level=section]{sdo/w3c/http}
+
+\end{document}
+\endinput

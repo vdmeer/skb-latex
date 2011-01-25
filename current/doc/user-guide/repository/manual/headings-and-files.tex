@@ -1,0 +1,70 @@
+\opt{text}{\skbheading{Files and Headings}}
+
+\DescribeMacro{\skbinput}
+\DescribeMacro{\skbheading}
+Just to remember: we have two different types of files in two
+different directory structures. The repository folder stores the
+content and the publish folder stores everything needed to produce
+complete documents. For the content in the repository, we mark headings
+with the macro \cmd{\skbheading}. This macro has no options and no arguments
+and is simply called with the text for the heading, as shown in
+\opt{text}{the following example.}\opt{note}{the first block on this slide.}
+
+\opt{text}{
+  \lstinputlisting[style=generic,language=TeX]{\skbfileroot{examples/skbheading}}
+}
+
+Leaving the argument empty will have the same effect as calling the original \LaTeX~
+macros directly with an empty argument.
+
+The association of a \LaTeX~document level with the heading is then defined 
+for the published documents (in the publish folder) using the macro \cmd{\skbinput}.
+This macro provides a number of options and requires one argument.
+\opt{text}{The follwing examples}\opt{note}{The second block on this slide} shows
+a few use cases for \cmd{\skbinput}.
+\opt{text}{For all possible options, please see \autoref{tab:skbinput:options}}
+
+\opt{text}{
+  \lstinputlisting[style=genericLN,language=TeX]{\skbfileroot{examples/skbinput}}
+}
+
+\opt{text}{
+  \begin{table}[ht!]
+    \caption{Options for skbinput}
+    \label{tab:skbinput:options}
+    \begin{tabular*}{\textwidth}{ >{\small}p{.1\textwidth} >{\small}p{.40\textwidth} >{\small}p{.40\textwidth}}
+      \toprule
+      \textbf{Option} & \textbf{Description} & \textbf{Values} \\
+      \midrule
+      \skbinput[from=rep]{manual/skbinput-opt-table}
+      \bottomrule
+    \end{tabular*}
+  \end{table}
+}
+
+Let's start with the simpliest form, one argument only shown in line 1.
+The macro will look for a file called myfile.tex in the root directory of the \skbacft{A3DS:SKB}.
+The file extension .tex is automatically added, and since we did not specify any
+special directory the root directory is used instead.
+If the file is not found, the macro will throw an error providing the full path and filename it
+did try to load.
+
+Line 2 shows how we can load the file \skbem[code]{myfile.tex} from the repository folder.
+As you can see, the option \skbem[code]{from} is supplied with the argument \skbem[code]{rep},
+which in fact directs the macro to look for \skbem[code]{myfile.tex} in the repository folder.
+Should the file be located in the folder for published documents, we simply change the 
+\skbem[code]{from} option to \skbem[code]{pub} as shown in line 3.
+
+If \skbem[code]{from} is used and neither \skbem[code]{pub} nor \skbem[code]{rep} is given, the macro will trow an error.
+
+To associate a document level for the heading, we can use the option \skbem[code]{level} to define which 
+level we want. This option understands all standard document levels from the memoir package: book, part, 
+title, chapter, section, subsection and subsubsection. So, if we want to load myfile.tex as a chapter 
+we simple invoke \cmd{\skbinput} as shown in line 4 of the example.
+
+Since myfile.tex is part of the repository,
+we combine the two options \skbem[code]{from} and \skbem[code]{level} (see line 5).
+This call to \cmd{\input} will load \skbem[code]{myfile.tex} from the repository and use \cmd{\chapter} for 
+the heading found in that file. If \skbem[code]{myfile.tex} is in a sub folder, we simply add that sub folder to 
+the filename. An example is shown in line 6 assuming the the file is located in the repository sub-folder 
+examples.

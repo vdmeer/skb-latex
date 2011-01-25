@@ -1,0 +1,36 @@
+\mode
+<presentation>
+
+\begin{frame}{Optional Text -- Versions and Optional}
+  \label{manual:optiona-text}
+
+  \begin{itemize}
+    \item Supports the packages version and optional
+    \item Comes with 6 defined modes, automatically configured
+      \begin{itemize}
+        \item text         -- normal text, i.e. in an article
+        \item slide        -- slides, i.e. beamer frames
+        \item note         -- annotated slides, i.e. beamerarticle
+        \item anim/noanim  -- animated and non-animated slides/frames
+        \item memoir       -- used when memoir package is loaded
+      \end{itemize}
+  \end{itemize}
+
+  \begin{example}
+    \lstinputlisting[style=beamer-example,language=TeX]{\skbfileroot{examples/optional-text}}
+  \end{example}
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{manual:optiona-text}}
+\bigskip
+
+\skbinput[from=rep]{manual/optional-text}
+
+\clearpage
+
+\mode
+<all>

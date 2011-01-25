@@ -1,0 +1,30 @@
+This provides the following combinations for \cmd{\skbslide}
+\begin{skbnotelist}
+ \item Slide only: argument 1 has the name for the \skbacft{ISO:PDF}, argument 2 is empty
+ \item Annotation only: argument 1 is empty, argument 2 has the name for the \TeX~file, option \skbem[code]{annotate} used
+ \item Slide with Annotation 1: argument 1 has the name for the \skbacft{ISO:PDF}, argument 2 has the name for the \TeX~file, option \skbem[code]{annotate} used
+ \item Slide with Annotation 2: argument 1 has the name for the \skbacft{ISO:PDF}, argument is empty, option \skbem[code]{annotate} used
+ \item do nothing: leave both arguments empty
+\end{skbnotelist}
+
+\opt{not}{This slide show a few examples.}%
+\opt{text}{\noindent Some examples on how to use \cmd{\skbslide:} \lstinputlisting[style=genericLN,language=TeX]{\skbfileroot{examples/skbslide}}}%
+In line 1 and 2 we load \skbem[code]{myslides/slide1.pdf} and \skbem[code]{myslides/slide2.pdf}
+from the default directory without any annotations and clear the page after that. In line 3 we load \skbem[code]{myslides/slide2.pdf} and request this slide to 
+be annotated without giving a specific file name, thus loading \skbem[code]{myslides/slide3.tex}, both files from the default slides directory.
+In lines 4\&5 we change the directory for the notes and request a particular file to be loaded, resulting in the slide loaded as \skbem[code]{myslides/theme1.pdf} from the 
+slides directory and the annotations loaded as \skbem[code]{text/theme1.tex} from the repository. Finally, in lines 6\&7 we change both folders to the repository, this loading 
+\skbem[code]{text/theme2.pdf} and \skbem[code]{text/theme2.tex} from the repository.
+
+
+\opt{note}{\skbheading{Slides and Citations}}
+
+\DescribeMacro{\skbslidecite}
+The macro \cmd{\skbslidecite} provides some simple means to add citations to annotated slides.
+It takes two arguments, the first one for the type of citation and the second one for the actual citation.
+\opt{text}{Here a simple example:}\opt{note}{This second block on this slide shows a simple example.}
+\opt{text}{\lstinputlisting[style=genericLN,language=TeX]{\skbfileroot{examples/skbslidecite}}}%
+The first line states that the slide contains material from a book of Tannenbaum and the second line 
+states that the annotation contains material from an \skbacft{organisation:IETF} \skbacft{IETF:RFC}
+standard documents (\cite{standard:IETF:RFC:1155}). Since this
+macro is very simple, any content can be given for the two arguments.

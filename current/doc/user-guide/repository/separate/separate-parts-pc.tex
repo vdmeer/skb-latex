@@ -1,0 +1,43 @@
+\opt{text}{\skbheading{Publications and Content}}
+
+Here is were it might get slightly more complicated than in the first few 
+steps. And you might see already that the reason for that is separation! 
+We didn't finish the separation, we have to go one step further. And that 
+means to separate now the contents (with the references and acronyms and 
+figures) from the reason to publish a document. This last step of 
+separation is more conceptual, being focused on the \textit{why?} and 
+\textit{where?} and \textit{how?} we publish, rather than being focused on 
+the \textit{what?} we publish. 
+
+So we do publish for many reasons: articles for research, project 
+proposals, reports, lecture notes, standard documents, annotated 
+presentations, sometimes even books. We publish for a specific purpose, in 
+a specific (soon historic) context, using the requested format (and style 
+sheets) and a particular structure of our document that fits the purpose. 
+That means we organise and structure our content every time according to 
+these constrains. Thus we need a new directory structure for that, since 
+we will not reuse that as often as our 'stuff' itself. Remember, we use 
+the skb macro \cmd{\skbheading} for headings, not the classical \LaTeX~macros 
+like \cmd{\section}, so our files effectively do not contain much information 
+about their place in the structure, only that they claim one
+\footnote{Currently experimental, but soon to be ready, there will be an extension
+to the \cmd{\skbheading} macro that allows a little bit more information to be put 
+in the repository files. For the moment this is captured in the \cmd{\skbheadingduc} macro.}.
+This comes in handy now, since all we have actually to do is to assign a document heading 
+level to every repository file we load. Let's create a folder for the published documents and 
+call it \skbem[code]{published} with a set of sub-folders that help us to understand the general
+context of the publication.%
+\opt{note}{My directory structure is shown in this slide}%
+\opt{text}{
+My directory structure could look like this:
+  \begin{longtable}{|>{}p{0.945\textwidth} >{}p{1pt}|}
+    \hline
+    \rowcolor[gray]{.9}
+      \skbinput[from=fig]{dirtree/publish}
+    & \\
+    \hline
+  \end{longtable}
+  \addtocounter{table}{-1}
+}
+
+\opt{text}{\skbinput[from=rep]{separate/separate-parts-pc2}}

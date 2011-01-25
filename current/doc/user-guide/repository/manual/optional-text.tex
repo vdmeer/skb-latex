@@ -1,0 +1,27 @@
+\opt{text}{\skbheading{Optional Text -- Versions and Optional}}
+
+The \skbacft{A3DS:SKB} provides two means to include text and other \LaTeX~commands on an otional
+basis. They are pre-configured and will be automatically set/unset according to the 
+three main document types the \skbacft{A3DS:SKB} supports:
+\begin{skbnotelist}
+  \item text   -- is equivalent to any classic text document, for instance an article or a book.
+  \item slide  -- is used to idenify slides, for instance beamer frames.
+  \item note   -- is used to identify lecture notes or handouts, in essence annotated slides (frames).
+  \item anim   -- for beamer frames, used for text with animation activated.
+  \item noanim -- for beamer frames, used for text with animation deactivated.
+  \item memoir -- used for documents that include the memoir package.
+\end{skbnotelist}
+
+We use the packages versions and optional and support both. The main difference is that with versions
+one has to use \cmd{\beging} and \cmd{\end} while with optional one can use more than one of the above
+introduced types. The macros for provided for optional text are:
+\begin{skbnotelist}
+  \item \cmd{\skbmodetext} and options using \skbem[code]{text}     -- will be valid if neither beamer nor beamerarticle is loaded (normal text).
+  \item \cmd{\skbmodeslide} and options using \skbem[code]{slide}   -- will be valid if the beamer package is loaded (slides).
+  \item \cmd{\skbmodenote} and options using \skbem[code]{note}     -- will be valid if the beamerarticle package is loaded (annotated slides).
+  \item \cmd{\skbmodeanim} and options using \skbem[code]{anim}     -- will be valid if the beamer package is loaded and the \skbacft{A3DS:SKB} is loaded with the argument \skbem[code]{beameranim}
+  \item \cmd{\skbmodenoanim} and options using \skbem[code]{noanim} -- will be valid if the beamer package is loaded and the \skbacft{A3DS:SKB} is loaded with the argument \skbem[code]{beamernoanim}
+  \item \cmd{\skbmodememoir} and options using \skbem[code]{memoir} -- will be valid if the memoir package is loaded
+\end{skbnotelist}
+
+\opt{text}{The following code}\opt{note}{This slide} shows a few examples on how to use the optional text.

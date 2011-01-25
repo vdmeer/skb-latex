@@ -1,0 +1,37 @@
+\mode
+<presentation>
+
+\begin{frame}{Headings and Files}
+  \label{manual:haf}
+
+  \begin{block}{\skbem[code]{skbheading}}
+    \lstinputlisting[style=beamer-example,language=TeX]{\skbfileroot{examples/skbheading}}
+  \end{block}
+
+  \begin{block}{\skbem[code]{skbinput}}
+    \lstinputlisting[style=beamer-exampleLN,language=TeX]{\skbfileroot{examples/skbinput}}
+  \end{block}
+
+  \scriptsize{
+    \begin{itemize}
+       \item\skbem[code]{from}: pub, rep, fig, sli
+  
+       \item\skbem[code]{level}: book, part, title, chapter, section, subsection, subsubsection
+    \end{itemize}
+  }
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{manual:haf}}
+\bigskip
+
+\skbinput[from=rep]{manual/headings-and-files}
+
+\clearpage
+
+\mode
+<all>

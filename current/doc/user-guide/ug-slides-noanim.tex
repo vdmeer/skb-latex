@@ -1,0 +1,18 @@
+\documentclass[beamernoanim]{skbbeamer}
+  \IfFileExists{ug-slides-load}
+    {\skbconfig[root=./]{ug-slides-noanim.tex}}{}
+  \IfFileExists{user-guide/ug-slides-load}
+    {\skbconfig[root=user-guide]{ug-slides-noanim.tex}}{}
+
+  \skbconfig[pub=,acr=database,bib=database]{ug-slides-noanim.tex}
+  \skbbibtex
+
+  \mode<presentation>
+  {
+    \usetheme{Darmstadt}
+  }
+
+  \begin{document}
+    \skbinput[from=pub]{ug-slides-load}
+  \end{document}
+\endinput

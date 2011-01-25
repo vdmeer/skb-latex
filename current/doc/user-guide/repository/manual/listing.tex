@@ -1,0 +1,18 @@
+\opt{text}{\skbheading{Listings Styles and Support}}
+
+The \skbacft{A3DS:SKB} comes with a few predefined styles for the listing package.
+Most of them use type writer font in scriptsize, arrange a grey
+box around the listing and set the keywords to Blue4.
+\begin{skbnotelist}
+  \item generic -- for any generic listing without specifying a language and no line numbers.
+  \item genericLN -- same as generic, just with line number in the left side, which means allowing extra space left to the listing box.
+  \item gentab -- almost the same as generic, but without definitions for frame and numbers, which seem to collide with some table environments.
+  \item genericLNspecial -- same as genericLN, just with a lighter grey for the box.
+  \item beamer-example -- style designed for examples in beamer frames.
+  \item beamer-exampleLN -- same as beamer-example, just with line numbers on the left, which means allowing extra space left to the listing box.
+  \item javaCode -- generic style plus lanugage Java.
+\end{skbnotelist}
+
+\DescribeMacro{\lstdefinestyle}
+There is also one macro supported, which sets the listing style back to normal, i.e. after changing it in the text. Some macros
+in the \skbacft{A3DS:SKB} make use of this. All that \cmd{\lstdefinestyle} does is setting the basic style back to type writer font.

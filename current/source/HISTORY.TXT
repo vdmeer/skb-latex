@@ -1,0 +1,142 @@
+2010/08/04 v0.5
+- this is the first version on CTAN: http://www.ctan.org/tex-archive/macros/latex/contrib/skb/
+- added example describing how the \SKB~uses itself to create parts of its documentation
+- removed the redefinition of \title and \author, since they intererred with the beamer package definitions of these macros.
+  added \skbtitle and \skbauthor instead.
+- added RequiredPackage in the class skbbeamer before loading beamer to load xcolors with x11names
+- added test for nemoir class: if loaded, then skbnotelist and skbnoteenum will have no effect; if not loaded, then the package
+  booktabs will be loaded (for top/mid/bottomrule
+- added test for beamer package: depending if beamer or beamerarticle are loaded, the SKB will initialise a few newe ifs
+- added required package dirtree, and redefinition of some dirtree styles
+- added two options to the \SKB package: beameranim and beamernoanim
+- added the package versions with the environments: skbmodetext, skbmodenote and skbmodeslide
+- added the package optional with the options: text, note, slide, anim and noanim
+- internally, the package optional also provides memoir
+- changed the documentation, moved manual description to user guide in folder /doc, moved history.tex into the dtx file and
+  changed most of the actual documentation (still not finished though)
+- skbbeamer: corrected load of beamer package
+- skblncsbeamer: moved load of skb after beamerarticle to allow skb to create proper options
+- added \providecommand for \DescribeMacro and \cmd, so that we can use the user-guide in the dtx and stand-alone
+- added conditional load of skb.dtx in the driver
+- changed the sequence of definitions in the dtx file, again, hopefully the last time
+- bug fixes (SF=sourceforge):
+  + SF\#3032749 (skboptionsused doesn't work) -- fixed, changed \skb@setCfgVars
+  + SF\#3032752 (history section for v0.4 has wrong date) -- fixed, changed the heading
+  + SF\#3032754 (skb.cfg missing/empty) -- fixed, changed the installer (skb.ins) to generate it and my local scripts to put it into /run
+  + SF\#3033124 (renewcommand title/author doesn't work) -- fixed, no renewcommand anymore, two new commands to set author/title for pdfinfo
+  + SF\#3038935 (skbinput not working w/o from) -- fixed, can load from root directory now
+- new commands
+  + \skbtitle -- title for PDF info
+  + \skbauthor -- author for PDF info
+  + \skbslide -- load slides and annotations
+  + \skbslidecite -- for citations on slide annotation pages
+- changed commands:
+  + \skbinput -- added option to load tex files from figures directory (option fig)
+- replaced commands:
+  + \SkbLoadSlideNotes => replaced by \skbslide with option annotate and first argument only
+  + \SkbLoadSlideNotesDifferent => replaced by \skbslide with option annotate and both arguments
+  + \SkbLoadSlideNotesExtern => replaced by \skbslide with option annotate and both arguments and option notefrom set
+  + \SkbLoadSlideNotes => replaced by \skbslide without annotate and first argument only
+  + \SkbLoadSlideOnlyNotes => replaced by \skbslide with option annotate and second argument only
+  + \SkbSlideSource => replaced by \skbslidecite
+  + \SkbBeamerAnimtrue => replaced by options beameranim and beamernoanim for skbbeamer
+  + \SkbBeamerAnimtrue => usage of this if replaced by \opt with anim and noanim
+
+2010/07/21 v0.4
+- major re-write of the kernel subsequently the documentation.
+  Most internal macros will have been changed or removed, some are
+  added. Also re-arranged the macros in the dtx file to (hopefully)
+  optimise the documentation
+- added input for skb.cfg and skblocal.cfg to overwrite package
+  options with configuration files
+- added skb.cfg to the distribution
+- new commands:
+  \skbpathroot - returns current root path
+  \skbfileroot - returns root/\#1
+  \skbfileacr - returns current acronym path and file
+  \skbfilebib - returns current bibtex path and file
+  \skbpathbib - returns current bibtex path
+  \skbfilerep - returns rep/\#1
+  \skbfilepub - returns pub/\#1
+  \skbfilefig - returns fig/\#1
+  \skbfilesli - returns sli/\#1
+  \skboptionsused - prints a warning with change log of otptions and current values
+- changed commands:
+  \skbconfig - added parameter to identify origin of the configuration change
+- replaced commands:
+  \SkbPathBib => replaced by \skbpathbib
+  \SkbPathFig => replaced by \skbfilefig
+
+2010/07/20 v0.32
+- fastest re-release, I had built-in some problems and excluded important code in v0.31, fixed now
+
+2010/07/20 v0.31
+- fixed space problem in \skbem
+- added error handling to the options skbconfig and skbheading
+- added error handling for skbinput related macros
+- separated documentation, skb.dtx is now using itself to create the documentation
+- removed old code: DeclareOptions (none declared)
+- changed a lot in the documentation
+- prepare for CTAN submission, i.e. adding README and other things
+- new commands:
+  \skbconfig - change the path/file options
+  \skbsubject - add subject information for PDF
+  \subkeywords - add keyword information for PDF
+  \skbpdfinfo - generate PDF information
+- changed commands:
+  \skbfigure - added option for position, moved caption/label from argument to option
+  \title - re-newed to store PDF info information (experimental)
+  \author - re-newed to store PDF info information (experimental)
+- replaced commands:
+  \SkbCodeInline => replaced by \skbcode
+
+2010/07/14 v0.3
+- first dtx release of the skb, including the package and all classes
+  introduced in v0.2
+- integrated parts of the v0.1 pdf as documentation and added documentation for
+  many commands (not finished though)
+- re-write of all load commands (publish, repository, figures, acronyms, bib)
+  and rename of all old load commands, new command names use only lowercases
+  in their names
+- in rewrite, many commands could be removed w/o losing their functionality
+- new commands:
+  \skbfigure - load figures with some options
+  \skbinput - load files with some options
+  \skbheading - set heading text in a file loaded
+  \skbheadingudc - set heading relatively to the last heading level (up, down, current) (experimental)
+  \skbem - emphasise code using options
+  \skbacft - rename of \SkbAcFT
+  \skbacronyms - rename of \SkbLoadAcronyms
+  \skbbibtex - rename of \SkbLoadBibtex
+  environment skbnotelist - itemize list with \parskip 0 and \itemskip 0
+  environment skbnoteenum - enumerate list with \parskip 0 and \itemskip 0
+- replaced commands:
+  \SkbSetTitle => replaced by \skbheading
+  \SkbFigure => removed, closest is \skbfigure (but changed behaviour!)
+  \listingInline => replaced by \skbem[code]
+  \SkbEmIT => replaced by \skbem[italic]
+  \SkbEmBF => replaced by \skbem[bold]
+  \SkbAcFT => replaced by \skbacft
+  \SkbLoadAcronyms => replaced by \skbacronyms
+  \SkbLoadBibtex => replaced by \skbbibtex
+  \SkbLoadRepository => replaced by \skbinput[from=rep]
+  \SkbLoadPublish => replaced by \skbinput[from=pub]
+  \SkbItemizeBegin => replaced by \begin{skbnotelist}
+  \SkbItemizeEnd => replaced by \end{skbnotelist}
+  \SkbEnumerateBegin => replaced by \begin{skbnoteenum}
+  \SkbEnumerateEnd => replaced by \end{skbnoteenum}
+  \SkbFigureBeamerTextWidth => replaced by \skbfigure[width=##]
+  \SkbFigureBeamerTextHeight => replaced by \skbfigure[height=##]
+  \SkbFigureBeamerNoResize => replaced by \skbfigure[]
+  \SkbFigureBeamerTextWidthPDFMulti => replaced by \skbfigure[multiinclude=##]
+
+2010/07/08 v0.2
+- first LaTeX package version of the skb
+- no changes in the documentation and no change in commands
+- removed acronym list
+
+2010/07/06 v0.1
+- first source forge release of the skb
+- at this stage a collection of .sty and .tex files
+- documentation in a separate pdf file
+- included acronym list

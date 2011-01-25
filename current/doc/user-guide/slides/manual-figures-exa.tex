@@ -1,0 +1,22 @@
+\mode
+<presentation>
+
+\begin{frame}{\opt{anim}{skbfigure: Multiinclude/Animation Example}\opt{noanim}{skbfigure: and the scaled to textwidth}}
+  \label{exa:multiinclude}
+
+  \opt{anim}{\multiinclude[<+>][start=0,format=pdf,graphics={width=\textwidth}]{\skbfilefig{multiexample/dpe}}}
+  \opt{noanim}{\skbfigure[width=\textwidth]{multiexample/dpe-14}}
+
+  \skbslidecite{\cite{vandermeer-sven:inproceedings:in:2000}}{Figure}
+\end{frame}
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{exa:multiinclude}}
+\bigskip
+
+\nocite{vandermeer-sven:inproceedings:in:2000}
+
+\mode
+<all>

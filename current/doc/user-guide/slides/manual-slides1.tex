@@ -1,0 +1,35 @@
+\mode
+<presentation>
+
+\begin{frame}{Slides}
+  \label{manual:slides1}
+
+  Use \cmd{\skbslide} and \cmd{\skbslidecite} to integrate slides from outside the \LaTeX~universe
+  \begin{itemize}
+    \item Load PDF slides with or without \LaTeX~annotations
+    \item Load the PDF and/or the \LaTeX~from any SKB known path
+    \item Add standardised citation for the slides to the annotation
+  \end{itemize}
+
+  Example with Microsoft Powerpoint
+  \begin{itemize}
+    \item Take a Powerpoint presentation and print all slides into a 4x3 format, individual PDF
+    \item Write or reuse existing anotations using \LaTeX~(and \BibTeX~etc.)
+    \item Produce handouts using the SKB and present the slides using Powerpoint
+  \end{itemize}
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{manual:slides1}}
+\bigskip
+
+\skbinput[from=rep]{manual/slides}
+
+\clearpage
+
+\mode
+<all>

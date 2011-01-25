@@ -1,0 +1,20 @@
+\documentclass[beameranim]{skbbeamer}
+
+\IfFileExists{ug-slides-load}
+  {\skbconfig[root=./]{ug-slides-anim.tex}}{}
+\IfFileExists{user-guide/ug-slides-load}
+  {\skbconfig[root=user-guide]{ug-slides-anim.tex}}{}
+
+\skbconfig[pub=,acr=database,bib=database]{ug-slides-anim.tex}
+\skbbibtex
+
+\mode<presentation>
+{
+  \usetheme{Darmstadt}
+}
+
+\begin{document}
+  \skbinput[from=pub]{ug-slides-load}
+\end{document}
+
+\endinput

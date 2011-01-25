@@ -1,0 +1,31 @@
+\mode
+<presentation>
+
+\begin{frame}{Emphasising Text}
+  \label{manual:skbem}
+
+  \begin{block}{\LaTeX example for \skbem[code]{skbinput}}
+    \lstinputlisting[style=beamer-example,language=TeX]{\skbfileroot{examples/skbem}}
+  \end{block}
+
+  \bigskip
+
+  \begin{block}{And the result}
+    \skbinput{examples/skbem}
+  \end{block}
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{manual:skbem}}
+\bigskip
+
+\skbinput[from=rep]{manual/skbem}
+
+\clearpage
+
+\mode
+<all>

@@ -1,0 +1,31 @@
+\mode
+<presentation>
+
+\begin{frame}{Slides}
+  \label{manual:slides2}
+
+  \begin{block}{\skbem[code]{skbslide}}
+    \lstinputlisting[style=beamer-exampleLN,language=TeX]{\skbfileroot{examples/skbslide}}
+  \end{block}
+
+  \bigskip
+
+  \begin{block}{\skbem[code]{skbslidecite}}
+    \lstinputlisting[style=beamer-exampleLN,language=TeX]{\skbfileroot{examples/skbslidecite}}
+  \end{block}
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{manual:slides2}}
+\bigskip
+
+\skbinput[from=rep]{manual/slides2}
+
+\clearpage
+
+\mode
+<all>

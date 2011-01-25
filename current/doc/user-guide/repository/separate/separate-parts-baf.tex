@@ -1,0 +1,55 @@
+\opt{text}{\skbheading{Bibliography, Acronyms and Figures}}
+
+So the combination of \LaTeX~and \BibTeX~already helps us for this separation.
+Using the acronym package, we can extend this to acronyms. Looking into the highly
+common re-use of figures, we should look into this as well. Let's take the organisation 
+of bibliographic information as a template. I store them using \BibTeX and process them 
+with the biblatex package (but that is not critical for now). My \BibTeX database is in 
+a special folder (we can call it \skbem[code]{references} for the moment) and it uses 
+a file structure that helps me to find information. This structure is based on the \BibTeX
+and biblatex classification, i.e. inproceedings, article, book, thesis, standard, etc.
+
+Now, I can do the same for figures: put them into a special folder (we can call it
+\skbem[code]{figures} for the moment), which contains the source of the figures and the
+generated formats I need for my documents (usually \skbacft{ISO:PDF}, some \skbacft{ISO:PNG}). Now I can reference these 
+figures from the repository as well as for other use cases, such as web publishing or 
+presentations\footnote{My figures are exclusively in \skbacft{W3C:SVG} using inkscape (www.inkscape.org).
+This has the advantage of a standardised, text-based format with many export options. All my
+figures are in a single root folder, structured very similar to the 
+document folders created above, but separated from it. This makes re-use of figures very easy.}.
+
+Last not least, the \skbem[code]{acronym} package 
+allows for an automatic handling of acronyms, including list of acronyms. 
+It is very similar to {\scshape Bib\TeX} in that it will only show the 
+acronyms used in a document out of a (potentially large) database.
+
+One might also want to create other specific structures, such as for programming code. Dont'
+stop yourself, it's easier to combine things later (if the separation is not effective) than 
+to separate things that are hugely integrated into each other. For one of my internal projects,
+a parser generation environment based on \skbacft{ANTLR}, I created a special folder for the EBNF specifications
+along with railroad diagrams. Now I can use them in my book and my papers.
+
+Now we name the folders for the separated content. This is straight forward, although you might want 
+to use different names (don't worry, the skb supports that). We add to the already created repository 
+folder the things we need for figures (\skbem[code]{figures}) and combine acronyms and \BibTeX in a 
+folder called \skbem[code]{database}, separating the data from all other content~\footnote{Now, the
+reason for the database folder and it's structure 
+is that the whole \skbacft{A3DS:SKB} contains more databases, all of which reside here. If you want to simply apply this
+to \LaTeX~documents you might want to use a different strutural approach.}.%
+\opt{note}{This slide shows the resulting directory structure}%
+\opt{text}{
+  Now the directory structure looks like this:
+  \begin{longtable}{|>{}p{0.945\textwidth} >{}p{1pt}|}
+    \hline
+    \rowcolor[gray]{.9}
+      \skbinput[from=fig]{dirtree/baf}
+    & \\
+    \hline
+  \end{longtable}
+  \addtocounter{table}{-1}
+}
+
+What did we do so far? We did separate the different parts of our 
+documents. The more clinical you are, the better the result will be. But 
+please note: separate as much as you should, not as you could. If you 
+don't find a reason for separating 'stuff', then don't do it!

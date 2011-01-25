@@ -1,0 +1,23 @@
+\opt{text}{\skbheading{Confguration: View Options Used}\label{macro:skboptionsused}}
+
+\DescribeMacro{\skboptionsused}
+This macro will print out a warning including the currently used configuration 
+information and the change list for each of them. For example, if the configuration
+for \skbem[code]{root} has not been changed the output for \skbem[code]{root} will be
+
+\skbem[code]{- root [skb.sty]: /doc}
+
+but if the configuration for \skbem[code]{fig} has been changed using
+\cmd{\skbconfig} to \skbem[code]{graphics} the output for \skbem[code]{root} will be
+
+\skbem[code]{- fib [skb.sty, skbconfig]: graphics}
+
+This macro is automatically called at the end of processing.
+
+When creating the documentation for the \skbacft{A3DS:SKB} by running \skbem[code]{pdflatex skb.dtx},
+the following output will be created:
+\lstinputlisting[style=generic]{\skbfileroot{examples/used-options}}
+
+The change log shows that all configuration options have been set by \skbem[code]{skb.sty} and later 
+by \skbem[code]{skb.cfg}. Furthermore, the configuration option \skbem[code]{root} has 
+been changed by \skbem[code]{skb.dtx}.

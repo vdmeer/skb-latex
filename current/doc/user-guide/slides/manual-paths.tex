@@ -1,0 +1,37 @@
+\mode
+<presentation>
+
+\begin{frame}{Commands to access Path and Filenames directly}
+  \label{manual:paths}
+
+  \begin{itemize}
+    \item \cmd{\skbfileroot} -- the root directory
+    \item \cmd{\skbpathroot} -- with 1 argument, the root-dir/\#1
+    \item \cmd{\skbfileacr} -- the acronym directory and file
+    \item \cmd{\skbfilebib} -- the reference directory and file
+    \item \cmd{\skbpathbib} -- the reference directory
+    \item \cmd{\skbfilerep} -- with 1 argument, the repository-dir/\#1
+    \item \cmd{\skbfilepub} -- with 1 argument, the publish-dir/\#1
+    \item \cmd{\skbfilefig} -- with 1 argument, the figure-dir/\#1
+    \item \cmd{\skbfilesli} -- with 1 argument, the slide-dir/\#1
+  \end{itemize}
+
+  \begin{example}
+    \lstinputlisting[style=beamer-example,language=TeX]{\skbfileroot{examples/paths}}
+  \end{example}
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{manual:paths}}
+\bigskip
+
+\skbinput[from=rep]{manual/path-commands}
+
+\clearpage
+
+\mode
+<all>

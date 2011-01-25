@@ -1,0 +1,10 @@
+\opt{text}{\skbheading{Loading Acronyms and Bibliographic Information}}
+
+\DescribeMacro{\skbacronyms}
+\DescribeMacro{\skbbibtex}
+These two macros can be used to load the acronym database (\cmd{\skbacronyms}) and the references
+(\cmd{\skbbibtex}). Both macros behave identical: they use \cmd{\InputIfFileExists} to check whether
+the acronym or bibtex file exists. If so, they simply input the file. If not, they use \cmd{\PackageError} to 
+throw an error with a help message, showing the requested database file to input.
+One should use \cmd{\skbacronyms} at the place in the document were the list of acronyms should 
+be printed and \cmd{\skbbibtex} at the beginning of the document to load the bibliographic information.

@@ -1,0 +1,40 @@
+\DescribeMacro{\skbconfig}
+There are multiple options to configure the \skbacft{A3DS:SKB}. The following list
+contains all possible options starting with the least significant. That 
+means that the higher priority settings, which overwrite other settings,
+will be listed at the bottom.
+\begin{itemize}
+  \item Change the file \skbem[code]{skb.sty} in your \LaTeX~
+        distribution. This might require administrator (root)
+        privileges. This option, while possible, is not recommended.
+  \item Change the file \skbem[code]{skb.cfg} in your \LaTeX~
+        distribution. This might require administrator (root)
+        privileges. This option is suitable for a system wide 
+        configuration, say on your own computer or laptop.
+  \item Create a file \skbem[code]{skblocal.cfg} in your personal
+        \LaTeX~style/template directory. This will be the most
+        convenient way to configure the \skbacft{A3DS:SKB}. Note: you might need
+        to refresh the file database of your \LaTeX~distribution.
+  \item Use \cmd{\skbconfig} in your documents.
+\end{itemize}
+
+If you chose option 1 we assume you know what you are doing. In case you
+chose options 2-3, you can use the macro \cmd{\skbconfig} to do the configuration
+for you. The macro comes with options for all possible settings of the \skbacft{A3DS:SKB}.
+\opt{text}{\autoref{tab:skbconfig:options}}\opt{note}{This slide} describes all options and shows their default value.
+Please note that the \skbacft{A3DS:SKB} can currently not handle inputs from directories outside the root hierarchy. However, one can
+call \cmd{\skbconfig} anytime to change the root directory, but be carefull with potential side effects!.
+
+\opt{text}{
+  \begin{table}[ht!]
+    \caption{Options for skbconfig}
+    \label{tab:skbconfig:options}
+    \begin{tabular*}{\textwidth}{ >{\small}p{.1\textwidth} >{\small}p{.65\textwidth} >{\small}p{.15\textwidth}}
+      \toprule
+      \textbf{Option} & \textbf{Description} & \textbf{Default} \\
+      \midrule
+      \skbinput[from=rep]{getting-started/config-opt-table}
+      \bottomrule
+    \end{tabular*}
+  \end{table}
+}

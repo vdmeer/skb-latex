@@ -1,0 +1,19 @@
+\documentclass{skblncsbeamer}
+  \setjobnamebeamerversion{ug-slides-noanim}
+
+  \IfFileExists{ug-slides-load}
+    {\skbconfig[root=./]{ug-slides-notes.tex}}{}
+  \IfFileExists{user-guide/ug-slides-load}
+    {\skbconfig[root=user-guide]{ug-slides-notes.tex}}{}
+
+  \skbconfig[pub=,acr=database,bib=database]{ug-slides-notes.tex}
+  \skbbibtex
+
+  \begin{document}
+    \skbinput[from=pub]{ug-slides-load}
+    \section{Acronyms}
+      \skbacronyms
+    \printbibliography
+  \end{document}
+
+\endinput

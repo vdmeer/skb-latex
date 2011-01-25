@@ -1,0 +1,37 @@
+We could, and it usually makes sense to do so, go one step further in that 
+separation. This time within the documents in the \skbem[code]{published} 
+folder. The reason is the structure of \LaTeX~documents: they do need some 
+commands specific to \LaTeX, which we don't necessarily want to mix with the 
+commands that input our content (the files from repository).
+So it would make sense to have another pair of documents here, one 
+containing all \LaTeX~commands needed to create a document, and one 
+containing all the commands that include our content. Say we have a few 
+articles for state of the art discussions on \textit{naming}, 
+\textit{object-models} and \textit{protocols}, we could create
+\opt{text}{the following structure}\opt{note}{the structure shown in this slide}
+for the \skbem[code]{article} folder%
+\opt{text}{:%
+  \begin{longtable}{|>{}p{0.945\textwidth} >{}p{1pt}|}
+    \hline
+    \rowcolor[gray]{.9}
+      \skbinput[from=fig]{dirtree/publish-art}
+    & \\
+    \hline
+  \end{longtable}
+  \addtocounter{table}{-1}
+}
+
+Now everything is structured, thus simple again. If we are looking for content, we go to the 
+\skbem[code]{repository} directory and the directory names help us to find what 
+we are looking for. If we need a figure, we do the same at the \skbem[code]{figures} directory. 
+\skbem[code]{acronyms} and \skbem[code]{bibtex} help with the respective 
+other content. If we want a specific published document, we simply check the 
+\skbem[code]{published} directory and will have a look into a 
+\skbem[code]{tex} sub-directory to see what content is include how.
+
+Good news, the separation is finished! What have we done? We have 
+separated the contents from the structure by creating, created a separate directory structure for 
+figures, another one for bibliographic data, one for acronyms and finally a 
+complete directory structure for published documents. Content and title 
+form a pair, include figure, use acronyms and references and are combined 
+in the published documents. At this point we can start calling it document repository.

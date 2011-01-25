@@ -1,0 +1,36 @@
+\opt{text}{\skbheading{Rebuild the SKB from Source}}
+
+The \skbacft{A3DS:SKB} class and style files as well as the documentation
+can be rebuild from its sources very easily. The class and style
+files are part of the documented \LaTeX~sources in the file
+\skbem[code]{source/skb.dtx} and the \LaTeX~installer (\skbem[code]{source/skb.ins})
+provides all necessary instructions. Simply follow the steps shown in the first part of
+\opt{text}{the following example}\opt{note}{this slide}. All you have to
+do then is to copy the files created to your \LaTeX~distribution.
+
+\opt{text}{
+  \lstinputlisting[style=generic,language=TeX,lastline=5]{\skbfileroot{examples/rebuild}}
+}
+
+The \skbacft{A3DS:SKB} documentation comes in several different ways. The file \skbem[code]{source/skb.dtx}
+contains the documented source while the files in \skbem[code]{doc/user-guide} can be used
+to generate the User Guide without source documentation, the \skbacft{A3DS:SKB} presentation (animated
+and not animated) and the lecture notes for the presentation.
+
+When processing the file \skbem[code]{source/skb.dtx}, the User Guide will automatically be
+included in the generated \skbacft{ISO:PDF} if it is found in either of the directories 
+\skbem[code]{source/../doc/user-guide} (when using the \skbacft{A3DS:SKB} original distribution)
+or \skbem[code]{source/../doc/latex/skb/user-guide} (when the \skbacft{A3DS:SKB} is already installed with 
+your \LaTeX~distribution).
+
+\opt{text}{The following example shows}%
+\opt{note}{The rest of this slide and the next slide show}%
+how to generate the complete \skbacft{A3DS:SKB} documentation. Please note that the sequence is partially important, for instance the 
+file \skbem[code]{ug-slides-noanim} must be processed before the file \skbem[code]{ug-slides-notes}.
+
+\opt{text}{
+  \lstinputlisting[style=generic,language=TeX,firstline=7]{\skbfileroot{examples/rebuild}}
+}
+
+Please note that the \skbacft{A3DS:SKB} documentation is heavily using the \skbacft{A3DS:SKB} macros, so you will
+need to have the style and class files installed before you can rebuild the documentation.

@@ -1,0 +1,14 @@
+%default content of skb.cfg
+\skbconfig[
+    root=/doc,fig=figures,sli=slides
+    acr=database/latex,acrfile=acronym,
+    bib=database/bibtex,bibfile=bibliograhpy,
+    rep=repository,pub=publish
+]{skb.cfg}
+
+%using relative path for root and no directory structure
+\skbconfig[
+    root=./,rep=,pub=,fig=,sli=,
+    acr=,acrfile=acronym,
+    bib=,bibfile=bibliograhpy
+]{myfile.tex}

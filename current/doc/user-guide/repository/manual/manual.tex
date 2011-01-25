@@ -1,0 +1,30 @@
+\skbheading{User Manual}
+
+The \skbacft{A3DS:SKB} provides macros that simplify file handling and hide some \LaTeX~
+code (i.e. for figures) from the user, thus helping everyone to focus on
+the actual document one wants to write. There are a few macros, and they
+can be catagorised as follows.
+\begin{skbnotelist}
+  \item Installation, rebuilt and configuration: this part deals with the 
+        installation of the package with your local \LaTeX~distribution,
+        the rebuilt of the styles, classes and documentation (all of them are
+        provided, but you never know, it might become useful) and the configuration
+        of the \skbacft{A3DS:SKB} using configuration files and the macro \cmd{\skbconfig}.
+  \item Files, figures and slides: the combination of \cmd{\skbheading} and
+        \cmd{\skbinput} will process files and the document level of headings.
+        The macro \cmd{\skbfigure} makes it easy to include figures in your document 
+        and the macro \cmd{\skbslide} helps with \skbacft{ISO:PDF} slides and annotations (if 
+        you are not using a classic \LaTeX solution such as the beamer package).
+  \item Filenames, acronyms and references: here we deal with macros that provide 
+        access to the path and filenames the \skbacft{A3DS:SKB} maintains, plus loading acronym and 
+        reference databases.
+  \item Other useful macros: there are some more macros that complete the \skbacft{A3DS:SKB}. There 
+        are little helpers for emphasising text, limiting the space between items in some
+        list environments, putting acronyms into footnotes, filling meta information for 
+        \skbacft{ISO:PDF} files and last not least macros that help dealing with optional and conditional text.
+\end{skbnotelist}
+
+For the impatient, we start with a few examples. The first one shows how to use the \skbacft{A3DS:SKB} to
+produce a simple article. The second one exmplains how the documentation for the \skbacft{A3DS:SKB} is 
+created using most of the \skbacft{A3DS:SKB} macros. Then we detail the usage of all the macros, following 
+the above introduced categorisation.

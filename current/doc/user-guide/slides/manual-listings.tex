@@ -1,0 +1,36 @@
+\mode
+<presentation>
+
+\begin{frame}{Styles and Support for Listings}
+  \label{manual:listing}
+
+  \begin{itemize}
+    \item A few pre-defined styles provided
+    \item Most of them set a small type writer font
+    \item Some provide for line numbers
+    \item \cmd{\lstdefinestyle} used to reset style to basic parameters
+  \end{itemize}
+
+  \begin{example}[use within normal text]
+    \lstinputlisting[style=beamer-example,language=TeX,lastline=2]{\skbfileroot{examples/listings}}
+  \end{example}
+
+  \begin{example}[use for beamer frames]
+    \lstinputlisting[style=beamer-example,language=TeX,firstline=3]{\skbfileroot{examples/listings}}
+  \end{example}
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{manual:listing}}
+\bigskip
+
+\skbinput[from=rep]{manual/listing}
+
+\clearpage
+
+\mode
+<all>

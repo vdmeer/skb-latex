@@ -1,0 +1,33 @@
+\opt{text}{\skbheading{A Simple Article}}
+
+Take the article that describes the state of the art in protocols. Remember, we 
+have all the contents for that in our \skbem[code]{repository} directory. 
+We go the directory that has the published articles 
+\skbem[code]{published/articles} and create a new file say 
+\skbem[code]{protocols.tex} \opt{note}{as shown on this slide and the following two slides}.
+
+\opt{text}{\lstinputlisting[style=generic,language=TeX]{\skbfileroot{examples/example}}}
+
+The article uses the class \skbem[code]{skbarticle}. That class will load the \skbacft{A3DS:SKB} package and
+the memoir class and do all settings we need. It prepares the title page and 
+prints the table of contents like any other \LaTeX~article. It uses \cmd{\skbinput}
+to load files from the repository. The first one is loaded without requesting a level.
+In other words, there is some text right at the beginning of our article, without 
+any special heading, like an abstract.
+
+Then we do start the section 'Introduction' and collect a few files with their heading 
+categorised as sub-sections. Reading the directory and file names, we can already guess
+what the introduction will be doing: it introduces general protocol concepts with regard
+to data encoding, protocol message formats, protocols themselves and protocol services. 
+The last block loads four files with headings categorised as sections.
+Using the directory names, we see that the remaining article 
+describes the protocols \ac{OMG:GIOP} defined by the \ac{organisation:OMG}, \ac{IETF:SNMP} by the
+\ac{organisation:IETF}, \ac{ITU:CMIP} by the \ac{organisation:ITU} and finally \ac{W3C:HTTP} by the 
+\ac{organisation:W3C}.
+
+Finally, we load acronyms and bebliography and finishing the article.
+This example will create a table of contents similar to this:
+
+\lstinputlisting[style=generic]{\skbfileroot{examples/example-toc}}
+
+Job done. Now we can use \LaTeX~or PDF-\LaTeX~to compile our article. 

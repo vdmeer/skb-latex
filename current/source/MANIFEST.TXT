@@ -1,0 +1,145 @@
+|   README
+|   
++---doc
+|   |   skb.pdf
+|   |   ug-slides-anim.pdf
+|   |   ug-slides-noanim.pdf
+|   |   ug-slides-notes.pdf
+|   |   user-guide.pdf
+|   |   
+|   `---user-guide
+|       |   ug-slides-anim.tex
+|       |   ug-slides-load.tex
+|       |   ug-slides-noanim.tex
+|       |   ug-slides-notes.tex
+|       |   user-guide-load.tex
+|       |   user-guide.tex
+|       |   
+|       +---examples
+|       |       example-toc.tex
+|       |       example.tex
+|       |       figure-classic.tex
+|       |       listings.tex
+|       |       optional-text.tex
+|       |       paths.tex
+|       |       rebuild.tex
+|       |       skbconfig.tex
+|       |       skbem.tex
+|       |       skbfigure.tex
+|       |       skbheading.tex
+|       |       skbinput.tex
+|       |       skbslide.tex
+|       |       skbslidecite.tex
+|       |       used-options.tex
+|       |       
+|       +---figures
+|       |   `---dirtree
+|       |           baf.tex
+|       |           complete.tex
+|       |           publish-art.tex
+|       |           publish.tex
+|       |           repository.tex
+|       |           skb-distribution.tex
+|       |           
+|       +---repository
+|       |   |   abstract.tex
+|       |   |   applicability.tex
+|       |   |   example-article.tex
+|       |   |   intent.tex
+|       |   |   title.tex
+|       |   |   
+|       |   +---getting-started
+|       |   |       config-cmd.tex
+|       |   |       config-opt-table.tex
+|       |   |       config-opt.tex
+|       |   |       config.tex
+|       |   |       distribution.tex
+|       |   |       folders.tex
+|       |   |       installation.tex
+|       |   |       rebuild.tex
+|       |   |       start.tex
+|       |   |       used-options.tex
+|       |   |       
+|       |   +---manual
+|       |   |       acr-bib.tex
+|       |   |       figures.tex
+|       |   |       figures2.tex
+|       |   |       headings-and-files.tex
+|       |   |       listing.tex
+|       |   |       lists.tex
+|       |   |       manual.tex
+|       |   |       optional-text.tex
+|       |   |       path-commands.tex
+|       |   |       pdfinfo.tex
+|       |   |       skbem.tex
+|       |   |       skbfigure-opt-table.tex
+|       |   |       skbinput-opt-table.tex
+|       |   |       slides.tex
+|       |   |       slides2.tex
+|       |   |       
+|       |   +---separate
+|       |   |       separate-cs.tex
+|       |   |       separate-final.tex
+|       |   |       separate-parts-baf.tex
+|       |   |       separate-parts-pc.tex
+|       |   |       separate-parts-pc2.tex
+|       |   |       separate-parts.tex
+|       |   |       separate.tex
+|       |   |       
+|       |   `---story
+|       |           long.tex
+|       |           long2.tex
+|       |           short.tex
+|       |           
+|       `---slides
+|               about.tex
+|               applicability.tex
+|               example-art-tex1.tex
+|               example-art-tex2.tex
+|               example-art-tex3.tex
+|               example-art-toc.tex
+|               intent.tex
+|               manual-acrbib.tex
+|               manual-figures-opt.tex
+|               manual-figures.tex
+|               manual-haf.tex
+|               manual-listings.tex
+|               manual-lists.tex
+|               manual-optional-text.tex
+|               manual-paths.tex
+|               manual-pdfinfo.tex
+|               manual-skbem.tex
+|               manual-slides1.tex
+|               manual-slides2.tex
+|               separate-cs.tex
+|               separate-parts-baf.tex
+|               separate-parts-pc1.tex
+|               separate-parts-pc2.tex
+|               separate.tex
+|               start-config-cmd.tex
+|               start-config-opt.tex
+|               start-distribution.tex
+|               start-folders.tex
+|               start-installation.tex
+|               start-rebuild.tex
+|               start-used-options.tex
+|               story-long1.tex
+|               story-long2.tex
+|               story-short.tex
+|               
++---run
+|       skb.cfg
+|       skb.sty
+|       skbarticle.cls
+|       skbbeamer.cls
+|       skbbook.cls
+|       skblncsbeamer.cls
+|       skblncsppt.cls
+|       
+`---source
+        HISTORY.TXT
+        LICENSE.TXT
+        MANIFEST.TXT
+        skb.dtx
+        skb.ins
+        TODO.TXT

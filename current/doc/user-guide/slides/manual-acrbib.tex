@@ -1,0 +1,35 @@
+\mode
+<presentation>
+
+\begin{frame}{Acronyms and References}
+  \label{manual:acrbib}
+
+  Load Acronym Database
+  \begin{itemize}
+    \item \cmd{\skbacronyms} will load the Acronymnym Database
+    \item Should be called right at the place you want to have the list of acronyms printed
+  \end{itemize}
+
+  \bigskip
+
+  Load References
+  \begin{itemize}
+    \item \cmd{\skbbibtex} will load the reference list
+    \item Should be called before starting with the document
+  \end{itemize}
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{manual:acrbib}}
+\bigskip
+
+\skbinput[from=rep]{manual/acr-bib}
+
+\clearpage
+
+\mode
+<all>

@@ -1,0 +1,37 @@
+## Build style and class files
+$cd run
+latex ../source/skb.ins
+-> creates: skb.cfg, skb.sty and all cls files
+
+## Build Package Documentation
+$cd doc
+$pdflatex ../source/skb.dtx
+$bibtex skb
+$pdflatex ../source/skb.dtx
+$pdflatex ../source/skb.dtx
+
+## Build User Guide
+$cd doc
+$pdflatex user-guide/user-guide
+$bibtex user-guide
+$pdflatex user-guide/user-guide
+$pdflatex user-guide/user-guide
+
+## Build Presentation with Animations
+$cd doc
+$pdflatex user-guide/ug-slides-anim
+$bibtex user-guide
+$pdflatex user-guide/ug-slides-anim
+$pdflatex user-guide/ug-slides-anim
+
+## Build Presentation without Animations
+$pdflatex user-guide/ug-slides-noanim
+$bibtex user-guide
+$pdflatex user-guide/ug-slides-noanim
+$pdflatex user-guide/ug-slides-noanim
+
+## Build Notes for Presentation
+$pdflatex user-guide/ug-slides-noanim
+$bibtex user-guide
+$pdflatex user-guide/ug-slides-noanim
+$pdflatex user-guide/ug-slides-noanim

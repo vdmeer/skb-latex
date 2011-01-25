@@ -1,0 +1,24 @@
+\mode
+<presentation>
+
+\begin{frame}{An Example Article -- \TeX~code}
+  \label{example:art:tex1}
+
+  \begin{example}[start of the tex file]
+    \lstinputlisting[style=beamer-example,language=TeX,firstline=1,lastline=8]{\skbfileroot{examples/example}}
+  \end{example}
+\end{frame}
+
+
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{example:art:tex1}}
+\bigskip
+
+\skbinput[from=rep]{example-article}
+
+\mode
+<all>

@@ -1,0 +1,35 @@
+\mode
+<presentation>
+
+\begin{frame}{Separate Parts of the Document, Part I}
+  \label{separate:parts:baf}
+
+  \begin{itemize}
+    \item Create a folder for data
+      \begin{itemize}
+        \item Acronyms, References, ...
+      \end{itemize}
+    \item Create a folder for figures
+  \end{itemize}
+
+  \begin{block}{Bibliography, Acronyms and Figures}
+    \skbinput[from=fig]{dirtree/baf}
+  \end{block}
+
+\end{frame}
+
+
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{separate:parts:baf}}
+\bigskip
+
+\skbinput[from=rep]{separate/separate-parts-baf}
+
+\clearpage
+
+\mode
+<all>

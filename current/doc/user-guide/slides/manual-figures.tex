@@ -1,0 +1,29 @@
+\mode
+<presentation>
+
+\begin{frame}{Figures}
+  \label{manual:figures}
+
+  \begin{block}{Classic \LaTeX~Example}
+    \lstinputlisting[style=beamer-example,language=TeX]{\skbfileroot{examples/figure-classic}}
+  \end{block}
+
+  \begin{block}{\skbem[code]{skbfigure}}
+    \lstinputlisting[style=beamer-exampleLN,language=TeX]{\skbfileroot{examples/skbfigure}}
+  \end{block}
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{manual:figures}}
+\bigskip
+
+\skbinput[from=rep]{manual/figures}
+
+\clearpage
+
+\mode
+<all>

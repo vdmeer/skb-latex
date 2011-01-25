@@ -1,0 +1,39 @@
+\opt{text}{\skbheading{Environments for lists and enumerates}}
+
+\DescribeMacro{\skbnotelist}
+\DescribeMacro{\skbnoteenum}
+These two environments mimic the macro \cmd{\tightlists} from the memoir package. It might be 
+usefull when not using memoir to minimise the margin between items in lists (iemize) and enumerations
+(enumerate).
+
+Both environments do the following:
+\begin{skbnotelist}
+  \item Store current value of \cmd{\parskip} and \cmd{\itemsep}.
+  \item Set \cmd{\parskip} and \cmd{\itemsep} to \skbem[code]{0cm}.
+  \item Use the original environments (itemize for skbnotelist and enumerate for skbnoteenum)
+  \item Set \cmd{\parskip} and \cmd{\itemsep} back to thir original value.
+\end{skbnotelist}
+
+Here is an example using first the classic list environment (itemize) and then the \skbacft{A3DS:SKB} macro
+\cmd{skbnotelist}
+\footnote{For those who are interested, the `Lorem Ipsum' is the standard phrase commonly used since the 1500s.}
+\footnote{The following examples might have no effect on annotated slides...}
+:
+\setlength{\parskip}{4.5pt}
+\setlength{\itemsep}{4.5pt}
+\begin{itemize}
+  \item Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  \item Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  \item Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end{itemize}
+
+\noindent Now list with \cmd{\skbnotelist}:
+\begin{skbnotelist}
+  \item Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  \item Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  \item Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  \item Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end{skbnotelist}
+
+Note: both macros will only change the margins of the memoir package is not loaded!

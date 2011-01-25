@@ -1,0 +1,37 @@
+\mode
+<presentation>
+
+\begin{frame}{Lists}
+  \label{manual:lists}
+
+  Two new environments for lists
+  \begin{itemize}
+    \item \cmd{\skbnotelist} for replacing itemize
+    \item \cmd{\skbnoteenum} for replacing enumerate
+  \end{itemize}
+
+  Both do nothing but chaning \cmd{itemsep} and \cmd{parskip}
+  \begin{itemize}
+    \item Set to 0
+    \item Same effect as \cmd{\tightlist} in the memoir package
+  \end{itemize}
+
+  \bigskip
+
+  Both enviroments do \skbem[italic]{nothing} if the memoir package is used!
+
+\end{frame}
+
+
+\mode
+<article>
+
+\resizebox{\textwidth}{!}{\includeslide{manual:lists}}
+\bigskip
+
+\skbinput[from=rep]{manual/lists}
+
+\clearpage
+
+\mode
+<all>
