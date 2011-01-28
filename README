@@ -1,6 +1,7 @@
-skb v0.5 2010/08/04
--------------------
-Create and maintain a repository for long-living documents
+SKB-LaTeX, v0.5 2010/08/04
+==========================
+
+*Create and maintain a repository for long-living documents*
 
 This package provides  macros that help  to build a  document repository for
 long living  documents. It  focuses on  structure and  re-use of text, code,
@@ -13,22 +14,23 @@ many protocols); all without constantly copying or changing text. As a  side
 effect, using the document  classes provided, it hides  a lot of LaTeX  from
 someone who just wants to write articles and books. 
 
-skb.sty v0.5            : the skb package
-skbarticle.cls v0.5     : an article class based on memoir
-skbbook.cls v0.5        : a book class based memoir
-skbbeamer.cls v0.5      : a beamer class based on beamer v3.10
-skblncsbeamer.cls v0.5  : a class for annotated beamer slides
-skblncsppt.cls v0.5     : a class for annotated ppt slides
+The following classes are supported
 
-See for more information the PDF documentation of this package. The  history
-of  the  package  is  documented  in  /source/HISTORY.TXT  and  in  the  PDF
-documentation.
+- skbarticle - an article class using the memoir package
+- skbbook - a book class using the memoir package
+- skbbeamer - a class for presentations using the beamer package
+- skblncsbeamer - a class for annotated slides using the beamer package
+- skblncsppt - a class for annotated Powerpoint slides
 
+The documentation (current/doc) provides for a user guide, the documentation
+of  the  LaTeX  package  and  classes  and  a  few  documents  showing   the
+capabilities  of  the  skb  package  for  documents  and  presentations. All
+documentation of the  SKB is done  using the SKB  itself, so you  can have a
+look into the LaTeX code as well to see how it works.
 
 
 Status: Alpha, Experimental
 ---------------------------
-
 This package, while being  used by me and  some early adaptors, is  still in
 alpha status, thus experimental. We are using it to maintain a large  amount
 of documents  (articles, lecture  notes, some  books, project documentation,
@@ -44,48 +46,51 @@ recommendations, complaints; as long as you try to keep them contructive ;)
 
 Contents and Installation
 -------------------------
-
 Your LaTeX  distribution might  have the  skb package  already installed  or
 might install it automatically when you are trying to use it the first time.
 If you have  to manually install  it, copy the  files listed below  to their
 respective  locations   within  your   LaTeX  distribution   (TSD  compliant
 structure). Once you  copied all files,  please don't forget  to update your
 filename database. To use  the skb package, you  probably only need to  copy
-the files from the /run folder
+the  files from  the /run  folder. In  the directory  listing below,  please
+substitute `texmf` with the root of your LaTeX distribution
 
 [archive root]
  |
  +-- doc
- |    +-- skb.pdf           : [your tex distribution]/doc/latex/skb
- |    +-- ug-slides-anim    : [your tex distribution]/doc/latex/skb
- |    +-- ug-slides-noanim  : [your tex distribution]/doc/latex/skb
- |    `-- ug-slides-notes   : [your tex distribution]/doc/latex/skb
+ |    +-- skb.pdf           : texmf/doc/latex/skb
+ |    +-- ug-slides-anim    : texmf/doc/latex/skb
+ |    +-- ug-slides-noanim  : texmf/doc/latex/skb
+ |    `-- ug-slides-notes   : texmf/doc/latex/skb
  +-- source
- |    +-- skb.dtx           : [your tex distribution]/source/latex/skb
- |    `-- skb.ins           : [your tex distribution]/source/latex/skb
+ |    +-- skb.dtx           : texmf/source/latex/skb
+ |    `-- skb.ins           : texmf/source/latex/skb
  `-- run
-      +-- skb.cfg           : [your tex distribution]/tex/latex/skb
-      +-- skb.sty           : [your tex distribution]/tex/latex/skb
-      +-- skbarticle.cls    : [your tex distribution]/tex/latex/skb
-      +-- skbbeamer.cls     : [your tex distribution]/tex/latex/skb
-      +-- skbbook.cls       : [your tex distribution]/tex/latex/skb
-      +-- skblncsbeamer.cls : [your tex distribution]/tex/latex/skb
-      `-- skblncsppt.cls    : [your tex distribution]/tex/latex/skb
+      +-- skb.cfg           : texmf/tex/latex/skb
+      +-- skb.sty           : texmf/tex/latex/skb
+      +-- skbarticle.cls    : texmf/tex/latex/skb
+      +-- skbbeamer.cls     : texmf/tex/latex/skb
+      +-- skbbook.cls       : texmf/tex/latex/skb
+      +-- skblncsbeamer.cls : texmf/tex/latex/skb
+      `-- skblncsppt.cls    : texmf/tex/latex/skb
 
-The   archive   contains  pre-generated  files   (in  the   /doc   and  /run
-folders).  You  can  reproduce  them from  the  source  (/source)  using the
-docstrip command and the ltxdoc package usting the following commands:
+The repository contains the LaTeX sources of the skb package (current/source) and the sources for the 
+documentation (/current/doc). The distribution archive (download) also contains the generated LaTeX files (/run) and the generated PDF files 
+of the documentation (/doc). You can reproduce them from the source in the repository (current/source) using the docstrip command and the ltxdoc 
+package (assuming you are in the folder /current):
 
+[source,shell]
   $ cd run
   $ latex ../skb.ins
   $ cd ../doc
   $ pdflatex ../skb.dtx
   $ pdflatex ../skb.dtx
   $ pdflatex ../skb.dtx
+----
 
-This will create  the style file  (skb.sty), the general  configuration file
-(skb.cfg) and the class files (*.cls)  in the directory run and the  package
-documentation in the directory doc You need to have docstrip, ltxdoc and doc
+This will create  the style file  (`skb.sty`), the general  configuration file
+(`skb.cfg`) and the class files (`*.cls`)  in the directory /run and the  package
+documentation in the directory /doc. You need to have docstrip, ltxdoc and doc
 installed, which should be already part of your LaTeX distribution. Parts of
 the documentation (the user guide) are in the folder doc/user-guide and  you
 will need to  install the SKB  before you can  create the documentation  (in
@@ -95,19 +100,17 @@ other words, the SKB package uses itself to compile the PDF document)
 
 Configuration
 -------------
-
-The SKB comes with a default  configuration in the package (skb.sty) and  an
-external  configuration  file  (skb.cfg).  There  are  multiple  options  to
+The SKB comes with a default  configuration in the package (`skb.sty`) and  an
+external  configuration  file  (`skb.cfg`).  There  are  multiple  options  to
 configure  the  SKB   (changing  the  coniguration   file,  using  a   local
-configuration  file  called  skblocal.cfg   or  using  the  provided   macro
-\skbconfig). Please refer to the user guide for details.
+configuration  file  called  `skblocal.cfg` or  using  the  provided  macro
+`\skbconfig`). Please refer to the user guide for details.
 
 
 
 Where do I get it?
 ------------------
-
-GitHub: https://github.com/vdmeer/projects
+GitHub: https://github.com/vdmeer/skb-latex
 CTAN: http://www.ctan.org/tex-archive/macros/latex/contrib/skb/
 
 
