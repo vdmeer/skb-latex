@@ -1,8 +1,12 @@
-SKB-LaTeX, v0.5 2010/08/04
---------------------------
+SKB-LaTeX
+---------
 
 *Create and maintain a repository for long-living documents*
 
+*Latest version: v0.5 2010/08/04*
+
+Introduction
+------------
 This package provides  macros that help  to build a  document repository for
 long living  documents. It  focuses on  structure and  re-use of text, code,
 figures etc. The basic concept  is to first separate structure  from content
@@ -55,7 +59,7 @@ the  files from  the /run  folder. In  the directory  listing below,  please
 substitute `texmf` with the root of your LaTeX distribution
 
 [archive root]
- |
+ v
  +-- doc
  |    +-- skb.pdf           : texmf/doc/latex/skb
  |    +-- ug-slides-anim    : texmf/doc/latex/skb
