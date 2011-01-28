@@ -81,7 +81,6 @@ reproduce them from  the source in  the repository (`current/source`)  using
 the docstrip command and the ltxdoc package (assuming you are in the  folder
 `/current`):
 
-[source,shell]
 ----
   # cd run
   # latex ../skb.ins
