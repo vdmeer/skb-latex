@@ -80,6 +80,7 @@ of the documentation (/doc). You can reproduce them from the source in the repos
 package (assuming you are in the folder /current):
 
 [source,shell]
+----
   $ cd run
   $ latex ../skb.ins
   $ cd ../doc
@@ -94,7 +95,7 @@ documentation in the directory /doc. You need to have docstrip, ltxdoc and doc
 installed, which should be already part of your LaTeX distribution. Parts of
 the documentation (the user guide) are in the folder doc/user-guide and  you
 will need to  install the SKB  before you can  create the documentation  (in
-other words, the SKB package uses itself to compile the PDF document)
+other words, the SKB package uses itself to compile the PDF document).
 
 
 
@@ -110,8 +111,8 @@ configuration  file  called  `skblocal.cfg` or  using  the  provided  macro
 
 Where do I get it?
 ------------------
-GitHub: https://github.com/vdmeer/skb-latex
-CTAN: http://www.ctan.org/tex-archive/macros/latex/contrib/skb/
+- GitHub: https://github.com/vdmeer/skb-latex
+- CTAN: http://www.ctan.org/tex-archive/macros/latex/contrib/skb/
 
 
 
@@ -136,4 +137,4 @@ This software is  provided 'as is',  without warranty of  any kind, either
 expressed  or  implied,  including,  but  not  limited  to,  the   implied
 warranties of merchantability and fitness for a particular purpose.
 
-This work consists of all files in source/MANIFEST.TXT
+This work consists of all files in source/MANIFEST.TXT.
