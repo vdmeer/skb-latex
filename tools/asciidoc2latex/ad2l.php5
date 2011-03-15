@@ -151,10 +151,10 @@ for($i=0;$i<$_size;$i++){
   	//qoute block
   	//     -> QuoteBlock:       __________________________
  		if(strpos($ad[$i], "__________")!==false){
- 			$ad[$i]="\\begin{QUOTE}";
+ 			$ad[$i]="\\begin{qoute}";
  			for($k=$i+1;$k<$_size;$k++){
  				if(strpos($ad[$k], "__________")!==false){
- 					$ad[$k]="\\end{QUOTE}";
+ 					$ad[$k]="\\end{qoute}";
  					$i=$k;
  					break;
  				}
@@ -192,6 +192,40 @@ for($i=0;$i<$_size;$i++){
  			}
  			continue;
  		}
+  }
+
+  //bullet lists
+  // + lookup: empty line followed by list or empty lines and no paragraph, header or list block (open block)
+  // +         indent is non-critical
+  //     -> - List item.
+  //     -> * List item.
+  //     -> ** List item.
+  //     -> *** List item.
+  //     -> **** List item.
+  //     -> ***** List item.
+  $line=trim($ad[$i]);
+  if(strlen($line)>2&&($line[0]=='-'||$line[0]=='*')){
+  	//entry, we have a new list opening
+    $ad[$i-1]="\begin{itemize}";
+    $ad[$i]="\\item ".$ad[$i];
+		for($k=$i+1;$k<$_size;$k++){
+			if(strlen($ad[$k])==0)
+			  continue;
+      if(strlen($ad[$k])>1&&substr($ad[$k],0,1)=="-")
+			  continue; //ADD LIST CHECK
+      if(strlen($ad[$k])>1&&substr($ad[$k],0,1)=="*")
+			  continue; //ADD LIST CHECK
+
+      if(strlen($ad[$k])==2&&substr($ad[$k],0,2)=="--"){
+      	$i=$k;
+			  break; //ADD INSERT \end{itemize}
+			}
+      if(strlen($ad[$k])>1&&substr($ad[$k],0,1)=="."){
+      	$i=$k;
+			  break; //ADD INSERT \end{itemize}
+			}
+		}
+		continue;
   }
 
 }
