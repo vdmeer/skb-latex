@@ -1,3 +1,6 @@
+####/##/## v#.#
+
+
 2010/08/04 v0.5
 - this is the first version on CTAN: http://www.ctan.org/tex-archive/macros/latex/contrib/skb/
 - added example describing how the \SKB~uses itself to create parts of its documentation
