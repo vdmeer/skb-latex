@@ -135,6 +135,7 @@
 |       skbbook.cls
 |       skblncsbeamer.cls
 |       skblncsppt.cls
+|       skbmoderncv.cls
 |       
 `---source
         HISTORY.TXT
