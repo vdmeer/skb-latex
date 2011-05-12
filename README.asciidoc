@@ -3,7 +3,7 @@ SKB-LaTeX
 
 *Create and maintain a repository for long-living documents*
 
-*Latest version: v0.5 2010/08/04*
+*Latest version: v0.51 2011/05/12*
 
 Introduction
 ------------
@@ -25,6 +25,7 @@ The following classes are supported
 - skbbeamer: a class for presentations using the beamer package
 - skblncsbeamer: a class for annotated slides using the beamer package
 - skblncsppt: a class for annotated Powerpoint slides
+- skbmoderncv: a class integrating the moderncv package
 
 The documentation (current/doc) provides for a user guide, the documentation
 of  the  LaTeX  package  and  classes  and  a  few  documents  showing   the
@@ -75,7 +76,8 @@ substitute `texmf` with the root of your LaTeX distribution
       +-- skbbeamer.cls     : texmf/tex/latex/skb
       +-- skbbook.cls       : texmf/tex/latex/skb
       +-- skblncsbeamer.cls : texmf/tex/latex/skb
-      `-- skblncsppt.cls    : texmf/tex/latex/skb
+      +-- skblncsppt.cls    : texmf/tex/latex/skb
+      `-- skbmoderncv.cls   : texmf/tex/latex/skb
 
 The   repository   contains   the  LaTeX   sources   of   the  skb   package
 (`current/source`) and the  sources for the  documentation (`/current/doc`).

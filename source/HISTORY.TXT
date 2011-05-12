@@ -1,5 +1,16 @@
-####/##/## v#.#
-
+2011/05/12 v0.51
+- worked on the documentation, lots of changes
+- fixed a typo in skb.cfg, which made the bibliography file unloadable
+- changed linkcolor from AntiqueWhite4 to Brown4
+- added acronym database (short version of the automatically generated) and acronym handling in the documentation
+- removed \SKB, appropriately it's now an acronym rather than a special type setting
+- added bibtex load to the documentation
+- removed call to \cmd{\skbbibtex} from class files, users need to call that now manually. reason is that otherwise
+  configuration changes for bib/bibfile have no effect
+- changed load mechanism for the user guide, due to bibtex load problems
+- changed the two skbnote environments (list/enum), removed unnecessary temp storage
+- \textbf{changed default acronym file name to acronyms, note the added 's'}
+- added skbmoderncv class using the moderncv package and adding some macros for reference lists using biblatex
 
 2010/08/04 v0.5
 - this is the first version on CTAN: http://www.ctan.org/tex-archive/macros/latex/contrib/skb/

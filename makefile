@@ -4,7 +4,7 @@ ug:	doc/user-guide.pdf
 slides:	uganim ugnoanim ugnnote
 
 
-latextmpfiles = doc/*.aux doc/*.bbl doc/*.bib doc/*.idx doc/*.blg doc/*.dvi doc/*.log doc/*.out doc/*.toc doc/*.lof doc/*.lot doc/*.nav doc/*.snm doc/*.vrb doc/*.ps doc/*.glo
+latextmpfiles = doc/*.aux doc/*.bbl doc/*.bib doc/*.idx doc/*.blg doc/*.dvi doc/*.log doc/*.out doc/*.toc doc/*.lof doc/*.lot doc/*.nav doc/*.snm doc/*.vrb doc/*.ps doc/*.glo doc/*.run.xml
 clean:	
 	rm -f run/skb.log
 	rm -f ${latextmpfiles}
@@ -59,5 +59,5 @@ ${mystyles}:	${runfiles}
 		rm -f ~/doc/styles/tex/latex/skb/*;cp run/* ~/doc/styles/tex/latex/skb/
 
 
-sf:	run copy doc ug slides clean
-	cd ..;rm -r -f latex-skb;cp -r current latex-skb
+#sf:	run copy doc ug slides clean
+#	cd ..;rm -r -f latex-skb;cp -r current latex-skb

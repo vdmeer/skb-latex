@@ -2,7 +2,7 @@
 % \iffalse
 %
 % skb.dtx
-%% Copyright (c) 2010 Sven van der Meer <sven@vandermeer.de>
+%% Copyright (c) 2011 Sven van der Meer <sven@vandermeer.de>
 %%
 %% This work may be distributed  and/or modified under the conditions  of the
 %% LaTeX Project Public  License, either version  1.3 of this  license or (at
@@ -77,7 +77,7 @@
 %
 %\author{Sven van der Meer}
 %
-%\date{2010-08-04 v0.5}
+%\date{2011-05-12 v0.51}
 %
 %\maketitle
 %
@@ -127,7 +127,7 @@
 %    \begin{macrocode}
 %<*skbpackage>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{skb}[2010/08/04 Sven's Knowledge Base - SKB for LaTeX v0.5]
+\ProvidesPackage{skb}[2011/05/12 Sven's Knowledge Base - SKB for LaTeX v0.51]
 %    \end{macrocode}
 %
 %    Next we process the package's options. To do that, we define a new if 
@@ -1539,7 +1539,7 @@
 %    \begin{macrocode}
 %<*skbarticle>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{skbarticle}[2010/08/04 The SKB Article class v0.5]
+\ProvidesClass{skbarticle}[2011/05/12 The SKB Article class v0.51]
 %    \end{macrocode}
 %
 %    Now we load the memoir class with the following options:
@@ -1701,7 +1701,7 @@
 %    \begin{macrocode}
 %<*skbbook>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{skbbook}[2010/08/04 The SKB Book class v0.5]
+\ProvidesClass{skbbook}[2011/05/12 The SKB Book class v0.51]
 %    \end{macrocode}
 %
 %    Now we load the memoir class with the following options:
@@ -1871,7 +1871,7 @@
 %    \begin{macrocode}
 %<*skbbeamer>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{skbbeamer}[2010/08/04 The SKB Beamer class v0.5]
+\ProvidesClass{skbbeamer}[2011/05/12 The SKB Beamer class v0.51]
 \DeclareOption{beameranim}{\PassOptionsToPackage{\CurrentOption}{skb}}
 \DeclareOption{beamernoanim}{\PassOptionsToPackage{\CurrentOption}{skb}}
 \ProcessOptions\relax
@@ -1965,7 +1965,7 @@
 %    \begin{macrocode}
 %<*skblncsbeamer>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{skblncsbeamer}[2010/08/04 The SKB LNCS Beamer class v0.5]
+\ProvidesClass{skblncsbeamer}[2011/05/12 The SKB LNCS Beamer class v0.51]
 %    \end{macrocode}
 %
 %    Just in case there is no \cmd{\titlepage} declared, the beamerarticle wants that.
@@ -2158,7 +2158,7 @@
 %    \begin{macrocode}
 %<*skblncsppt>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{skblncsppt}[2010/08/04 The SKB LNCS PPT class v0.5]
+\ProvidesClass{skblncsppt}[2011/05/12 The SKB LNCS PPT class v0.51]
 %    \end{macrocode}
 %
 %    Now we load the memoir class with the following options:
@@ -2325,6 +2325,184 @@
 %    There is no code for \cmd{\AtBeginDocument} and \cmd{\AtEndDocument}, so we are done now.
 %    \begin{macrocode}
 %</skblncsppt>
+%    \end{macrocode}
+%
+%
+%
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% \subsection{The Class skbmoderncv}
+%
+%    This class integrates the moderncv package into the \skbacft{A3DS:SKB}. I use moderncv
+%    for my own CV and with the \skbacft{A3DS:SKB} I am able to maintain all information while
+%    producing different documents (i.e. one for a research proposal, for my website, for journals, etc.).
+%    This class provides some macros using biblatex to create several lists of publications, i.e. a different
+%    list for articles, proceedings, conference papers per year, etc.
+%
+%    First, we announce the package and the font definition file and process the options.
+%    \begin{macrocode}
+%<*skbmoderncv>
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{skbmoderncv}[2011/05/12 The SKB Modern CV class v0.51]
+%    \end{macrocode}
+%
+%    Now we load the moderncv package. By default we use an 11 point font and A4 paper. Once can change these
+%    settings later in a CV document.
+%    \begin{macrocode}
+\LoadClass[11pt,a4paper]{moderncv}
+%    \end{macrocode}
+%
+%    Load the \skbacft{A3DS:SKB}.
+%    \begin{macrocode}
+\RequirePackage{skb}
+%    \end{macrocode}
+%
+%
+% \subsubsection{Loaded Packages}
+%
+%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{A3DS:SKB} (such as the \skbacft{LAMP}
+%    server) produce BibLaTeX. The options are:
+%    \begin{skbnotelist}
+%      \item style - is set to alphabetic, much better to find/remember references.
+%                    If writing for IEEE or LNCS, numeric would be the prefered option.
+%      \item sorting - is set to ynt, year first, then author name then title.
+%      \item bibstyle - is set to standard, which means there are no labels (we set labels as enumerate list later).
+%      \item hyperref - I want to have hyperef with my citations
+%    \end{skbnotelist}
+%    \begin{macrocode}
+\RequirePackage[style=alphabetic,sorting=ynt,bibstyle=standard,hyperref]{biblatex}
+%    \end{macrocode}
+%
+%    Load the eurofont package for the Euro sign.
+%    \begin{macrocode}
+\RequirePackage{eurofont}
+%    \end{macrocode}
+%
+%    Load the enumitem package, which is used later to change indents on the enumerate list for publication references.
+%    \begin{macrocode}
+\RequirePackage{enumitem}
+%    \end{macrocode}
+%
+%    Load the xcolor and hyperref packages to allow painting URLs in publication references.
+%    \begin{macrocode}
+\RequirePackage[x11names]{xcolor}
+\RequirePackage[colorlinks,%
+                linkcolor=Brown4,%
+                citecolor=SeaGreen4,%
+                urlcolor=RoyalBlue3,%
+                pdftex
+               ]{hyperref}
+%    \end{macrocode}
+%
+%
+% \subsubsection{Misc Settings}
+%
+%    Configure moderncv to use the classic layout.
+%    \begin{macrocode}
+\moderncvtheme{classic}
+%    \end{macrocode}
+%
+%    Some definitions for list symbols.
+%    \begin{macrocode}
+\newcommand{\up}[1]{\ensuremath{^\textrm{\scriptsize#1}}}
+\renewcommand{\listitemsymbol}{\textendash}
+%    \end{macrocode}
+%
+%    Define a new heading for BibLaTeX doing nothing, we want to set headings manually in the CV.
+%    \begin{macrocode}
+\defbibheading{None}{}
+%    \end{macrocode}
+%
+% \subsection{Macros}
+%
+%    \DescribeMacro{\skbcvrefplain}
+%    This macro prints a list of references without any labels. It expects a list of citation references, and empty list is valid and 
+%    and will result in an empty reference list. The macro defines a new environment for the BibTeX list adding an indent to the list
+%    using moderncv counters. \cmd{\hintscolumnwidth} is the left column of an entry and \cmd{\separatorcolumnwidth} is the middle column
+%    providing a spacer between left and right.
+%
+%    With the new environment defined, the macro then opens a new refsgment (BibLaTeX) to group all references without impacting the overall
+%    reference list. It uses \cmd{\nocite} to mark all references as being used without printing them, and then \cmd{\printbibliography} for
+%    printing the list. The options here are:
+%    \begin{skbnotelist}
+%      \item heading - refers to the new heading we have defined earlier, called None.
+%      \item segment - points to the current refsegment, so only references used here will be part of the list.
+%      \item maxnames - the maximum names shown per entry, we want to see as many as possible.
+%      \item minnames - the minimum names shown per entry, we want to see as many as possible.
+%    \end{skbnotelist}
+%    \begin{macrocode}
+\newcommand{\skbcvrefplain}[1]{%
+  \defbibenvironment{bibliography}
+    {\list{}{%
+       \setlength{\parindent}{\hintscolumnwidth}
+       \addtolength{\parindent}{\separatorcolumnwidth}
+       \leftmargin\parindent
+       \setlength{\parindent}{0pt}
+       \itemindent\parindent
+       \itemsep\bibitemsep
+       \parsep\bibparsep
+    }}
+    {\endlist}
+    {\item}
+
+  \begin{refsegment}
+    \nocite{#1}
+    \printbibliography[heading=None,segment=\therefsegment,maxnames=20,minnames=20]
+  \end{refsegment}
+}
+%    \end{macrocode}
+%
+%    \DescribeMacro{\skbcvrefenum}
+%    This macro prints a list of references as an enumerated list, which helps to see how many entries a list has and also makes it
+%    easier to read the list in the final CV. It expects a list of citation references, and empty list is valid and 
+%    and will result in an empty reference list. The macro defines a new environment for the BibTeX list using an enumerate environment, which 
+%    was of course alreadt changed loading the enumitem package. First, we calculate the length for \cmd{\parindent} by setting it to \cmd{hintscolumnwidth},
+%    addint \cmd{separatorcolumnwidth} and finally adding another 1pt to it. This will make the items of the enumeration list appear within the left column of 
+%    the CV. We then apply a few options to the enumerate environment:
+%    \begin{skbnotelist}
+%      \item leftmargin - set to the newly calculate \cmd{\parindent}.
+%      \item labelsep - set to the spacer defined in moderncv \cmd{\separatorcolumnwidth}.
+%      \item label - set to use arabic numbers without any trailing full stop.
+%      \item noitemsep - no vertical separation between items, we want a small list.
+%      \item topsep - finally add a top separator for the items of 1pt.
+%    \end{skbnotelist}
+%    To reset \cmd{\parindent}, we set it back to 0pt once the enumerate environment is closed.
+%
+%    With the new environment defined, the macro then opens a new refsgment (BibLaTeX) to group all references without impacting the overall
+%    reference list. It uses \cmd{\nocite} to mark all references as being used without printing them, and then \cmd{\printbibliography} for
+%    printing the list. The options here are:
+%    \begin{skbnotelist}
+%      \item heading - refers to the new heading we have defined earlier, called None.
+%      \item segment - points to the current refsegment, so only references used here will be part of the list.
+%      \item maxnames - the maximum names shown per entry, we want to see as many as possible.
+%      \item minnames - the minimum names shown per entry, we want to see as many as possible.
+%    \end{skbnotelist}
+%    \begin{macrocode}
+\newcommand{\skbcvrefenum}[1]{%
+  \defbibenvironment{bibliography}
+    {\setlength{\parindent}{\hintscolumnwidth}
+     \addtolength{\parindent}{\separatorcolumnwidth}
+     \addtolength{\parindent}{1pt}
+     \begin{enumerate}[leftmargin=\parindent,labelsep=\separatorcolumnwidth,label*=\arabic*,noitemsep,topsep=1pt]{%
+    }}
+    {\end{enumerate}%
+     \setlength{\parindent}{0pt}
+    }
+    {\item}
+
+  \begin{refsegment}
+    \nocite{#1}
+    \printbibliography[heading=None,segment=\therefsegment,maxnames=20,minnames=20]
+  \end{refsegment}
+}
+%    \end{macrocode}
+%
+%
+%    There is no code for \cmd{\AtBeginDocument} and \cmd{\AtEndDocument}, so we are done now.
+%    \begin{macrocode}
+%</skbmoderncv>
 %    \end{macrocode}
 %
 %
@@ -2538,7 +2716,7 @@
 %\end{skbnotelist}
 %
 %
-%\subsection{v0.5 from 04-Aug-2010}
+%\subsection{v0.51 from 12-May-2011}
 %
 %\begin{skbnotelist}
 %  \item worked on the documentation, lots of changes
@@ -2551,7 +2729,8 @@
 %        configuration changes for bib/bibfile have no effect
 %  \item changed load mechanism for the user guide, due to bibtex load problems
 %  \item changed the two skbnote environments (list/enum), removed unnecessary temp storage
-%  \item \textbf{changed default acronym file name to acronyms, note the added 's'}
+%  \item changed default acronym file name to acronyms, note the added 's'
+%  \item added skbmoderncv class using the moderncv package and adding some macros for reference lists using biblatex
 %\end{skbnotelist}
 %
 %
