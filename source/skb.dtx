@@ -77,7 +77,7 @@
 %
 %\author{Sven van der Meer}
 %
-%\date{2011-05-12 v0.51}
+%\date{2011-06-03 v0.52}
 %
 %\maketitle
 %
@@ -127,7 +127,7 @@
 %    \begin{macrocode}
 %<*skbpackage>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{skb}[2011/05/12 Sven's Knowledge Base - SKB for LaTeX v0.51]
+\ProvidesPackage{skb}[2011/06/03 Sven's Knowledge Base - SKB for LaTeX v0.52]
 %    \end{macrocode}
 %
 %    Next we process the package's options. To do that, we define a new if 
@@ -1539,7 +1539,7 @@
 %    \begin{macrocode}
 %<*skbarticle>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{skbarticle}[2011/05/12 The SKB Article class v0.51]
+\ProvidesClass{skbarticle}[2011/06/03 The SKB Article class v0.52]
 %    \end{macrocode}
 %
 %    Now we load the memoir class with the following options:
@@ -1701,7 +1701,7 @@
 %    \begin{macrocode}
 %<*skbbook>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{skbbook}[2011/05/12 The SKB Book class v0.51]
+\ProvidesClass{skbbook}[2011/06/03 The SKB Book class v0.52]
 %    \end{macrocode}
 %
 %    Now we load the memoir class with the following options:
@@ -1871,7 +1871,7 @@
 %    \begin{macrocode}
 %<*skbbeamer>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{skbbeamer}[2011/05/12 The SKB Beamer class v0.51]
+\ProvidesClass{skbbeamer}[2011/06/03 The SKB Beamer class v0.52]
 \DeclareOption{beameranim}{\PassOptionsToPackage{\CurrentOption}{skb}}
 \DeclareOption{beamernoanim}{\PassOptionsToPackage{\CurrentOption}{skb}}
 \ProcessOptions\relax
@@ -1965,7 +1965,7 @@
 %    \begin{macrocode}
 %<*skblncsbeamer>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{skblncsbeamer}[2011/05/12 The SKB LNCS Beamer class v0.51]
+\ProvidesClass{skblncsbeamer}[2011/06/03 The SKB LNCS Beamer class v0.52]
 %    \end{macrocode}
 %
 %    Just in case there is no \cmd{\titlepage} declared, the beamerarticle wants that.
@@ -2158,7 +2158,7 @@
 %    \begin{macrocode}
 %<*skblncsppt>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{skblncsppt}[2011/05/12 The SKB LNCS PPT class v0.51]
+\ProvidesClass{skblncsppt}[2011/06/03 The SKB LNCS PPT class v0.52]
 %    \end{macrocode}
 %
 %    Now we load the memoir class with the following options:
@@ -2345,7 +2345,7 @@
 %    \begin{macrocode}
 %<*skbmoderncv>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{skbmoderncv}[2011/05/12 The SKB Modern CV class v0.51]
+\ProvidesClass{skbmoderncv}[2011/06/03 The SKB Modern CV class v0.52]
 %    \end{macrocode}
 %
 %    Now we load the moderncv package. By default we use an 11 point font and A4 paper. Once can change these
@@ -2731,6 +2731,14 @@
 %  \item changed the two skbnote environments (list/enum), removed unnecessary temp storage
 %  \item changed default acronym file name to acronyms, note the added 's'
 %  \item added skbmoderncv class using the moderncv package and adding some macros for reference lists using biblatex
+%\end{skbnotelist}
+%
+%
+%\subsection{v0.52 from 03-Jun-2011}
+%
+%\begin{skbnotelist}
+%  \item changed directory and package structure to be CTAN conform
+%  \item re-worked README to reflect new package structure, and added information on generating files from the source
 %\end{skbnotelist}
 %
 %
