@@ -1,3 +1,7 @@
+2011/06/03 v0.52
+- changed directory and package structure to be CTAN conform
+- re-worked README to reflect new package structure, and added information on generating files from the source
+
 2011/05/12 v0.51
 - worked on the documentation, lots of changes
 - fixed a typo in skb.cfg, which made the bibliography file unloadable
