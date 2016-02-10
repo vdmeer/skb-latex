@@ -138,14 +138,14 @@
 %
 % \subsection{Required Packages}
 %    Now we load a few packages that we need within the \skbacft{A3DS:SKB}:
-%    \begin{itemize}
-%        \item keyval to allow for options in macros,
-%        \item the listings package for all listings,
-%        \item dirtree to show tree structures similar to a directory tree,
-%        \item ifpdf to establish whether we use \skbacft{ISO:PDF} or not,
-%        \item datetime to get the current date, and
-%        \item the versions package to allow for optional text.
-%    \end{itemize}
+%    \begin{skbnotelist}
+%        \item \skbem[code]{keyval} to allow for options in macros,
+%        \item \skbem[code]{listings} for all listings,
+%        \item \skbem[code]{dirtree} to show tree structures similar to a directory tree,
+%        \item \skbem[code]{ifpdf} to establish whether we use \skbacft{ISO:PDF} or not,
+%        \item \skbem[code]{datetime} to get the current date, and
+%        \item \skbem[code]{versions} to allow for optional text.
+%    \end{skbnotelist}
 %    Note: some packages, such as the package optional, are loaded at a later stage.
 %    \begin{macrocode}
 \RequirePackage{keyval}
@@ -159,26 +159,26 @@
 % \subsection{Conditional/Optional Text Support}
 %    Now we set everything that we need to provide optional text.
 %    Basically, we want to distinguish between the following modes:
-%    \begin{itemize}
+%    \begin{skbnotelist}
 %        \item text (normal text),
 %        \item slide (for slides),
 %        \item note (for slite annotations),
 %        \item anim (for animated slides,
 %        \item noanim (for non-animated slides), and
 %        \item memoir (if we use the memoir package).
-%    \end{itemize}
+%    \end{skbnotelist}
 %
 %    We start with the memoir package.
-%    First we define a configuration value (used when loading the package optional) and a new if (telling us later if memoir is loaded or not).
+%    First we define a configuration value (used when loading the package optional) and a new if (telling us later if \skbem[code]{memoir} is loaded or not).
 %    \begin{macrocode}
 \def\skb@cfg@memoir{}
 \newif\ifSkbMemoirLoaded
 %    \end{macrocode}
 %
-%    Now we test for the memoir package.
+%    Now we test for the \skbem[code]{memoir} package.
 %    Note, if this package is loaded after the \skbacft{A3DS:SKB}, this test and all following actions will fail.
-%    If the package is loaded, then we set the if to true, activate (include) the environment skbmodememoir and set our configuration value to the string ", memoir".
-%    If the memoir package is not loaded, then we set the if to false, deactivate (exclude) the environment skbmodememoir and load the package booktabs (to provide the commands \cmd{\toprule} and \cmd{\bottomrule}.
+%    If the package is loaded, then we set the if to true, activate (include) the environment \skbem[code]{skbmodememoir} and set our configuration value to the string ``, memoir''.
+%    If the \skbem[code]{memoir} package is not loaded, then we set the if to false, deactivate (exclude) the environment \skbem[code]{skbmodememoir} and load the package \skbem[code]{booktabs} (to provide the commands \cmd{\toprule} and \cmd{\bottomrule}.
 %    \begin{macrocode}
 \@ifclassloaded{memoir}
   {\SkbMemoirLoadedtrue
@@ -189,15 +189,15 @@
    \RequirePackage{booktabs}}
 %    \end{macrocode}
 %
-%    Now we check for the style beamerarticle.
-%     We define an if, set its default value to false and test for of the package is loaded (if so, we change the if to true).
+%    Now we check for the style \skbem[code]{beamerarticle}.
+%    We define an if, set its default value to false and test for of the package is loaded (if so, we change the if to true).
 %    \begin{macrocode}
 \newif\ifSkbBeamerArticleLoaded
 \SkbBeamerArticleLoadedfalse
 \@ifpackageloaded{beamerarticle}{\SkbBeamerArticleLoadedtrue}{}
 %    \end{macrocode}
 %
-%    Now we check for the beamer package.
+%    Now we check for the \skbem[code]{beamer} package.
 %    We define an if, set its default value to false and test for of the package is loaded (if so, we change the if to true).
 %    \begin{macrocode}
 \newif\ifSkbBeamerLoaded
@@ -207,8 +207,8 @@
 %
 %    Now we process the first optional text support.
 %    First, we define a configuration value for beamer animations.
-%    If animations are requested (skb package option, see above), we set that value to the string ",anim" and activate (include) the environment skbmodeanim and deactivate (exclude) the environment skbmodenoanim.
-%    If no-animation is requested (skb package option, see above) or as default we set the value to the string ",noanim" and deactivate (exclude) the environment skbmodeanim and activate (include) the environment skbmodenoanim.
+%    If animations are requested (skb package option, see above), we set that value to the string ``,anim'' and activate (include) the environment \skbem[code]{skbmodeanim} and deactivate (exclude) the environment \skbem[code]{skbmodenoanim}.
+%    If no animation is requested (skb package option, see above) or as default we set the value to the string ``,noanim'' and deactivate (exclude) the environment \skbem[code]{skbmodeanim} and activate (include) the environment \skbem[code]{skbmodenoanim}.
 %    \begin{macrocode}
 \def\skb@cfg@beameranim{}
 \if@skbBeamerAnim
@@ -223,7 +223,7 @@
 %    \end{macrocode}
 %
 %    Now we are ready to provide for all other optional text support.
-%    The code configures the environments skbmodetext, skbmodenote and skbmodeslide and loads the optional package depending if we have the beamer package loaded or have the package beamerarticle loaded or have none of the two packages loaded.
+%    The code configures the environments \skbem[code]{skbmodetext}, \skbem[code]{skbmodenote}, and \skbem[code]{skbmodeslide} and loads the optional package depending if we have the \skbem[code]{beamer} package loaded or have the package \skbem[code]{beamerarticle} loaded or have none of the two packages loaded.
 %    The environments (package versions) are excluded or included accordingly. The package optional is loaded with the respective option activated (text, note or slide) and using the two configuration values we have defined above (these values are either empty having no effect or contain the option to be included).
 %    \begin{macrocode}
 \ifSkbBeamerLoaded
@@ -250,7 +250,7 @@
 %    \DescribeMacro{\DescribeMacro}
 %    \DescribeMacro{\cmdprint}
 %    \DescribeMacro{\cmd}
-%    The \skbacft{A3DS:SKB} provides for a few commands that the documentation (and maybe your documents as well) expect to be available. The first two are for typesetting SKB and BibTeX, the rest are simply usefull.
+%    The \skbacft{A3DS:SKB} provides for a few commands that the documentation (and maybe your documents as well) expect to be available. The first two are for typesetting SKB and \BibTeX, the rest are simply usefull.
 %    \begin{macrocode}
 \providecommand{\BibTeX}{{\scshape Bib}\TeX}
 \providecommand{\DescribeMacro}[1]{\relax}
@@ -270,8 +270,7 @@
 %
 % \subsection{At End of Document}
 %    Last not least, we define what should happen at the end of the processing of the input document.
-%    At them moment, we call \cmd{\skbpdfinfo} to set \skbacft{ISO:PDF} meta information and \cmd{\skboptionsused} to print out the change log and current set of \skbacft{A3DS:SKB} configuration 
-%    options.
+%    At them moment, we call \cmd{\skbpdfinfo} to set \skbacft{ISO:PDF} meta information and \cmd{\skboptionsused} to print out the change log and current set of \skbacft{A3DS:SKB} configuration options.
 %    \begin{macrocode}
 \AtEndDocument{
   \skbpdfinfo
@@ -298,12 +297,12 @@
 %    \DescribeMacro{\skb@cfg@origlast}
 %    Is used to store the last location (second argument of \cmd{\skbconfig}) were any configuration information has been changed.
 %    The currently possible locations are:
-%    \begin{itemize}
+%    \begin{skbnotelist}
 %        \item \skbem[code]{skb.sty} for default values,
 %        \item \skbem[code]{skb.cfg} for the general configuration file,
 %        \item \skbem[code]{skblocal.cfg} for the local configuration file,
 %        \item and \skbem[code]{skbconfig} when the macro \cmd{\skbconfig} was called.
-%    \end{itemize}
+%    \end{skbnotelist}
 %    \begin{macrocode}
 \newcommand{\skb@cfg@origlast}{skb.sty}
 %    \end{macrocode}
@@ -355,10 +354,10 @@
 %    \DescribeMacro{\skb@cfg@var@acr}
 %    \DescribeMacro{\skb@cfg@var@acrfile}
 %    These two values define the directory and the file name for the acronym database:
-%    \begin{itemize}
+%    \begin{skbnotelist}
 %        \item \skbacft{A3DS:SKB} uses the \skbem[code]{acronym} package and the two macros detail the directory (\skbem[code]{acr})
 %        \item the file (\skbem[code]{acrfile}) where the acronyms can be found.
-%    \end{itemize}
+%    \end{skbnotelist}
 %    The default for the directory is \skbem[code]{database/latex} and the default for the file is \skbem[code]{acronym}.
 %    \begin{macrocode}
 \skb@defCfgVars{acr}{database/latex}
@@ -432,25 +431,25 @@
 %    This is the actual core functionality of the \skbacft{A3DS:SKB} package: flexibly load files from various pre-defined locations (folders). We start with a few macros that we can use later to test options using the package keyval.
 %
 %    \DescribeMacro{\skb@input@var@rep}
-%    This macro represents the string "rep", which will be later used to test for macro options, for instance in \cmd{\skbinput}.
+%    This macro represents the string ``rep'', which will be later used to test for macro options, for instance in \cmd{\skbinput}.
 %    \begin{macrocode}
 \def\skb@input@var@rep{rep}
 %    \end{macrocode}
 %
 %    \DescribeMacro{\skb@input@var@pub}
-%    This macro represents the string "pub", which will be later used to test for macro options, for instance in \cmd{\skbinput}.
+%    This macro represents the string ``pub'', which will be later used to test for macro options, for instance in \cmd{\skbinput}.
 %    \begin{macrocode}
 \def\skb@input@var@pub{pub}
 %    \end{macrocode}
 %
 %    \DescribeMacro{\skb@input@var@fig}
-%    This macro represents the string "fig", which will be later used to test for macro options, for instance in \cmd{\skbinput}.
+%    This macro represents the string ``fig'', which will be later used to test for macro options, for instance in \cmd{\skbinput}.
 %    \begin{macrocode}
 \def\skb@input@var@fig{fig}
 %    \end{macrocode}
 %
 %    \DescribeMacro{\skb@input@var@sli}
-%    This macro represents the string "sli", which will be later used to test for macro options, for instance in \cmd{\skbinput}.
+%    This macro represents the string ``sli'', which will be later used to test for macro options, for instance in \cmd{\skbinput}.
 %    \begin{macrocode}
 \def\skb@input@var@sli{sli}
 %    \end{macrocode}
@@ -459,10 +458,10 @@
 %    All of them behave identical: they expect argument 1 being the reuqest file and use \cmd{\InputIfFileExists} to check whether this file exists.
 %    If so, they simply input the file using \cmd{\input}.
 %    If not, they use \cmd{\PackageError} to throw an error with a help message, showing the requested directory and file.
-%    The extention .tex is automatically added to the argument, which in turn should only contain the path and the basename of the file.
+%    The extention \skbem[code]{.tex} is automatically added to the argument, which in turn should only contain the path and the basename of the file.
 %
 %    \DescribeMacro{\skb@input@doroot}
-%    Load a given .tex file from the root directory.
+%    Load a given \skbem[code]{.tex} file from the root directory.
 %    \begin{macrocode}
 \newcommand{\skb@input@doroot}[1]{%
   \def\intarg{#1}
@@ -471,7 +470,7 @@
 %    \end{macrocode}
 %
 %    \DescribeMacro{\skb@input@dorep}
-%    Load a given .tex file from the repository.
+%    Load a given \skbem[code]{.tex} file from the repository.
 %    \begin{macrocode}
 \newcommand{\skb@input@dorep}[1]{%
   \def\intarg{#1}
@@ -480,7 +479,7 @@
 %    \end{macrocode}
 %
 %    \DescribeMacro{\skb@input@dopub}
-%    Load a given .tex file from the directory with the published documents.
+%    Load a given \skbem[code]{.tex} file from the directory with the published documents.
 %    \begin{macrocode}
 \newcommand{\skb@input@dopub}[1]{%
   \def\intarg{#1}
@@ -489,7 +488,7 @@
 %    \end{macrocode}
 %
 %    \DescribeMacro{\skb@input@dofig}
-%    Load a given .tex file from the figure directory.
+%    Load a given \skbem[code]{.tex} file from the figure directory.
 %    \begin{macrocode}
 \newcommand{\skb@input@dofig}[1]{%
   \def\intarg{#1}
@@ -498,7 +497,7 @@
 %    \end{macrocode}
 %
 %    \DescribeMacro{\skb@input@dosli}
-%    Load a given .tex file from the slide directory.
+%    Load a given \skbem[code]{.tex} file from the slide directory.
 %    \begin{macrocode}
 \newcommand{\skb@input@dosli}[1]{%
   \def\intarg{#1}
@@ -523,8 +522,9 @@
 %  \section{Implementation: Configuring the \skbacft{A3DS:SKB}}
 %    \subsection{Changing Configuration: skbconfig}
 %      \subsubsection{The Macro Options}
-%        The macro provides one option per \skbacft{A3DS:SKB} configuration value. Each option expects one parameter; the new value. The options are
-%        \begin{itemize}
+%        The macro provides one option per \skbacft{A3DS:SKB} configuration value. Each option expects one parameter; the new value.
+%        The options are
+%        \begin{skbnotelist}
 %            \item \skbem[code]{root} (for the root directory),
 %            \item \skbem[code]{acr} (for the acronym directory),
 %            \item \skbem[code]{acrfile} (for the acronym file),
@@ -533,7 +533,7 @@
 %            \item \skbem[code]{rep} (for the repository directory),
 %            \item \skbem[code]{pub} (for the directory with the published documents), and
 %            \item \skbem[code]{sli} (for the directory with slides).
-%        \end{itemize}
+%        \end{skbnotelist}
 %    \begin{macrocode}
 \define@key{skbconfig}{root}[]{\skb@setCfgVars{root}{#1}}
 \define@key{skbconfig}{acr}[]{\skb@setCfgVars{acr}{#1}}
@@ -556,7 +556,7 @@
 \newcommand{\skbconfig}[2][]{
   \def\intarg{#2}
 %    \end{macrocode}
-%        If no second argument is given, then set \cmd{\skb@cfg@origlast} to the string "skbconfig" (this macro's name) otherwise use the second argument to set \cmd{\skb@cfg@origlast}.
+%        If no second argument is given, then set \cmd{\skb@cfg@origlast} to the string ``skbconfig'' (this macro's name) otherwise use the second argument to set \cmd{\skb@cfg@origlast}.
 %        In both cases, print out a general warning about the change of configuration values for later trace or debugging.
 %    \begin{macrocode}
   \ifx\intarg\empty
@@ -644,14 +644,14 @@
 %
 %    \subsection{Loading \TeX~files: skbinput}
 %      \subsubsection{Macro Options}
-%      \DescribeMacro{skbinput: opt from}
+%      \DescribeMacro{skbinput opt from}
 %        The option \skbem[code]{from} is used to point to one of the following \skbacft{A3DS:SKB} directories:
-%        \begin{itemize}
+%        \begin{skbnotelist}
 %            \item the repository (\skbem[code]{from=rep}),
 %            \item the folder with the published documents (\skbem[code]{from=pub}),
 %            \item the figure folder (\skbem[code]{from=fig}), or
 %            \item the slide folder (\skbem[code]{from=sli}).
-%        \end{itemize}
+%        \end{skbnotelist}
 %        The option is optional, but when used must give one of the those values.
 %        The \skbacft{A3DS:SKB} will throw an error otherwise.
 %        The implementation works as follows: if the option is used, its parameter is evaluated.
@@ -678,28 +678,26 @@
 }
 %    \end{macrocode}
 %
-%      \DescribeMacro{skbinput: opt level}
+%      \DescribeMacro{skbinput opt level}
 %      The option \skbem[code]{level} is used to define the document level to be used for the next occurance of \cmd{\skbheading}.
-%      Supported are all document levels known to \LaTeX~and no check is done whether the currently 
-%      used document class supports them or not (for instance, the article class 
-%      does not support the document level chapter, however, memoir supports it even
-%      in article mode).
+%      Supported are all document levels known to \LaTeX~and no check is done whether the currently used document class supports them or not (for  instance, the article class does not support the document level chapter, however, \skbem[code]{memoir} supports it even in article mode).
 %      The supported parameters for this option are:
-%      \begin{itemize}
-%          \item \skbem[code]{book} (memoir pacakge),
-%          \item \skbem[code]{part} (memoir pacakge),
+%      \begin{skbnotelist}
+%          \item \skbem[code]{book} (\skbem[code]{memoir} pacakge),
+%          \item \skbem[code]{part} (\skbem[code]{memoir} pacakge),
 %          \item \skbem[code]{title} (base \LaTeX~classes),
 %          \item \skbem[code]{chapter} (\LaTeX~book class),
 %          \item \skbem[code]{section} (base \LaTeX~classes),
 %          \item \skbem[code]{subsection} (base \LaTeX~classes), and
 %          \item \skbem[code]{subsubsection} (base \LaTeX~classes).
-%      \end{itemize}
+%      \end{skbnotelist}
 %
 %      The option is optional, but when used must give one of the above described values.
 %      The package will throw an error otherwise.
 %
 %      We start be defining the macros we use later for testing the option.
-%      This might be a slightly awkward way to do it, I am still looking into optimizing this code. Anyway, we define everything we need for book, part, title, chapter, section, subsection and subsubsection.
+%      This might be a slightly awkward way to do it, I am still looking into optimizing this code.
+%      Anyway, we define everything we need for \cmd{\book}, \cmd{\part}, \cmd{\title}, \cmd{\chapter}, \cmd{\section}, \cmd{\subsection}, and \cmd{\subsubsection}.
 %    \begin{macrocode}
 \def\skb@inputLevelBook{book}
 \def\skb@inputLevelPart{part}
@@ -717,7 +715,7 @@
 %    \end{macrocode}
 %
 %      And here is the actual definition of the option \skbem[code]{level}.
-%      For each supported parameter (introduced and defined above) we test if it was provided calling the option (put into \cmd{\\intarg} on start) and if so we point \cmd{\skb@inputLevel} to the \LaTeX~macro realizing that document level.
+%      For each supported parameter (introduced and defined above) we test if it was provided calling the option (put into \cmd{\intarg} on start) and if so we point \cmd{\skb@inputLevel} to the \LaTeX~macro realizing that document level.
 %      For instance, if the requested level is subsection we point \cmd{\skb@inputLevel} to the \LaTeX~macro \cmd{\subsection}.
 %      That means we can later simply call \cmd{\skb@inputLevel} to instruct \LaTeX~to realize the requested document level.
 %      In case the parameter is not supported, the option will throw an error along with a help message.
@@ -751,10 +749,10 @@
 %
 %      \subsubsection{The Macro}
 %      \DescribeMacro{\skbinput}
-%       This macro will load a .tex file from the root directory or from an \skbacft{A3DS:SKB} known directory (if option \skbem[code]{from} is applied).
+%       This macro will load a \skbem[code]{.tex} file from the root directory or from an \skbacft{A3DS:SKB} known directory (if option \skbem[code]{from} is applied).
 %       It will also configure the document level macro for the next use of \cmd{\skbheading}, if the option \skbem[code]{level} is applied.
 %       If \skbem[code]{level} is not used, then \cmd{\skbheading} will have no effect. The macro first sets the input level to be empty (\cmd{\skb@input@set}) and the input macro to the default value (\cmd{\skb@input@set}).
-%       The it processes the options (using the keyval pacakge) and finally calls \cmd{\skb@input@call} to realise the load of the requested file.
+%       The it processes the options (using the \skbem[code]{keyval} package) and finally calls \cmd{\skb@input@call} to realize the load of the requested file.
 %    \begin{macrocode}
 \newcommand\skbinput[2][]{%
   \skb@input@set
@@ -802,7 +800,7 @@
 %      This way we can test these corresponding macros for being empty (default) or not and then decide how to process the figure input.
 %
 %      \DescribeMacro{skbfigure opt width}
-%      The first one is called \skbem[code]{width} used  for the width of \cmd{\resizebox} and \cmd{includegraphics}.
+%      The first one is called \skbem[code]{width} used  for the width of \cmd{\resizebox} and \cmd{\includegraphics}.
 %    \begin{macrocode}
 \define@key{skbfigures}{width}[]{%
   \gdef\skb@FigureOptWidth{#1}
@@ -810,7 +808,7 @@
 %    \end{macrocode}
 %
 %      \DescribeMacro{skbfigure opt height}
-%      The option height is used  for the height of \cmd{\resizebox} and \cmd{includegraphics}.
+%      The option \skbem[code]{height} is used  for the height of \cmd{\resizebox} and \cmd{\includegraphics}.
 %    \begin{macrocode}
 \define@key{skbfigures}{height}[]{%
   \gdef\skb@FigureOptHeight{#1}
@@ -818,7 +816,7 @@
 %    \end{macrocode}
 %
 %      \DescribeMacro{skbfigure opt center}
-%      The option center is used to trigger the center environment (so it only needs to set true).
+%      The option \skbem[code]{center} is used to trigger the center environment (so it only needs to set true).
 %    \begin{macrocode}
 \define@key{skbfigures}{center}[true]{%
   \gdef\skb@FigureOptCenter{true}
@@ -826,7 +824,7 @@
 %    \end{macrocode}
 %
 %      \DescribeMacro{skbfigure opt figure}
-%      The option figure is used to trigger the figure environment (so it only needs to set true).
+%      The option \skbem[code]{figure} is used to trigger the figure environment (so it only needs to set true).
 %    \begin{macrocode}
 \define@key{skbfigures}{figure}[true]{%
   \gdef\skb@FigureOptFigure{true}
@@ -834,7 +832,7 @@
 %    \end{macrocode}
 %
 %      \DescribeMacro{skbfigure opt position}
-%      The option position is used to fix the position when figure environment is used.
+%      The option \skbem[code]{position} is used to fix the position when figure environment is used.
 %    \begin{macrocode}
 \define@key{skbfigures}{position}[]{%
   \gdef\skb@FigureOptPosition{\begin{figure}[#1]}
@@ -842,7 +840,7 @@
 %    \end{macrocode}
 %
 %      \DescribeMacro{skbfigure opt caption}
-%      The option caption is used to define the caption of the figure used as \cmd{\caption}.
+%      The option \skbem[code]{caption} is used to define the caption of the figure used as \cmd{\caption}.
 %    \begin{macrocode}
 \define@key{skbfigures}{caption}[]{%
   \gdef\skb@FigureOptCaption{#1}
@@ -850,9 +848,9 @@
 %    \end{macrocode}
 %
 %      \DescribeMacro{skbfigure opt captionlong}
-%      The option captionlong extends the option caption.
-%      If caoption and captionlong are present, then caption will be used as short option and captionlong will be used as long caption.
-%      This is using the cpation as \cmd{\caption[short]{long}}.
+%      The option \skbem[code]{captionlong} extends the option \skbem[code]{caption}.
+%      If \skbem[code]{caption} and \skbem[code]{captionlong} are present, then \skbem[code]{caption} will be used as short option and \skbem[code]{captionlong} will be used as long caption.
+%      This is using the caption as \cmd{\caption[short]{long}}.
 %    \begin{macrocode}
 \define@key{skbfigures}{captionlong}[]{%
   \gdef\skb@FigureOptCaptionLong{#1}
@@ -860,7 +858,7 @@
 %    \end{macrocode}
 %
 %      \DescribeMacro{skbfigure opt label}
-%      The option label is used to define the label of the figure used as \cmd{\label}.
+%      The option \skbem[code]{label} is used to define the label of the figure used as \cmd{\label}.
 %    \begin{macrocode}
 \define@key{skbfigures}{label}[]{%
   \gdef\skb@FigureOptLabel{\label{fig:#1}}
@@ -868,7 +866,7 @@
 %    \end{macrocode}
 %
 %      \DescribeMacro{skbfigure opt multiinclude}
-%      The option multiinclude is a special option to use \cmd{\multiinclude}, automatically deactivates all other options.
+%      The option \skbem[code]{multiinclude} is a special option to use \cmd{\multiinclude}, automatically deactivates all other options.
 %    \begin{macrocode}
 \define@key{skbfigures}{multiinclude}[]{%
   \gdef\skb@FigureOptMultiinclide{#1}
@@ -878,12 +876,12 @@
 %
 %      \subsubsection{The Macro}
 %        \DescribeMacro{\skbfigure}
-%        \cmd{\skbfigure} itself expects options (processed using keyval) and the actual file to be included.
+%        \cmd{\skbfigure} itself expects options (processed using \skbem[code]{keyval}) and the actual file to be included.
 %        The file name should start at the figure root directory.
 %    \begin{macrocode}
 \newcommand{\skbfigure}[2][]{
 %    \end{macrocode}
-%    First, we call our reset function and then use keyval to process the options.
+%    First, we call our reset function and then use \skbem[code]{keyval} to process the options.
 %    \begin{macrocode}
   \skb@figureOptReset
   \setkeys{skbfigures}{#1}%
@@ -910,7 +908,7 @@
 %    \end{macrocode}
 %        The core of the macro.
 %        If the option multiinclude was not used, we proceed load the figure as we would usually do with \LaTeX.
-%        If multiinclude was used, then we simply call \cmd{\multiinclude} with the given overlay information, starting at number 0, using \skbacft{ISO:PDF} format and scaling everything to \cmd{\textwidth}.
+%        If the option \skbem[code]{multiinclude} was used, then we simply call \cmd{\multiinclude} with the given overlay information, starting at number 0, using \skbacft{ISO:PDF} format and scaling everything to \cmd{\textwidth}.
 %    \begin{macrocode}
   \ifx\skb@FigureOptMultiinclide\empty
     \ifx\skb@FigureOptWidth\empty
@@ -944,7 +942,7 @@
     {\skbfilefig{#2}}}
   \fi
 %    \end{macrocode}
-%        If we did use the figure environment, then we check for given caption, captionlong and label.
+%        If we did use the figure environment, then we check for given \skbem[code]{caption}, \skbem[code]{captionlong}, and \skbem[code]{label} options.
 %    \begin{macrocode}
   \ifx\skb@FigureOptFigure\empty\else%
     \ifx\skb@FigureOptCaption\empty\else%
@@ -987,11 +985,11 @@
 %      \subsubsection{Macro Options}
 %        \DescribeMacro{\skbslide opt slidefrom}
 %        The option \skbem[code]{slidefrom} is used to point to one of the following \skbacft{A3DS:SKB} directories:
-%        \begin{itemize}
+%        \begin{skbnotelist}
 %          \item \skbem[code]{sli} (the folder for slides) or
 %          \item \skbem[code]{pub} (the folder for published documents), or
 %          \item \skbem[code]{rep} (the repository directory).
-%        \end{itemize}
+%        \end{skbnotelist}
 %        The option is optional, but when used must give one of the above described values.
 %        The \skbacft{A3DS:SKB} will throw an error otherwise.
 %    \begin{macrocode}
@@ -1015,11 +1013,11 @@
 %
 %        \DescribeMacro{\skbslide opt notefrom}
 %        The option \skbem[code]{notefrom} is used to point to one of the following \skbacft{A3DS:SKB} directories:
-%        \begin{itemize}
+%        \begin{skbnotelist}
 %          \item \skbem[code]{sli} (the folder for slides) or
 %          \item \skbem[code]{pub} (the folder for published documents), or
 %          \item \skbem[code]{rep} (the repository directory).
-%        \end{itemize}
+%        \end{skbnotelist}
 %        The option is optional, but when used must give one of the above described values.
 %        The \skbacft{A3DS:SKB} will throw an error otherwise.
 %    \begin{macrocode}
@@ -2378,7 +2376,7 @@
 %    \DescribeMacro{\skbcvrefplain}
 %    This macro prints a list of references without any labels.
 %    It expects a list of citation references, and empty list is valid and and will result in an empty reference list.
-%    The macro defines a new environment for the BibTeX list adding an indent to the list using moderncv counters.
+%    The macro defines a new environment for the \BibTeX list adding an indent to the list using moderncv counters.
 %    \cmd{\hintscolumnwidth} is the left column of an entry and \cmd{\separatorcolumnwidth} is the middle column providing a spacer between left and right.
 %
 %    With the new environment defined, the macro then opens a new refsgment (BibLaTeX) to group all references without impacting the overall reference list.
@@ -2414,7 +2412,7 @@
 %    \DescribeMacro{\skbcvrefenum}
 %    This macro prints a list of references as an enumerated list, which helps to see how many entries a list has and also makes it easier to read the list in the final CV.
 %    It expects a list of citation references, and empty list is valid and and will result in an empty reference list.
-%    The macro defines a new environment for the BibTeX list using an enumerate environment, which was of course alreadt changed loading the enumitem package.
+%    The macro defines a new environment for the \BibTeX list using an enumerate environment, which was of course alreadt changed loading the enumitem package.
 %    First, we calculate the length for \cmd{\parindent} by setting it to \cmd{hintscolumnwidth}, addint \cmd{separatorcolumnwidth} and finally adding another 1pt to it.
 %    This will make the items of the enumeration list appear within the left column of the CV.
 %    We then apply a few options to the enumerate environment:
@@ -2698,8 +2696,6 @@
 %\end{skbnotelist}
 %
 %
-%
-%
 %\section*{Acronyms}
 %  \skbacronyms
 %
@@ -2728,4 +2724,3 @@
 %%   Right bracket \]     Circumflex    \^     Underscore    \_
 %%   Grave accent  \`     Left brace    \{     Vertical bar  \|
 %%   Right brace   \}     Tilde         \~}
- 
