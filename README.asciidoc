@@ -3,7 +3,7 @@ SKB-LaTeX
 
 *Create and maintain a repository for long-living documents*
 
-*Latest version: v0.52 2011/06/03*
+*Latest version: v0.53 2016/02/12*
 
 Introduction
 ------------
@@ -181,7 +181,7 @@ Where do I get it?
 
 License
 -------
-Copyright (c) 2010-2011 Sven van der Meer <sven@vandermeer.de>
+Copyright (c) 2010-2016 Sven van der Meer <vdmeer.sven@mykolab.com>
 
 This work may be distributed  and/or modified under the conditions  of the
 LaTeX Project Public  License, either version  1.3 of this  license or (at
@@ -194,7 +194,7 @@ and version 1.3  or later is  part of all  distributions of LaTeX  version
 This work has the LPPL maintenance status `author-maintained'.
 
 The Current Maintainer of this work is
-   Sven van der Meer <sven@vandermeer.de>
+   Sven van der Meer <vdmeer.sven@mykolab.com>
 
 This software is  provided 'as is',  without warranty of  any kind, either
 expressed  or  implied,  including,  but  not  limited  to,  the   implied

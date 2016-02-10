@@ -4,7 +4,7 @@ ug:	doc/user-guide.pdf
 slides:	uganim ugnoanim ugnnote
 
 
-latextmpfiles = doc/*.aux doc/*.bbl doc/*.bib doc/*.idx doc/*.blg doc/*.dvi doc/*.log doc/*.out doc/*.toc doc/*.lof doc/*.lot doc/*.nav doc/*.snm doc/*.vrb doc/*.ps doc/*.glo doc/*.run.xml
+latextmpfiles = doc/*.aux doc/*.bbl doc/*.bib doc/*.idx doc/*.blg doc/*.dvi doc/*.log doc/*.out doc/*.toc doc/*.lof doc/*.lot doc/*.nav doc/*.snm doc/*.vrb doc/*.ps doc/*.glo doc/*.run.xml doc/*.bcf
 clean:	
 	rm -f run/skb.log
 	rm -f ${latextmpfiles}
