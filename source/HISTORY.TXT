@@ -1,3 +1,12 @@
+2016/02/12 v0.53
+- added option "captionlong" to skbfigure
+  - changed the behavior of caption to only print the option
+  - added an option captionlong only printing the option
+  - changed the code for skbfigure to test for caption/captionlong
+  - added a check for label in skbfigure
+- spell check on all documentation
+- fixed a problem in skbcode to be used in tables and tabular environments (using || instead of {} for argument)
+
 2011/06/03 v0.52
 - changed directory and package structure to be CTAN conform
 - re-worked README to reflect new package structure, and added information on generating files from the source
