@@ -1,9 +1,9 @@
 This provides the following combinations for \cmd{\skbslide}
 \begin{skbnotelist}
- \item Slide only: argument 1 has the name for the \skbacft{ISO:PDF}, argument 2 is empty
+ \item Slide only: argument 1 has the name for the \skbacft{org:iso:pdf}, argument 2 is empty
  \item Annotation only: argument 1 is empty, argument 2 has the name for the \TeX~file, option \skbem[code]{annotate} used
- \item Slide with Annotation 1: argument 1 has the name for the \skbacft{ISO:PDF}, argument 2 has the name for the \TeX~file, option \skbem[code]{annotate} used
- \item Slide with Annotation 2: argument 1 has the name for the \skbacft{ISO:PDF}, argument is empty, option \skbem[code]{annotate} used
+ \item Slide with Annotation 1: argument 1 has the name for the \skbacft{org:iso:pdf}, argument 2 has the name for the \TeX~file, option \skbem[code]{annotate} used
+ \item Slide with Annotation 2: argument 1 has the name for the \skbacft{org:iso:pdf}, argument is empty, option \skbem[code]{annotate} used
  \item do nothing: leave both arguments empty
 \end{skbnotelist}
 
@@ -25,6 +25,6 @@ It takes two arguments, the first one for the type of citation and the second on
 \opt{text}{Here a simple example:}\opt{note}{This second block on this slide shows a simple example.}
 \opt{text}{\lstinputlisting[style=genericLN,language=TeX]{\skbfileroot{examples/skbslidecite}}}%
 The first line states that the slide contains material from a book of Tannenbaum and the second line 
-states that the annotation contains material from an \skbacft{organisation:IETF} \skbacft{IETF:RFC}
+states that the annotation contains material from an \skbacft{org:ietf} \skbacft{org:ietf:rfc}
 standard documents (\cite{standard:IETF:RFC:1155}). Since this
 macro is very simple, any content can be given for the two arguments.

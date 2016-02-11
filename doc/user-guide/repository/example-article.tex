@@ -8,7 +8,7 @@ We go the directory that has the published articles
 
 \opt{text}{\lstinputlisting[style=generic,language=TeX]{\skbfileroot{examples/example}}}
 
-The article uses the class \skbem[code]{skbarticle}. That class will load the \skbacft{A3DS:SKB} package and
+The article uses the class \skbem[code]{skbarticle}. That class will load the \skbacft{vdm:skb} package and
 the memoir class and do all settings we need. It prepares the title page and 
 prints the table of contents like any other \LaTeX~article. It uses \cmd{\skbinput}
 to load files from the repository. The first one is loaded without requesting a level.
@@ -21,9 +21,9 @@ what the introduction will be doing: it introduces general protocol concepts wit
 to data encoding, protocol message formats, protocols themselves and protocol services. 
 The last block loads four files with headings categorised as sections.
 Using the directory names, we see that the remaining article 
-describes the protocols \ac{OMG:GIOP} defined by the \ac{organisation:OMG}, \ac{IETF:SNMP} by the
-\ac{organisation:IETF}, \ac{ITU:CMIP} by the \ac{organisation:ITU} and finally \ac{W3C:HTTP} by the 
-\ac{organisation:W3C}.
+describes the protocols \ac{org:omg:giop} defined by the \ac{org:omg}, \ac{org:ietf:snmp} by the
+\ac{org:ietf}, \ac{org:itu:x700:cmip} by the \ac{org:itu} and finally \ac{org:ietf:www:http} by the 
+\ac{org:w3c}.
 
 Finally, we load acronyms and bebliography and finishing the article.
 This example will create a table of contents similar to this:
