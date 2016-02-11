@@ -1,4 +1,4 @@
-all:	run copy doc ug slides
+all:	run doc ug slides
 doc:	doc/skb.pdf
 ug:	doc/user-guide.pdf
 slides:	uganim ugnoanim ugnnote
@@ -22,7 +22,7 @@ ${runfiles}:	source/skb.dtx source/skb.ins
 run:	${runfiles}
 
 doc/skb.pdf:	source/skb.dtx
-	cd doc;pdflatex ../source/skb.dtx;bibtex skb;pdflatex ../source/skb.dtx;pdflatex ../source/skb.dtx
+	cd doc;pdflatex ../source/skb.dtx;biber skb;pdflatex ../source/skb.dtx;pdflatex ../source/skb.dtx
 
 
 dbfiles = doc/user-guide/database/*.* doc/user-guide/database/bibtex/*.*
@@ -38,26 +38,25 @@ ugnnotesfiles = doc/user-guide/ug-slides-load.tex doc/user-guide/ug-slides-notes
 
 
 doc/user-guide.pdf:	${runfiles} ${ugfiles} ${dbfiles} ${examplefiles} ${figfiles} ${repfiles}
-										cd doc;pdflatex user-guide/user-guide;bibtex user-guide;pdflatex user-guide/user-guide;pdflatex user-guide/user-guide
+										cd doc;pdflatex user-guide/user-guide;biber user-guide;pdflatex user-guide/user-guide;pdflatex user-guide/user-guide
 
 ugnoanim:	doc/ug-slides-noanim.pdf
 doc/ug-slides-noanim.pdf:	${runfiles} ${ugnoanimfiles} ${dbfiles} ${examplefiles} ${figfiles} ${repfiles} ${slifiles}
-													cd doc;pdflatex user-guide/ug-slides-noanim;bibtex ug-slides-noanim;pdflatex user-guide/ug-slides-noanim;pdflatex user-guide/ug-slides-noanim
+													cd doc;pdflatex user-guide/ug-slides-noanim;biber ug-slides-noanim;pdflatex user-guide/ug-slides-noanim;pdflatex user-guide/ug-slides-noanim
 
 uganim:	doc/ug-slides-anim.pdf
 doc/ug-slides-anim.pdf:	${runfiles} ${uganimfiles} ${dbfiles} ${examplefiles} ${figfiles} ${repfiles} ${slifiles}
-												cd doc;pdflatex user-guide/ug-slides-anim;bibtex ug-slides-anim;pdflatex user-guide/ug-slides-anim;pdflatex user-guide/ug-slides-anim
+												cd doc;pdflatex user-guide/ug-slides-anim;biber ug-slides-anim;pdflatex user-guide/ug-slides-anim;pdflatex user-guide/ug-slides-anim
 
 ugnnote:	doc/ug-slides-notes.pdf
 doc/ug-slides-notes.pdf:	doc/ug-slides-noanim.pdf ${runfiles} ${ugnnotesfiles} ${dbfiles} ${examplefiles} ${figfiles} ${repfiles} ${slifiles}
-													cd doc;pdflatex user-guide/ug-slides-notes;bibtex ug-slides-notes;pdflatex user-guide/ug-slides-notes;pdflatex user-guide/ug-slides-notes
+													cd doc;pdflatex user-guide/ug-slides-notes;biber ug-slides-notes;pdflatex user-guide/ug-slides-notes;pdflatex user-guide/ug-slides-notes
 
 
-mystyles = ~/doc/styles/tex/latex/skb/skb.cfg ~/doc/styles/tex/latex/skb/skb.sty ~/doc/styles/tex/latex/skb/*.cls
-copy:	${mystyles}
-${mystyles}:	${runfiles}
-		rm -f ~/doc/styles/tex/latex/skb/*;cp run/* ~/doc/styles/tex/latex/skb/
-
+#mystyles = ~/doc/styles/tex/latex/skb/skb.cfg ~/doc/styles/tex/latex/skb/skb.sty ~/doc/styles/tex/latex/skb/*.cls
+#copy:	${mystyles}
+#${mystyles}:	${runfiles}
+#		rm -f ~/doc/styles/tex/latex/skb/*;cp run/* ~/doc/styles/tex/latex/skb/
 
 #sf:	run copy doc ug slides clean
 #	cd ..;rm -r -f latex-skb;cp -r current latex-skb
