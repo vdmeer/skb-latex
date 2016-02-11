@@ -137,12 +137,12 @@
 %    \end{macrocode}
 %
 % \subsection{Required Packages}
-%    Now we load a few packages that we need within the \skbacft{A3DS:SKB}:
+%    Now we load a few packages that we need within the \skbacft{vdm:skb}:
 %    \begin{skbnotelist}
 %        \item \skbem[code]{keyval} to allow for options in macros,
 %        \item \skbem[code]{listings} for all listings,
 %        \item \skbem[code]{dirtree} to show tree structures similar to a directory tree,
-%        \item \skbem[code]{ifpdf} to establish whether we use \skbacft{ISO:PDF} or not,
+%        \item \skbem[code]{ifpdf} to establish whether we use \skbacft{org:iso:pdf} or not,
 %        \item \skbem[code]{datetime} to get the current date, and
 %        \item \skbem[code]{versions} to allow for optional text.
 %    \end{skbnotelist}
@@ -176,7 +176,7 @@
 %    \end{macrocode}
 %
 %    Now we test for the \skbem[code]{memoir} package.
-%    Note, if this package is loaded after the \skbacft{A3DS:SKB}, this test and all following actions will fail.
+%    Note, if this package is loaded after the \skbacft{vdm:skb}, this test and all following actions will fail.
 %    If the package is loaded, then we set the if to true, activate (include) the environment \skbem[code]{skbmodememoir} and set our configuration value to the string ``, memoir''.
 %    If the \skbem[code]{memoir} package is not loaded, then we set the if to false, deactivate (exclude) the environment \skbem[code]{skbmodememoir} and load the package \skbem[code]{booktabs} (to provide the commands \cmd{\toprule} and \cmd{\bottomrule}.
 %    \begin{macrocode}
@@ -250,7 +250,7 @@
 %    \DescribeMacro{\DescribeMacro}
 %    \DescribeMacro{\cmdprint}
 %    \DescribeMacro{\cmd}
-%    The \skbacft{A3DS:SKB} provides for a few commands that the documentation (and maybe your documents as well) expect to be available. The first two are for typesetting SKB and \BibTeX, the rest are simply usefull.
+%    The \skbacft{vdm:skb} provides for a few commands that the documentation (and maybe your documents as well) expect to be available. The first two are for typesetting SKB and \BibTeX, the rest are simply usefull.
 %    \begin{macrocode}
 \providecommand{\BibTeX}{{\scshape Bib}\TeX}
 \providecommand{\DescribeMacro}[1]{\relax}
@@ -260,7 +260,7 @@
 %
 %
 % \subsection{Macro Redefinitions}
-%    The \skbacft{A3DS:SKB} documentation uses the package dirtree and we want to have some of its default settings changed.
+%    The \skbacft{vdm:skb} documentation uses the package dirtree and we want to have some of its default settings changed.
 %    For the comments, the default configuration we want is an small, italic serif font in blue; and for the style part we want a type writer font in black.
 %    \begin{macrocode}
 \renewcommand*\DTstylecomment{\itshape\sffamily\color{blue}\small}
@@ -270,7 +270,7 @@
 %
 % \subsection{At End of Document}
 %    Last not least, we define what should happen at the end of the processing of the input document.
-%    At them moment, we call \cmd{\skbpdfinfo} to set \skbacft{ISO:PDF} meta information and \cmd{\skboptionsused} to print out the change log and current set of \skbacft{A3DS:SKB} configuration options.
+%    At them moment, we call \cmd{\skbpdfinfo} to set \skbacft{org:iso:pdf} meta information and \cmd{\skboptionsused} to print out the change log and current set of \skbacft{vdm:skb} configuration options.
 %    \begin{macrocode}
 \AtEndDocument{
   \skbpdfinfo
@@ -280,16 +280,16 @@
 %
 %
 % \subsection{Package Configuration}
-%    The basic idea of the \skbacft{A3DS:SKB} is that different parts of a document (figures, slides, repository, published documents) reside in different folders.
-%    So the main configuration of the \skbacft{A3DS:SKB} is to provide macros to set and get these folders and to load files from them.
+%    The basic idea of the \skbacft{vdm:skb} is that different parts of a document (figures, slides, repository, published documents) reside in different folders.
+%    So the main configuration of the \skbacft{vdm:skb} is to provide macros to set and get these folders and to load files from them.
 %
 %    To simplify coding, we introduce some macros that handle configuration information.
-%    These macros will be used by the \skbacft{A3DS:SKB} package to define, set and get configuration information.
+%    These macros will be used by the \skbacft{vdm:skb} package to define, set and get configuration information.
 %    The macros also store the origin of changes to the configuration information.
 %
 %    \DescribeMacro{\skb@tmp}
 %    This variable is used to temporarily store macros and strings.
-%    The value can change anytime a new \skbacft{A3DS:SKB} macro is called.
+%    The value can change anytime a new \skbacft{vdm:skb} macro is called.
 %    \begin{macrocode}
 \newcommand{\skb@tmp}{}
 %    \end{macrocode}
@@ -333,19 +333,19 @@
 %    \end{macrocode}
 %
 %    \DescribeMacro{\skb@getCfgVars}
-%    This macro provides access to configuration values. It is used everywhere in the \skbacft{A3DS:SKB} to retrieve configuration values.
+%    This macro provides access to configuration values. It is used everywhere in the \skbacft{vdm:skb} to retrieve configuration values.
 %    \begin{macrocode}
 \newcommand{\skb@getCfgVars}[1]{%
   \csname skb@cfg@var@#1\endcsname%
 }%
 %    \end{macrocode}
 %
-%    Now we use \cmd{\skb@defCfgVars} to initialize all configuration values the \skbacft{A3DS:SKB} uses.
+%    Now we use \cmd{\skb@defCfgVars} to initialize all configuration values the \skbacft{vdm:skb} uses.
 %
 %    \DescribeMacro{\skb@cfg@var@root}
 %    The first one is the root directory.
-%    Everything that the \skbacft{A3DS:SKB} processes should be located below the root.
-%    The \skbacft{A3DS:SKB} can currently not handle inputs from directories outside the root hierarchy (Note: one can call \cmd{\skbconfig} anytime to change the root directory, but be careful with potential side effects!).
+%    Everything that the \skbacft{vdm:skb} processes should be located below the root.
+%    The \skbacft{vdm:skb} can currently not handle inputs from directories outside the root hierarchy (Note: one can call \cmd{\skbconfig} anytime to change the root directory, but be careful with potential side effects!).
 %    The default value for the root directory is \skbem[code]{/doc}.
 %    \begin{macrocode}
 \skb@defCfgVars{root}{/doc}
@@ -355,7 +355,7 @@
 %    \DescribeMacro{\skb@cfg@var@acrfile}
 %    These two values define the directory and the file name for the acronym database:
 %    \begin{skbnotelist}
-%        \item \skbacft{A3DS:SKB} uses the \skbem[code]{acronym} package and the two macros detail the directory (\skbem[code]{acr})
+%        \item \skbacft{vdm:skb} uses the \skbem[code]{acronym} package and the two macros detail the directory (\skbem[code]{acr})
 %        \item the file (\skbem[code]{acrfile}) where the acronyms can be found.
 %    \end{skbnotelist}
 %    The default for the directory is \skbem[code]{database/latex} and the default for the file is \skbem[code]{acronym}.
@@ -403,7 +403,7 @@
 %    \DescribeMacro{\skb@input@doife}
 %    \cmd{\skb@input@doife} is the generic input macro.
 %    It expects four arguments.
-%    The first argument is the \skbacft{A3DS:SKB} macro that should be used to input a file.
+%    The first argument is the \skbacft{vdm:skb} macro that should be used to input a file.
 %    The second argument is the actual file to be loaded, without file extension.
 %    The third argument is the file extension to be used.
 %    The fours argument is plain text that should be added to the help message in case an error occured while loading the file.
@@ -428,7 +428,7 @@
 %
 %
 % \subsection{Kernel support for skbinput}
-%    This is the actual core functionality of the \skbacft{A3DS:SKB} package: flexibly load files from various pre-defined locations (folders). We start with a few macros that we can use later to test options using the package keyval.
+%    This is the actual core functionality of the \skbacft{vdm:skb} package: flexibly load files from various pre-defined locations (folders). We start with a few macros that we can use later to test options using the package keyval.
 %
 %    \DescribeMacro{\skb@input@var@rep}
 %    This macro represents the string ``rep'', which will be later used to test for macro options, for instance in \cmd{\skbinput}.
@@ -510,7 +510,7 @@
 %    \DescribeMacro{\skb@input@set}
 %    These two macros are used to load files. \cmd{\skb@input@call} will point to the currently requested load macro (see above).
 %    \cmd{\skb@input@set} sets the default load option in \cmd{\skb@input@call} to \cmd{\skb@input@doroot}.
-%    That means if no option is given for an input directory, then the \skbacft{A3DS:SKB} root directory will be used.
+%    That means if no option is given for an input directory, then the \skbacft{vdm:skb} root directory will be used.
 %    \begin{macrocode}
 \def\skb@input@call{}
 \newcommand\skb@input@set{%
@@ -519,10 +519,10 @@
 %    \end{macrocode}
 %
 %
-%  \section{Implementation: Configuring the \skbacft{A3DS:SKB}}
+%  \section{Implementation: Configuring the \skbacft{vdm:skb}}
 %    \subsection{Changing Configuration: skbconfig}
 %      \subsubsection{The Macro Options}
-%        The macro provides one option per \skbacft{A3DS:SKB} configuration value. Each option expects one parameter; the new value.
+%        The macro provides one option per \skbacft{vdm:skb} configuration value. Each option expects one parameter; the new value.
 %        The options are
 %        \begin{skbnotelist}
 %            \item \skbem[code]{root} (for the root directory),
@@ -548,8 +548,8 @@
 %
 %      \subsubsection{The Macro}
 %        \DescribeMacro{\skbconfig}
-%        This macro allows to change the main directory and path information for the \skbacft{A3DS:SKB}.
-%        It reads the provided options and changes the requested values in the \skbacft{A3DS:SKB}.
+%        This macro allows to change the main directory and path information for the \skbacft{vdm:skb}.
+%        It reads the provided options and changes the requested values in the \skbacft{vdm:skb}.
 %        The macro takes one argument which will set the origin of the configuration change.
 %        If this argument is empty, the origin will be set to \skbem[code]{skbconfig}.
 %    \begin{macrocode}
@@ -576,7 +576,7 @@
 %
 %
 %    \subsection{Changing Configuration: skb.cfg and skblocal.cfg}
-%      The \skbacft{A3DS:SKB} can also be configured using external configuration files. Two files will be loaded if they exist:
+%      The \skbacft{vdm:skb} can also be configured using external configuration files. Two files will be loaded if they exist:
 %      \begin{skbnotelist}
 %        \item \skbem[code]{skb.cfg} -- Should be used with the installed package in your \TeX/\LaTeX~distribution. If it exists, it will overwrite the default options for directories and paths.
 %        \item \skbem[code]{skblocal.cfg} -- Should be used in your local styles/template directory. If it exists, it will overwrite the default options as well as the options loaded with \skbem[code]{skb.cfg}.
@@ -596,7 +596,7 @@
 %
 %    \subsection{Viewing Configuration: skboptionsused}
 %      \DescribeMacro{\skboptionsused}
-%      This macro can be used to print out a message (as package warning), which contains the change log and the currently used value for all \skbacft{A3DS:SKB} configuration values.
+%      This macro can be used to print out a message (as package warning), which contains the change log and the currently used value for all \skbacft{vdm:skb} configuration values.
 %    \begin{macrocode}
 \newcommand{\skboptionsused}{
   \PackageWarningNoLine{skb}{%
@@ -630,7 +630,7 @@
 %
 %    \subsection{Declaring Headings: skbheading}
 %      \DescribeMacro{\skbheading}
-%      This macro can be used everywhere to declare a new heading and let the \skbacft{A3DS:SKB} decide which document level to use.
+%      This macro can be used everywhere to declare a new heading and let the \skbacft{vdm:skb} decide which document level to use.
 %      The actual document level must be declared in the loading file using \cmd{\skbinput} with the option \skbem[code]{level}, otherwise this command will have no effect.
 %    \begin{macrocode}
 \newcommand{\skbheading}[1]{
@@ -645,7 +645,7 @@
 %    \subsection{Loading \TeX~files: skbinput}
 %      \subsubsection{Macro Options}
 %      \DescribeMacro{skbinput opt from}
-%        The option \skbem[code]{from} is used to point to one of the following \skbacft{A3DS:SKB} directories:
+%        The option \skbem[code]{from} is used to point to one of the following \skbacft{vdm:skb} directories:
 %        \begin{skbnotelist}
 %            \item the repository (\skbem[code]{from=rep}),
 %            \item the folder with the published documents (\skbem[code]{from=pub}),
@@ -653,9 +653,9 @@
 %            \item the slide folder (\skbem[code]{from=sli}).
 %        \end{skbnotelist}
 %        The option is optional, but when used must give one of the those values.
-%        The \skbacft{A3DS:SKB} will throw an error otherwise.
+%        The \skbacft{vdm:skb} will throw an error otherwise.
 %        The implementation works as follows: if the option is used, its parameter is evaluated.
-%        Depending on which \skbacft{A3DS:SKB} directories is requested, the value \cmd{\skb@input@call} is set to point to the respective load load macro.
+%        Depending on which \skbacft{vdm:skb} directories is requested, the value \cmd{\skb@input@call} is set to point to the respective load load macro.
 %        For instance, if the requested directory is the repository (\skbem[code]{from=rep}) then \cmd{\skb@input@call} will be pointed to \cmd{\skb@input@dorep}.
 %    \begin{macrocode}
 \define@key{skbinput}{from}[]{%
@@ -749,7 +749,7 @@
 %
 %      \subsubsection{The Macro}
 %      \DescribeMacro{\skbinput}
-%       This macro will load a \skbem[code]{.tex} file from the root directory or from an \skbacft{A3DS:SKB} known directory (if option \skbem[code]{from} is applied).
+%       This macro will load a \skbem[code]{.tex} file from the root directory or from an \skbacft{vdm:skb} known directory (if option \skbem[code]{from} is applied).
 %       It will also configure the document level macro for the next use of \cmd{\skbheading}, if the option \skbem[code]{level} is applied.
 %       If \skbem[code]{level} is not used, then \cmd{\skbheading} will have no effect. The macro first sets the input level to be empty (\cmd{\skb@input@set}) and the input macro to the default value (\cmd{\skb@input@set}).
 %       The it processes the options (using the \skbem[code]{keyval} package) and finally calls \cmd{\skb@input@call} to realize the load of the requested file.
@@ -908,7 +908,7 @@
 %    \end{macrocode}
 %        The core of the macro.
 %        If the option multiinclude was not used, we proceed load the figure as we would usually do with \LaTeX.
-%        If the option \skbem[code]{multiinclude} was used, then we simply call \cmd{\multiinclude} with the given overlay information, starting at number 0, using \skbacft{ISO:PDF} format and scaling everything to \cmd{\textwidth}.
+%        If the option \skbem[code]{multiinclude} was used, then we simply call \cmd{\multiinclude} with the given overlay information, starting at number 0, using \skbacft{org:iso:pdf} format and scaling everything to \cmd{\textwidth}.
 %    \begin{macrocode}
   \ifx\skb@FigureOptMultiinclide\empty
     \ifx\skb@FigureOptWidth\empty
@@ -965,7 +965,7 @@
 %
 %
 %    \subsection{Loading Slides: skbslide}
-%      This macro allows to load a (configurable) combination of \skbacft{ISO:PDF} slide and \LaTeX~annotation to be loaded in a single call.
+%      This macro allows to load a (configurable) combination of \skbacft{org:iso:pdf} slide and \LaTeX~annotation to be loaded in a single call.
 %
 %      \subsubsection{Some Extentions}
 %        \DescribeMacro{\skb@slides@callpath}
@@ -984,14 +984,14 @@
 %
 %      \subsubsection{Macro Options}
 %        \DescribeMacro{\skbslide opt slidefrom}
-%        The option \skbem[code]{slidefrom} is used to point to one of the following \skbacft{A3DS:SKB} directories:
+%        The option \skbem[code]{slidefrom} is used to point to one of the following \skbacft{vdm:skb} directories:
 %        \begin{skbnotelist}
 %          \item \skbem[code]{sli} (the folder for slides) or
 %          \item \skbem[code]{pub} (the folder for published documents), or
 %          \item \skbem[code]{rep} (the repository directory).
 %        \end{skbnotelist}
 %        The option is optional, but when used must give one of the above described values.
-%        The \skbacft{A3DS:SKB} will throw an error otherwise.
+%        The \skbacft{vdm:skb} will throw an error otherwise.
 %    \begin{macrocode}
 \define@key{skbslide}{slidefrom}[]{%
   \def\intarg{#1}
@@ -1012,14 +1012,14 @@
 %    \end{macrocode}
 %
 %        \DescribeMacro{\skbslide opt notefrom}
-%        The option \skbem[code]{notefrom} is used to point to one of the following \skbacft{A3DS:SKB} directories:
+%        The option \skbem[code]{notefrom} is used to point to one of the following \skbacft{vdm:skb} directories:
 %        \begin{skbnotelist}
 %          \item \skbem[code]{sli} (the folder for slides) or
 %          \item \skbem[code]{pub} (the folder for published documents), or
 %          \item \skbem[code]{rep} (the repository directory).
 %        \end{skbnotelist}
 %        The option is optional, but when used must give one of the above described values.
-%        The \skbacft{A3DS:SKB} will throw an error otherwise.
+%        The \skbacft{vdm:skb} will throw an error otherwise.
 %    \begin{macrocode}
 \define@key{skbslide}{notefrom}[]{%
   \def\intarg{#1}
@@ -1090,7 +1090,7 @@
 %
 %  \section{Implementation: Filenames, Acronyms and References}
 %    \subsection{Path and File Names}
-%      These macros are used within the \skbacft{A3DS:SKB} to generate path and file names for all known directories and files.
+%      These macros are used within the \skbacft{vdm:skb} to generate path and file names for all known directories and files.
 %      They basically provide user-level access to kernel-level processed configuration date.
 %      All path names, except root, are fully qualified from root.
 %      All file names are fully qualified from root.
@@ -1268,32 +1268,32 @@
 %    \subsection{PDF Meta Information: skbpdfinfo and more}
 %
 %      \DescribeMacro{\skbtitle}
-%      This macro allows to set text for the title of the generated \skbacft{ISO:PDF}.
+%      This macro allows to set text for the title of the generated \skbacft{org:iso:pdf}.
 %    \begin{macrocode}
 \def\skb@TitleText{}
 \newcommand{\skbtitle}[1]{\gdef\skb@TitleText{#1}}
 %    \end{macrocode}
 %      \DescribeMacro{\skbauthor}
-%      This macro allows to set text for the author of the generated \skbacft{ISO:PDF}.
+%      This macro allows to set text for the author of the generated \skbacft{org:iso:pdf}.
 %    \begin{macrocode}
 \def\skb@AuthorText{}
 \newcommand{\skbauthor}[1]{\gdef\skb@AuthorText{#1}}
 %    \end{macrocode}
 %      \DescribeMacro{\skbsubject}
-%      This macro allows to set text for the subject of the generated \skbacft{ISO:PDF}.
+%      This macro allows to set text for the subject of the generated \skbacft{org:iso:pdf}.
 %    \begin{macrocode}
 \def\skb@SubjectText{}
 \newcommand{\skbsubject}[1]{\gdef\skb@SubjectText{#1}}
 %    \end{macrocode}
 %      \DescribeMacro{\skbkeywords}
-%      This macro allows to set text for the keywords of the generated \skbacft{ISO:PDF}.
+%      This macro allows to set text for the keywords of the generated \skbacft{org:iso:pdf}.
 %    \begin{macrocode}
 \def\skb@KeywordsText{}
 \newcommand{\skbkeywords}[1]{\gdef\skb@KeywordsText{#1}}
 %    \end{macrocode}
 %      \DescribeMacro{\skbpdfinfo}
-%      This macro will set the \skbacft{ISO:PDF} information in the generated \skbacft{ISO:PDF}.
-%      It first checks if we are in \skbacft{ISO:PDF} mode, and then uses the information from \cmd{\skb@AuthorText}, \cmd{\skb@TitleText} plus subject and keywords from above.
+%      This macro will set the \skbacft{org:iso:pdf} information in the generated \skbacft{org:iso:pdf}.
+%      It first checks if we are in \skbacft{org:iso:pdf} mode, and then uses the information from \cmd{\skb@AuthorText}, \cmd{\skb@TitleText} plus subject and keywords from above.
 %    \begin{macrocode}
 \newcommand{\skbpdfinfo}{%
   \ifpdf
@@ -1310,7 +1310,7 @@
 %
 %
 %    \subsection{Listing Styles and Support}
-%      The \skbacft{A3DS:SKB} comes with a few pre-defined styles for the \skbem[code]{listing} package.
+%      The \skbacft{vdm:skb} comes with a few pre-defined styles for the \skbem[code]{listing} package.
 %      Most of these predefined styles use type writer font in scriptsize, arrange a gray box around the listing and set the keywords to Blue4.
 %
 %      The first style is the for any generic listing without specifying a language and no line numbers.
@@ -1393,7 +1393,7 @@
 %
 %
 %  \section{Experimental Macros}
-%    This part of the \skbacft{A3DS:SKB} is experimental.
+%    This part of the \skbacft{vdm:skb} is experimental.
 %    Please do not use it for production code or important documents.
 %    The macros in this section will be moved as soon as they are stable, or simply removed.
 %    They can, as long as they stay in this section, be changed at any time in future releases.
@@ -1486,7 +1486,7 @@
 %
 % \section{The Configuration File skb.cfg}
 %
-%    This file is used to overwrite the default values for the \skbacft{A3DS:SKB} configuration options.
+%    This file is used to overwrite the default values for the \skbacft{vdm:skb} configuration options.
 %    It calls the macro \cmd{\skbconfig} using all possible options of that very macro and providing useful text as origin of the configuration change \skbem[code]{skb.cfg}.
 %    Use this as template for the local configuration file \skbem[code]{skblocal.cfg} if you need one.
 %    \begin{macrocode}
@@ -1508,12 +1508,12 @@
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% \section{The \skbacft{A3DS:SKB} Classes}
+% \section{The \skbacft{vdm:skb} Classes}
 %
 %
 % \subsection{The Class skbarticle}
 %
-%    This class is an example on how to use the \skbacft{A3DS:SKB} with memoir.
+%    This class is an example on how to use the \skbacft{vdm:skb} with memoir.
 %    I use skbarticle for my articles. Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
 %
 %    First, we announce the package and the font definition file.
@@ -1537,7 +1537,7 @@
 \LoadClass[10pt,a4paper,extrafontsizes,twoside,onecolumn,openright,article]{memoir}
 %    \end{macrocode}
 %
-%    Load the \skbacft{A3DS:SKB}.
+%    Load the \skbacft{vdm:skb}.
 %    \begin{macrocode}
 \RequirePackage{skb}
 %    \end{macrocode}
@@ -1545,7 +1545,7 @@
 %
 % \subsubsection{Loaded Packages}
 %
-%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{A3DS:SKB} (such as the \skbacft{LAMP} server) produce BibLaTeX.
+%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{vdm:skb} (such as the \skbacft{it:linux:lamp} server) produce BibLaTeX.
 %    The options are:
 %    \begin{skbnotelist}
 %      \item style - is set to alphanumeric, much better to find/remember references.
@@ -1558,7 +1558,7 @@
 %    \end{macrocode}
 %
 %    Load the acronym package and print only the acronyms actually used in the document.
-%    This might move into the \skbacft{A3DS:SKB} package later.
+%    This might move into the \skbacft{vdm:skb} package later.
 %    \begin{macrocode}
 \RequirePackage[printonlyused]{acronym}
 %    \end{macrocode}
@@ -1670,7 +1670,7 @@
 %
 % \subsection{The Class skbbook}
 %
-%    This class is an example on how to use the \skbacft{A3DS:SKB} with memoir.
+%    This class is an example on how to use the \skbacft{vdm:skb} with memoir.
 %    I use skbbook for my books. Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
 %
 %    First, we announce the package and the font definition file.
@@ -1693,7 +1693,7 @@
 \LoadClass[11pt,a4paper,extrafontsizes,twoside,onecolumn,openright]{memoir}
 %    \end{macrocode}
 %
-%    Load the \skbacft{A3DS:SKB}.
+%    Load the \skbacft{vdm:skb}.
 %    \begin{macrocode}
 \RequirePackage{skb}
 %    \end{macrocode}
@@ -1701,7 +1701,7 @@
 %
 % \subsubsection{Loaded Packages}
 %
-%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{A3DS:SKB} (such as the \skbacft{LAMP} server) produce BibLaTeX.
+%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{vdm:skb} (such as the \skbacft{it:linux:lamp} server) produce BibLaTeX.
 %    The options are:
 %    \begin{skbnotelist}
 %      \item style - is set to alphanumeric, much better to find/remember references.
@@ -1714,7 +1714,7 @@
 %    \end{macrocode}
 %
 %    Load the acronym package and print only the acronyms actually used in the document.
-%    This might move into the \skbacft{A3DS:SKB} package later
+%    This might move into the \skbacft{vdm:skb} package later
 %    \begin{macrocode}
 \RequirePackage[printonlyused]{acronym}
 %    \end{macrocode}
@@ -1836,7 +1836,7 @@
 %
 % \subsection{The Class skbbeamer}
 %
-%    This class is an example on how to use the \skbacft{A3DS:SKB} with memoir.
+%    This class is an example on how to use the \skbacft{vdm:skb} with memoir.
 %    I use skbbeamer for my beamer presentations. Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
 %
 %    First, we announce the package and the font definition file and process the options.
@@ -1850,13 +1850,13 @@
 %    \end{macrocode}
 %
 %    Now we load the xcolor package and then the beamer class.
-%    That should load the x11names some of the \skbacft{A3DS:SKB} listing styles use while not creating any clash between the packages beamer and xcolor.
+%    That should load the x11names some of the \skbacft{vdm:skb} listing styles use while not creating any clash between the packages beamer and xcolor.
 %    \begin{macrocode}
 \RequirePackage[x11names]{xcolor}
 \LoadClass[x11names]{beamer}
 %    \end{macrocode}
 %
-%    Load the \skbacft{A3DS:SKB}.
+%    Load the \skbacft{vdm:skb}.
 %    \begin{macrocode}
 \RequirePackage{skb}
 %    \end{macrocode}
@@ -1864,7 +1864,7 @@
 %
 % \subsubsection{Loaded Packages}
 %
-%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{A3DS:SKB} (such as the \skbacft{LAMP} server) produce BibLaTeX. The options are:
+%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{vdm:skb} (such as the \skbacft{it:linux:lamp} server) produce BibLaTeX. The options are:
 %    \begin{skbnotelist}
 %      \item style - is set to alphanumeric, much better to find/remember references.
 %            If writing for IEEE or LNCS, numeric would be the preferred option.
@@ -1876,7 +1876,7 @@
 %    \end{macrocode}
 %
 %    Load the acronym package and print only the acronyms actually used in the document.
-%    This might move into the \skbacft{A3DS:SKB} package later
+%    This might move into the \skbacft{vdm:skb} package later
 %    \begin{macrocode}
 \RequirePackage[printonlyused]{acronym}
 %    \end{macrocode}
@@ -1928,7 +1928,7 @@
 %
 % \subsection{The Class skblncsbeamer}
 %
-%    This class is an example on how to use the \skbacft{A3DS:SKB} with memoir.
+%    This class is an example on how to use the \skbacft{vdm:skb} with memoir.
 %    I use skblncsbeamer for my beamer based handouts. Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
 %
 %    First, we announce the package and the font definition file.
@@ -1963,7 +1963,7 @@
 \RequirePackage{beamerarticle,pgf}
 %    \end{macrocode}
 %
-%    Load the \skbacft{A3DS:SKB}.
+%    Load the \skbacft{vdm:skb}.
 %    \begin{macrocode}
 \RequirePackage{skb}
 %    \end{macrocode}
@@ -1971,7 +1971,7 @@
 %
 % \subsubsection{Loaded Packages}
 %
-%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{A3DS:SKB} (such as the \skbacft{LAMP} server) produce BibLaTeX. The options are:
+%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{vdm:skb} (such as the \skbacft{it:linux:lamp} server) produce BibLaTeX. The options are:
 %    \begin{skbnotelist}
 %      \item style - is set to alphanumeric, much better to find/remember references.
 %            If writing for IEEE or LNCS, numeric would be the preferred option.
@@ -1983,7 +1983,7 @@
 %    \end{macrocode}
 %
 %    Load the acronym package and print only the acronyms actually used in the document.
-%    This might move into the \skbacft{A3DS:SKB} package later.
+%    This might move into the \skbacft{vdm:skb} package later.
 %    \begin{macrocode}
 \RequirePackage[printonlyused]{acronym}
 %    \end{macrocode}
@@ -2110,10 +2110,10 @@
 %
 % \subsection{The Class skblncsppt}
 %
-%    This class is an example on how to use the \skbacft{A3DS:SKB} with memoir.
+%    This class is an example on how to use the \skbacft{vdm:skb} with memoir.
 %    I use skblncsppt for handouts (anotated slides) based on Microsoft's PPT.
-%    Reason for that is that the \skbacft{ISO:PDF} export and print routines in Microsoft Office 2010 no longer support vector images for the slide thumbnails, which renders handouts almost useless.
-%    So I do print the PPT slides into \skbacft{ISO:PDF} (screen resolution, that way one avoids frames around the slides), and then \LaTeX~to generate handouts.
+%    Reason for that is that the \skbacft{org:iso:pdf} export and print routines in Microsoft Office 2010 no longer support vector images for the slide thumbnails, which renders handouts almost useless.
+%    So I do print the PPT slides into \skbacft{org:iso:pdf} (screen resolution, that way one avoids frames around the slides), and then \LaTeX~to generate handouts.
 %    Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
 %
 %    First, we announce the package and the font definition file.
@@ -2137,7 +2137,7 @@
 \LoadClass[9pt,a4paper,extrafontsizes,twoside,onecolumn,openright,article]{memoir}
 %    \end{macrocode}
 %
-%    Load the \skbacft{A3DS:SKB}.
+%    Load the \skbacft{vdm:skb}.
 %    \begin{macrocode}
 \RequirePackage{skb}
 %    \end{macrocode}
@@ -2145,7 +2145,7 @@
 %
 % \subsubsection{Loaded Packages}
 %
-%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{A3DS:SKB} (such as the \skbacft{LAMP}
+%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{vdm:skb} (such as the \skbacft{it:linux:lamp}
 %    server) produce BibLaTeX. The options are:
 %    \begin{skbnotelist}
 %      \item style - is set to alphanumeric, much better to find/remember references.
@@ -2158,7 +2158,7 @@
 %    \end{macrocode}
 %
 %    Load the acronym package and print only the acronyms actually used in the document.
-%    This might move into the \skbacft{A3DS:SKB} package later.
+%    This might move into the \skbacft{vdm:skb} package later.
 %    \begin{macrocode}
 \RequirePackage[printonlyused]{acronym}
 %    \end{macrocode}
@@ -2295,8 +2295,8 @@
 %
 % \subsection{The Class skbmoderncv}
 %
-%    This class integrates the moderncv package into the \skbacft{A3DS:SKB}.
-%    I use moderncv for my own CV and with the \skbacft{A3DS:SKB} I am able to maintain all information while producing different documents (i.e. one for a research proposal, for my website, for journals, etc.).
+%    This class integrates the moderncv package into the \skbacft{vdm:skb}.
+%    I use moderncv for my own CV and with the \skbacft{vdm:skb} I am able to maintain all information while producing different documents (i.e. one for a research proposal, for my website, for journals, etc.).
 %    This class provides some macros using biblatex to create several lists of publications, i.e. a different list for articles, proceedings, conference papers per year, etc.
 %
 %    First, we announce the package and the font definition file and process the options.
@@ -2311,7 +2311,7 @@
 \LoadClass[11pt,a4paper]{moderncv}
 %    \end{macrocode}
 %
-%    Load the \skbacft{A3DS:SKB}.
+%    Load the \skbacft{vdm:skb}.
 %    \begin{macrocode}
 \RequirePackage{skb}
 %    \end{macrocode}
@@ -2319,7 +2319,7 @@
 %
 % \subsubsection{Loaded Packages}
 %
-%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{A3DS:SKB} (such as the \skbacft{LAMP} server) produce BibLaTeX. The options are:
+%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{vdm:skb} (such as the \skbacft{it:linux:lamp} server) produce BibLaTeX. The options are:
 %    \begin{skbnotelist}
 %      \item style - is set to alphabetic, much better to find/remember references.
 %                    If writing for IEEE or LNCS, numeric would be the preferred option.

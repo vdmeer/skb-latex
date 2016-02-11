@@ -6,6 +6,9 @@
   - added a check for label in skbfigure
 - spell check on all documentation
 - fixed a problem in skbcode to be used in tables and tabular environments (using || instead of {} for argument)
+- removed target "cp" from make file
+- changed acronyms to new SKB base
+- switched from BibTeX to biber in make file, removed empty bib files from import (biber doesn't like empty files)
 
 2011/06/03 v0.52
 - changed directory and package structure to be CTAN conform
