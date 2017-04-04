@@ -250,7 +250,7 @@
 %    \DescribeMacro{\DescribeMacro}
 %    \DescribeMacro{\cmdprint}
 %    \DescribeMacro{\cmd}
-%    The \skbacft{vdm:skb} provides for a few commands that the documentation (and maybe your documents as well) expect to be available. The first two are for typesetting SKB and \BibTeX, the rest are simply usefull.
+%    The \skbacft{vdm:skb} provides for a few commands that the documentation (and maybe your documents as well) expect to be available. The first two are for typesetting \ac{vdm:skb} and \BibTeX, the rest are simply usefull.
 %    \begin{macrocode}
 \providecommand{\BibTeX}{{\scshape Bib}\TeX}
 \providecommand{\DescribeMacro}[1]{\relax}
@@ -522,17 +522,17 @@
 %  \section{Implementation: Configuring the \skbacft{vdm:skb}}
 %    \subsection{Changing Configuration: skbconfig}
 %      \subsubsection{The Macro Options}
-%        The macro provides one option per \skbacft{vdm:skb} configuration value. Each option expects one parameter; the new value.
+%        The macro provides one option per \skbacft{vdm:skb} configuration value. Each option expects one parameter, the new value.
 %        The options are
 %        \begin{skbnotelist}
-%            \item \skbem[code]{root} (for the root directory),
-%            \item \skbem[code]{acr} (for the acronym directory),
-%            \item \skbem[code]{acrfile} (for the acronym file),
-%            \item \skbem[code]{bib} (for the bibtex directory),
-%            \item \skbem[code]{bibfile} (for the bibtex file),
-%            \item \skbem[code]{rep} (for the repository directory),
-%            \item \skbem[code]{pub} (for the directory with the published documents), and
-%            \item \skbem[code]{sli} (for the directory with slides).
+%            \item \skbem[code]{root} for the root directory,
+%            \item \skbem[code]{acr} for the acronym directory,
+%            \item \skbem[code]{acrfile} for the acronym file,
+%            \item \skbem[code]{bib} for the bibtex directory,
+%            \item \skbem[code]{bibfile} for the bibtex file,
+%            \item \skbem[code]{rep} for the repository directory,
+%            \item \skbem[code]{pub} for the directory with the published documents, and
+%            \item \skbem[code]{sli} for the directory with slides.
 %        \end{skbnotelist}
 %    \begin{macrocode}
 \define@key{skbconfig}{root}[]{\skb@setCfgVars{root}{#1}}
@@ -647,10 +647,10 @@
 %      \DescribeMacro{skbinput opt from}
 %        The option \skbem[code]{from} is used to point to one of the following \skbacft{vdm:skb} directories:
 %        \begin{skbnotelist}
-%            \item the repository (\skbem[code]{from=rep}),
-%            \item the folder with the published documents (\skbem[code]{from=pub}),
-%            \item the figure folder (\skbem[code]{from=fig}), or
-%            \item the slide folder (\skbem[code]{from=sli}).
+%            \item the repository \skbem[code]{from=rep},
+%            \item the folder with the published documents \skbem[code]{from=pub},
+%            \item the figure folder \skbem[code]{from=fig}, or
+%            \item the slide folder \skbem[code]{from=sli}.
 %        \end{skbnotelist}
 %        The option is optional, but when used must give one of the those values.
 %        The \skbacft{vdm:skb} will throw an error otherwise.
@@ -680,7 +680,7 @@
 %
 %      \DescribeMacro{skbinput opt level}
 %      The option \skbem[code]{level} is used to define the document level to be used for the next occurance of \cmd{\skbheading}.
-%      Supported are all document levels known to \LaTeX~and no check is done whether the currently used document class supports them or not (for  instance, the article class does not support the document level chapter, however, \skbem[code]{memoir} supports it even in article mode).
+%      Supported are all document levels known to \LaTeX~and no check is done whether the currently used document class supports them or not (for instance, the article class does not support the document level chapter, however, \skbem[code]{memoir} supports it even in article mode).
 %      The supported parameters for this option are:
 %      \begin{skbnotelist}
 %          \item \skbem[code]{book} (\skbem[code]{memoir} pacakge),
@@ -986,9 +986,9 @@
 %        \DescribeMacro{\skbslide opt slidefrom}
 %        The option \skbem[code]{slidefrom} is used to point to one of the following \skbacft{vdm:skb} directories:
 %        \begin{skbnotelist}
-%          \item \skbem[code]{sli} (the folder for slides) or
-%          \item \skbem[code]{pub} (the folder for published documents), or
-%          \item \skbem[code]{rep} (the repository directory).
+%          \item \skbem[code]{sli} the folder for slides,
+%          \item \skbem[code]{pub} the folder for published documents, or
+%          \item \skbem[code]{rep} the repository directory.
 %        \end{skbnotelist}
 %        The option is optional, but when used must give one of the above described values.
 %        The \skbacft{vdm:skb} will throw an error otherwise.
@@ -1014,9 +1014,9 @@
 %        \DescribeMacro{\skbslide opt notefrom}
 %        The option \skbem[code]{notefrom} is used to point to one of the following \skbacft{vdm:skb} directories:
 %        \begin{skbnotelist}
-%          \item \skbem[code]{sli} (the folder for slides) or
-%          \item \skbem[code]{pub} (the folder for published documents), or
-%          \item \skbem[code]{rep} (the repository directory).
+%          \item \skbem[code]{sli} the folder for slides, or
+%          \item \skbem[code]{pub} the folder for published documents, or
+%          \item \skbem[code]{rep} the repository directory.
 %        \end{skbnotelist}
 %        The option is optional, but when used must give one of the above described values.
 %        The \skbacft{vdm:skb} will throw an error otherwise.
@@ -1217,7 +1217,7 @@
 %    \end{macrocode}
 %
 %    \subsection{List Environments: skbnotelist and skbnoteenum}
-%      These environments simulate \cmd{\tightlist} from the memoir package.
+%      These environments simulate \cmd{\tightlist} from the \skbem[code]{memoir} package.
 %      They work identical: call the environment itemize (for skbnotelist) or enumerate
 %      (for skbnoteenum) and set the two values to 0 (thus minimizing the margin between items).
 %
@@ -1514,7 +1514,8 @@
 % \subsection{The Class skbarticle}
 %
 %    This class is an example on how to use the \skbacft{vdm:skb} with memoir.
-%    I use skbarticle for my articles. Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
+%    I use \skbem[code]{skbarticle} for my articles.
+%    Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
 %
 %    First, we announce the package and the font definition file.
 %    \begin{macrocode}
@@ -1527,10 +1528,10 @@
 %    \begin{skbnotelist}
 %      \item 10pt - for 10 point font size
 %      \item a4paper - I am European, so A4 paper makes sense here
-%      \item extrafontsizes - tbd
+%      \item extrafontsizes - \skbem[italic]{tbd}
 %      \item twoside - I want my articles to be set with different even/odd pages
 %      \item onecolumn - I don't necessarily like 2-columns for my articles
-%      \item openright - tbd
+%      \item openright - \skbem[italic]{tbd}
 %      \item article - use memoir as if it is an article
 %    \end{skbnotelist}
 %    \begin{macrocode}
@@ -1549,7 +1550,7 @@
 %    The options are:
 %    \begin{skbnotelist}
 %      \item style - is set to alphanumeric, much better to find/remember references.
-%            If writing for IEEE or LNCS, numeric would be the preferred option.
+%            When writing for IEEE or LNCS, numeric would be the preferred option.
 %      \item sorting - is set to none, not needed here.
 %      \item hyperref - I want to have hyperef with my citations
 %    \end{skbnotelist}
@@ -1557,13 +1558,13 @@
 \RequirePackage[style=alphabetic,sorting=none,hyperref]{biblatex}
 %    \end{macrocode}
 %
-%    Load the acronym package and print only the acronyms actually used in the document.
+%    Load the \skbem[code]{acronym} package and print only the acronyms actually used in the document.
 %    This might move into the \skbacft{vdm:skb} package later.
 %    \begin{macrocode}
 \RequirePackage[printonlyused]{acronym}
 %    \end{macrocode}
 %
-%    Load a view packages that I tend to use quite often:
+%    Load a few packages that I tend to use quite often:
 %    \begin{skbnotelist}
 %      \item etoolbox - etoolbox
 %      \item comment - Add comments to your \LaTeX~files
@@ -1580,20 +1581,20 @@
 %      \item textcomp - Special characters, such as \textregistered~and \textcopyright
 %      \item gensymb - Generic characters (math and text mode), such as  \degree, \celsius, \perthousand, \micro~and \ohm
 %      \item wasysym - Adds characters from \textit{wasy} font, such as \smiley, \XBox~and \rightturn
-%      \item units - Typeset units correctly (and produce 'nice' fractions), such as \unitfrac[10]{m}{s} and \nicefrac[\texttt]{1}{2}
+%      \item units - Typeset units correctly (and produce `nice' fractions), such as \unitfrac[10]{m}{s} and \nicefrac[\texttt]{1}{2}
 %      \item float - Improves interface for floating environments (such as figures, tables)
-%      \item xmpmulti - tbd
+%      \item xmpmulti - \skbem[italic]{tbd}
 %    \end{skbnotelist}
 %    \begin{macrocode}
 \RequirePackage{textcomp,gensymb,wasysym,units,xmpmulti,float}
 %    \end{macrocode}
 %
-%    The xcolor package provides driver independent access to all sorts of color tins, shades, tones and mixes. I like x11names, as you can tell.
+%    The \skbem[code]{xcolor} package provides driver independent access to all sorts of color tins, shades, tones, and mixes. I like x11names, as you can see.
 %    \begin{macrocode}
 \RequirePackage[x11names]{xcolor}
 %    \end{macrocode}
 %
-%    The hyperref package provides layout for hyper references, such as URLs and references within a document, such as acronyms, citations and the table of contents.
+%    The \skbem[code]{hyperref} package provides layout for hyper references, such as URLs and references within a document, such as acronyms, citations, and the table of contents.
 %    We use the option colorlinks and then provide the colors we prefer for links (linkcolor), citations (citecolor) and URLs (urlcolor).
 %    \begin{macrocode}
 \RequirePackage[colorlinks,%
@@ -1671,7 +1672,7 @@
 % \subsection{The Class skbbook}
 %
 %    This class is an example on how to use the \skbacft{vdm:skb} with memoir.
-%    I use skbbook for my books. Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
+%    I use \skbem[code]{skbbook} for my books. Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
 %
 %    First, we announce the package and the font definition file.
 %    \begin{macrocode}
@@ -1684,10 +1685,10 @@
 %    \begin{skbnotelist}
 %      \item 11pt - for 11 point font size
 %      \item a4paper - I am European, so A4 paper makes sense here
-%      \item extrafontsizes - tbd
+%      \item extrafontsizes - \skbem[italic]{tbd}
 %      \item twoside - I want my articles to be set with different even/odd pages
 %      \item onecolumn - I don't necessarily like 2-columns for my articles
-%      \item openright - tbd
+%      \item openright - \skbem[italic]{tbd}
 %    \end{skbnotelist}
 %    \begin{macrocode}
 \LoadClass[11pt,a4paper,extrafontsizes,twoside,onecolumn,openright]{memoir}
@@ -1705,7 +1706,7 @@
 %    The options are:
 %    \begin{skbnotelist}
 %      \item style - is set to alphanumeric, much better to find/remember references.
-%            If writing for IEEE or LNCS, numeric would be the prefered option.
+%            If writing for IEEE or LNCS, numeric would be the preferred option.
 %      \item sorting - is set to none, not needed here.
 %      \item hyperref - I want to have hyperef with my citations
 %    \end{skbnotelist}
@@ -1713,13 +1714,13 @@
 \RequirePackage[style=alphabetic,sorting=none,hyperref]{biblatex}
 %    \end{macrocode}
 %
-%    Load the acronym package and print only the acronyms actually used in the document.
+%    Load the \skbem[code]{acronym} package and print only the acronyms actually used in the document.
 %    This might move into the \skbacft{vdm:skb} package later
 %    \begin{macrocode}
 \RequirePackage[printonlyused]{acronym}
 %    \end{macrocode}
 %
-%    Load a view packages that I tend to use quite often:
+%    Load a few packages that I tend to use quite often:
 %    \begin{skbnotelist}
 %      \item etoolbox - etoolbox
 %      \item comment - Add comments to your \LaTeX~files
@@ -1738,18 +1739,18 @@
 %      \item wasysym - Adds characters from \textit{wasy} font, such as \smiley, \XBox~and \rightturn
 %      \item units - Typeset units correctly (and produce 'nice' fractions), such as \unitfrac[10]{m}{s} and \nicefrac[\texttt]{1}{2}
 %      \item float - Improves interface for floating environments (such as figures, tables)
-%      \item xmpmulti - tbd
+%      \item xmpmulti - \skbem[italic]{tbd}
 %    \end{skbnotelist}
 %    \begin{macrocode}
 \RequirePackage{textcomp,gensymb,wasysym,units,xmpmulti,float}
 %    \end{macrocode}
 %
-%    The xcolor package provides driver independent access to all sorts of colour tins, shades, tones and mixes. I like x11names, as you can tell.
+%    The \skbem[code]{xcolor} package provides driver independent access to all sorts of colour tins, shades, tones, and mixes. I like x11names, as you can see.
 %    \begin{macrocode}
 \RequirePackage[x11names]{xcolor}
 %    \end{macrocode}
 %
-%    The hyperref package provides layout for hyper references, such as URLs and references within a document, such as acronyms, citations and the table of contents.
+%    The \skbem[code]{hyperref} package provides layout for hyper references, such as URLs and references within a document, such as acronyms, citations, and the table of contents.
 %    We use the option colorlings and then provide the colors we prefer for links (linkcolor), citations (citecolor) and URLs (urlcolor).
 %    \begin{macrocode}
 \RequirePackage[colorlinks,%
@@ -1779,7 +1780,7 @@
 \setlength{\evensidemargin}{0cm}
 %    \end{macrocode}
 %
-%    Set width and height for the text. Width to 15cm and length t0 22cm.
+%    Set width and height for the text. Width to 15cm and length to 22cm.
 %    \begin{macrocode}
 \setlength{\textwidth}{15cm}
 \setlength{\textheight}{22cm}
@@ -1837,7 +1838,7 @@
 % \subsection{The Class skbbeamer}
 %
 %    This class is an example on how to use the \skbacft{vdm:skb} with memoir.
-%    I use skbbeamer for my beamer presentations. Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
+%    I use \skbem[code]{skbbeamer} for my beamer presentations. Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
 %
 %    First, we announce the package and the font definition file and process the options.
 %    \begin{macrocode}
@@ -1849,7 +1850,7 @@
 \ProcessOptions\relax
 %    \end{macrocode}
 %
-%    Now we load the xcolor package and then the beamer class.
+%    Now we load the \skbem[code]{xcolor} package and then the beamer class.
 %    That should load the x11names some of the \skbacft{vdm:skb} listing styles use while not creating any clash between the packages beamer and xcolor.
 %    \begin{macrocode}
 \RequirePackage[x11names]{xcolor}
@@ -1875,13 +1876,13 @@
 \RequirePackage[style=alphabetic,sorting=none,hyperref]{biblatex}
 %    \end{macrocode}
 %
-%    Load the acronym package and print only the acronyms actually used in the document.
-%    This might move into the \skbacft{vdm:skb} package later
+%    Load the \skbem[code]{acronym package} and print only the acronyms actually used in the document.
+%    This might move into the \skbacft{vdm:skb} package later.
 %    \begin{macrocode}
 \RequirePackage[printonlyused]{acronym}
 %    \end{macrocode}
 %
-%    Load a view packages that I tend to use quite often:
+%    Load a few packages that I tend to use quite often:
 %    \begin{skbnotelist}
 %      \item etoolbox - etoolbox
 %      \item comment - Add comments to your \LaTeX~files
@@ -1893,14 +1894,14 @@
 \RequirePackage{etoolbox,comment,graphicx,longtable,colortbl}
 %    \end{macrocode}
 %
-%    And some more packages needed quite often:
+%    And some more packages quite often needed:
 %    \begin{skbnotelist}
 %      \item textcomp - Special characters, such as \textregistered~and \textcopyright
 %      \item gensymb - Generic characters (math and text mode), such as  \degree, \celsius, \perthousand, \micro~and \ohm
 %      \item wasysym - Adds characters from \textit{wasy} font, such as \smiley, \XBox~and \rightturn
-%      \item units - Typeset units correctly (and produce 'nice' fractions), such as \unitfrac[10]{m}{s} and \nicefrac[\texttt]{1}{2}
+%      \item units - Typeset units correctly (and produce `nice' fractions), such as \unitfrac[10]{m}{s} and \nicefrac[\texttt]{1}{2}
 %      \item float - Improves interface for floating environments (such as figures, tables)
-%      \item xmpmulti - tbd
+%      \item xmpmulti - \skbem[italic]{tbd}
 %    \end{skbnotelist}
 %    \begin{macrocode}
 \RequirePackage{textcomp,gensymb,wasysym,units,xmpmulti,float}
@@ -1929,7 +1930,7 @@
 % \subsection{The Class skblncsbeamer}
 %
 %    This class is an example on how to use the \skbacft{vdm:skb} with memoir.
-%    I use skblncsbeamer for my beamer based handouts. Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
+%    I use \skbem[code]{skblncsbeamer} for my beamer based handouts. Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
 %
 %    First, we announce the package and the font definition file.
 %    \begin{macrocode}
@@ -1938,7 +1939,7 @@
 \ProvidesClass{skblncsbeamer}[2016/02/12 The SKB LNCS Beamer class v0.53]
 %    \end{macrocode}
 %
-%    Just in case there is no \cmd{\titlepage} declared, the beamerarticle wants that.
+%    Just in case there is no \cmd{\titlepage} declared, the \skbem[code]{beamerarticle} wants that.
 %    \begin{macrocode}
 \providecommand{\titlepage}{}
 %    \end{macrocode}
@@ -1947,10 +1948,10 @@
 %    \begin{skbnotelist}
 %      \item 9pt - for 9 point font size
 %      \item a4paper - I am European, so A4 paper makes sense here
-%      \item extrafontsizes - tbd
+%      \item extrafontsizes - \skbem[italic]{tbd}
 %      \item twoside - I want my articles to be set with different even/odd pages
 %      \item onecolumn - I don't necessarily like 2-columns for my articles
-%      \item openright - tbd
+%      \item openright - \skbem[italic]{tbd}
 %      \item article - use memoir as if it is an article
 %      \item x11names - this option will be forwarded to the xcolor/graphics packages
 %    \end{skbnotelist}
@@ -1958,7 +1959,7 @@
 \LoadClass[9pt,a4paper,extrafontsizes,twoside,onecolumn,openright,article,x11names]{memoir}
 %    \end{macrocode}
 %
-%    For Beamer handouts, we need the beamerarticle package to load the frame thumbnails.
+%    For Beamer handouts, we need the \skbem[code]{beamerarticle} package to load the frame thumbnails.
 %    \begin{macrocode}
 \RequirePackage{beamerarticle,pgf}
 %    \end{macrocode}
@@ -1982,13 +1983,13 @@
 \RequirePackage[style=alphabetic,sorting=none,hyperref]{biblatex}
 %    \end{macrocode}
 %
-%    Load the acronym package and print only the acronyms actually used in the document.
+%    Load the \skbem[code]{acronym} package and print only the acronyms actually used in the document.
 %    This might move into the \skbacft{vdm:skb} package later.
 %    \begin{macrocode}
 \RequirePackage[printonlyused]{acronym}
 %    \end{macrocode}
 %
-%    Load a view packages that I tend to use quite often:
+%    Load a few packages that I tend to use quite often:
 %    \begin{skbnotelist}
 %      \item etoolbox - etoolbox
 %      \item comment - Add comments to your \LaTeX~files
@@ -2000,14 +2001,14 @@
 \RequirePackage{etoolbox,comment,graphicx,longtable,colortbl}
 %    \end{macrocode}
 %
-%    And some more packages needed quite often:
+%    And some more packages quite often needed:
 %    \begin{skbnotelist}
 %      \item textcomp - Special characters, such as \textregistered~and \textcopyright
 %      \item gensymb - Generic characters (math and text mode), such as  \degree, \celsius, \perthousand, \micro~and \ohm
 %      \item wasysym - Adds characters from \textit{wasy} font, such as \smiley, \XBox~and \rightturn
 %      \item units - Typeset units correctly (and produce 'nice' fractions), such as \unitfrac[10]{m}{s} and \nicefrac[\texttt]{1}{2}
 %      \item float - Improves interface for floating environments (such as figures, tables)
-%      \item xmpmulti - tbd
+%      \item xmpmulti - \skbem[italic]{tbd}
 %    \end{skbnotelist}
 %    \begin{macrocode}
 \RequirePackage{textcomp,gensymb,wasysym,units,xmpmulti}
@@ -2111,7 +2112,7 @@
 % \subsection{The Class skblncsppt}
 %
 %    This class is an example on how to use the \skbacft{vdm:skb} with memoir.
-%    I use skblncsppt for handouts (anotated slides) based on Microsoft's PPT.
+%    I use \skbem[code]{skblncsppt} for handouts (anotated slides) based on Microsoft's PPT.
 %    Reason for that is that the \skbacft{org:iso:pdf} export and print routines in Microsoft Office 2010 no longer support vector images for the slide thumbnails, which renders handouts almost useless.
 %    So I do print the PPT slides into \skbacft{org:iso:pdf} (screen resolution, that way one avoids frames around the slides), and then \LaTeX~to generate handouts.
 %    Using this class as a template, one can easily write other classes or change/overwrite the settings done here.
@@ -2123,14 +2124,14 @@
 \ProvidesClass{skblncsppt}[2016/02/12 The SKB LNCS PPT class v0.53]
 %    \end{macrocode}
 %
-%    Now we load the memoir class with the following options:
+%    Now we load the \skbem[code]{memoir} class with the following options:
 %    \begin{skbnotelist}
 %      \item 9pt - for 9 point font size
 %      \item a4paper - I am European, so A4 paper makes sense here
-%      \item extrafontsizes - tbd
+%      \item extrafontsizes - \skbem[italic]{tbd}
 %      \item twoside - I want my articles to be set with different even/odd pages
 %      \item onecolumn - I don't necessarily like 2-columns for my articles
-%      \item openright - tbd
+%      \item openright - \skbem[italic]{tbd}
 %      \item article - use memoir as if it is an article
 %    \end{skbnotelist}
 %    \begin{macrocode}
@@ -2145,8 +2146,8 @@
 %
 % \subsubsection{Loaded Packages}
 %
-%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{vdm:skb} (such as the \skbacft{it:linux:lamp}
-%    server) produce BibLaTeX. The options are:
+%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{vdm:skb} (such as the \skbacft{it:linux:lamp} server) produce BibLaTeX.
+%    The options are:
 %    \begin{skbnotelist}
 %      \item style - is set to alphanumeric, much better to find/remember references.
 %            If writing for IEEE or LNCS, numeric would be the preferred option.
@@ -2157,13 +2158,13 @@
 \RequirePackage[style=alphabetic,sorting=none,hyperref]{biblatex}
 %    \end{macrocode}
 %
-%    Load the acronym package and print only the acronyms actually used in the document.
+%    Load the \skbem[code]{acronym} package and print only the acronyms actually used in the document.
 %    This might move into the \skbacft{vdm:skb} package later.
 %    \begin{macrocode}
 \RequirePackage[printonlyused]{acronym}
 %    \end{macrocode}
 %
-%    Load a view packages that I tend to use quite often:
+%    Load a few packages that I tend to use quite often:
 %    \begin{skbnotelist}
 %      \item etoolbox - etoolbox
 %      \item comment - Add comments to your \LaTeX~files
@@ -2175,25 +2176,25 @@
 \RequirePackage{etoolbox,comment,graphicx,longtable,colortbl}
 %    \end{macrocode}
 %
-%    And some more packages needed quite often:
+%    And some more packages quite often needed:
 %    \begin{skbnotelist}
 %      \item textcomp - Special characters, such as \textregistered~and \textcopyright
 %      \item gensymb - Generic characters (math and text mode), such as  \degree, \celsius, \perthousand, \micro~and \ohm
 %      \item wasysym - Adds characters from \textit{wasy} font, such as \smiley, \XBox~and \rightturn
 %      \item units - Typeset units correctly (and produce 'nice' fractions), such as \unitfrac[10]{m}{s} and \nicefrac[\texttt]{1}{2}
 %      \item float - Improves interface for floating environments (such as figures, tables)
-%      \item xmpmulti - tbd
+%      \item xmpmulti - \skbem[italic]{tbd}
 %    \end{skbnotelist}
 %    \begin{macrocode}
 \RequirePackage{textcomp,gensymb,wasysym,units,xmpmulti,float}
 %    \end{macrocode}
 %
-%    The xcolor package provides driver independent access to all sorts of color tins, shades, tones and mixes. I like x11names, as you can tell.
+%    The \skbem[code]{xcolor} package provides driver independent access to all sorts of color tins, shades, tones, and mixes. I like x11names, as you can see.
 %    \begin{macrocode}
 \RequirePackage[x11names]{xcolor}
 %    \end{macrocode}
 %
-%    The hyperref package provides layout for hyper references, such as URLs and references within a document, such as acronyms, citations and the table of contents.
+%    The \skbem[code]{hyperref} package provides layout for hyper references, such as URLs and references within a document, such as acronyms, citations, and the table of contents.
 %    We use the option colorlings and then provide the colors we prefer for links (linkcolor), citations (citecolor) and URLs (urlcolor).
 %    \begin{macrocode}
 \RequirePackage[colorlinks,%
@@ -2256,7 +2257,8 @@
 \headstyles{komalike}
 %    \end{macrocode}
 %
-%    For lists, memoir provides different layouts. We use tightlists here, but can switch that to firmlists if needed.
+%    For lists, memoir provides different layouts.
+%    We use tightlists here, but can switch that to firmlists if needed.
 %    \begin{macrocode}
 \tightlists
 %\firmlists
@@ -2295,8 +2297,8 @@
 %
 % \subsection{The Class skbmoderncv}
 %
-%    This class integrates the moderncv package into the \skbacft{vdm:skb}.
-%    I use moderncv for my own CV and with the \skbacft{vdm:skb} I am able to maintain all information while producing different documents (i.e. one for a research proposal, for my website, for journals, etc.).
+%    This class integrates the \skbem[code]{moderncv} package into the \skbacft{vdm:skb}.
+%    I use \skbem[code]{moderncv} for my own CV and with the \skbacft{vdm:skb} I am able to maintain all information while producing different documents (i.e. one for a research proposal, for my website, for journals, etc.).
 %    This class provides some macros using biblatex to create several lists of publications, i.e. a different list for articles, proceedings, conference papers per year, etc.
 %
 %    First, we announce the package and the font definition file and process the options.
@@ -2306,7 +2308,9 @@
 \ProvidesClass{skbmoderncv}[2016/02/12 The SKB Modern CV class v0.53]
 %    \end{macrocode}
 %
-%    Now we load the moderncv package. By default we use an 11 point font and A4 paper. Once can change these settings later in a CV document.
+%    Now we load the \skbem[code]{moderncv} package.
+%    By default we use an 11 point font and A4 paper.
+%    Once can change these settings later in a CV document.
 %    \begin{macrocode}
 \LoadClass[11pt,a4paper]{moderncv}
 %    \end{macrocode}
@@ -2319,7 +2323,8 @@
 %
 % \subsubsection{Loaded Packages}
 %
-%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{vdm:skb} (such as the \skbacft{it:linux:lamp} server) produce BibLaTeX. The options are:
+%    I prefer BibLaTeX over plain \BibTeX, and other parts of the \skbacft{vdm:skb} (such as the \skbacft{it:linux:lamp} server) produce BibLaTeX.
+%    The options are:
 %    \begin{skbnotelist}
 %      \item style - is set to alphabetic, much better to find/remember references.
 %                    If writing for IEEE or LNCS, numeric would be the preferred option.
@@ -2331,17 +2336,17 @@
 \RequirePackage[style=alphabetic,sorting=ynt,bibstyle=standard,hyperref]{biblatex}
 %    \end{macrocode}
 %
-%    Load the eurofont package for the Euro sign.
+%    Load the \skbem[code]{eurofont} package for the Euro sign.
 %    \begin{macrocode}
 \RequirePackage{eurofont}
 %    \end{macrocode}
 %
-%    Load the enumitem package, which is used later to change indents on the enumerate list for publication references.
+%    Load the \skbem[code]{enumitem} package, which is used later to change indents on the enumerate list for publication references.
 %    \begin{macrocode}
 \RequirePackage{enumitem}
 %    \end{macrocode}
 %
-%    Load the xcolor and hyperref packages to allow painting URLs in publication references.
+%    Load the \skbem[code]{xcolor} and \skbem[code]{hyperref} packages to allow painting URLs in publication references.
 %    \begin{macrocode}
 \RequirePackage[x11names]{xcolor}
 \RequirePackage[colorlinks,%
@@ -2355,7 +2360,7 @@
 %
 % \subsubsection{Misc Settings}
 %
-%    Configure moderncv to use the classic layout.
+%    Configure \skbem[code]{moderncv} to use the classic layout.
 %    \begin{macrocode}
 \moderncvtheme{classic}
 %    \end{macrocode}
@@ -2376,11 +2381,12 @@
 %    \DescribeMacro{\skbcvrefplain}
 %    This macro prints a list of references without any labels.
 %    It expects a list of citation references, and empty list is valid and and will result in an empty reference list.
-%    The macro defines a new environment for the \BibTeX list adding an indent to the list using moderncv counters.
+%    The macro defines a new environment for the \BibTeX~ list adding an indent to the list using moderncv counters.
 %    \cmd{\hintscolumnwidth} is the left column of an entry and \cmd{\separatorcolumnwidth} is the middle column providing a spacer between left and right.
 %
-%    With the new environment defined, the macro then opens a new refsgment (BibLaTeX) to group all references without impacting the overall reference list.
-%    It uses \cmd{\nocite} to mark all references as being used without printing them, and then \cmd{\printbibliography} for printing the list. The options here are:
+%    With the new environment defined, the macro then opens a new \skbem[code]{refsgment} (BibLaTeX) to group all references without impacting the overall reference list.
+%    It uses \cmd{\nocite} to mark all references as being used without printing them, and then \cmd{\printbibliography} for printing the list.
+%    The options here are:
 %    \begin{skbnotelist}
 %      \item heading - refers to the new heading we have defined earlier, called None.
 %      \item segment - points to the current refsegment, so only references used here will be part of the list.
@@ -2412,7 +2418,7 @@
 %    \DescribeMacro{\skbcvrefenum}
 %    This macro prints a list of references as an enumerated list, which helps to see how many entries a list has and also makes it easier to read the list in the final CV.
 %    It expects a list of citation references, and empty list is valid and and will result in an empty reference list.
-%    The macro defines a new environment for the \BibTeX list using an enumerate environment, which was of course alreadt changed loading the enumitem package.
+%    The macro defines a new environment for the \BibTeX~ list using an enumerate environment, which was of course alreadt changed loading the enumitem package.
 %    First, we calculate the length for \cmd{\parindent} by setting it to \cmd{hintscolumnwidth}, addint \cmd{separatorcolumnwidth} and finally adding another 1pt to it.
 %    This will make the items of the enumeration list appear within the left column of the CV.
 %    We then apply a few options to the enumerate environment:
@@ -2694,6 +2700,25 @@
 %  \item changed directory and package structure to be CTAN conform
 %  \item re-worked README to reflect new package structure, and added information on generating files from the source
 %\end{skbnotelist}
+%
+%
+%\subsection{v0.53 from 12-Feb-2016}
+%
+%\begin{skbnotelist}
+%  \item added option ``captionlong'' to \cmd{\skbfigure}
+%    \begin{skbnotelist}
+%      \item changed the behavior of caption to only print the option
+%      \item added an option captionlong only printing the option
+%      \item changed the code for skbfigure to test for caption/captionlong
+%      \item added a check for label in \cmd{\skbfigure}
+%    \end{skbnotelist}
+%  \item spell check on all documentation
+%  \item fixed a problem in \cmd{\skbcode} to be used in tables and tabular environments (using || instead of {} for argument)
+%  \item removed target ``cp'' from make file
+%  \item changed acronyms to new SKB base
+%  \item switched from BibTeX to biber in make file, removed empty bib files from import (biber doesn't like empty files)
+%\end{skbnotelist}
+%
 %
 %
 %\section*{Acronyms}
